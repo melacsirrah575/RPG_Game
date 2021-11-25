@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,27 +6,32 @@ using UnityEngine.AI;
 
 public class Mover : MonoBehaviour
 {
-    [SerializeField] Transform target;
-
     NavMeshAgent navMeshAgent;
-    Ray lastRay;
 
     void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButton(0))
         {
-            //Setting lastRay to where player clicked
-            lastRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+            MoveToCursor();
         }
-        //Ray is shown in editor
-        Debug.DrawRay(lastRay.origin, lastRay.direction * 100);
+    }
 
-        navMeshAgent.destination = target.position;
+    private void MoveToCursor()
+    {
+        //Takes position from where player clicked on MainCamera's near clipping plane and sets as variable
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        //out hit stores Raycast hit position in hit
+        bool hasHit = Physics.Raycast(ray, out hit);
+
+        if(hasHit)
+        {
+            navMeshAgent.destination = hit.point;
+        }
     }
 }
