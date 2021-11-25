@@ -7,10 +7,12 @@ using UnityEngine.AI;
 public class Mover : MonoBehaviour
 {
     NavMeshAgent navMeshAgent;
+    Animator animator;
 
     void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -19,6 +21,7 @@ public class Mover : MonoBehaviour
         {
             MoveToCursor();
         }
+        UpdateAnimator();
     }
 
     private void MoveToCursor()
@@ -34,4 +37,14 @@ public class Mover : MonoBehaviour
             navMeshAgent.destination = hit.point;
         }
     }
+    private void UpdateAnimator()
+    {
+        //Grabbing global velocity
+        Vector3 velocity = navMeshAgent.velocity;
+        //Converts global to local for animator
+        Vector3 localVelocity = transform.InverseTransformDirection(velocity);
+        float speed = localVelocity.z;
+        animator.SetFloat("forwardSpeed", speed);
+    }
+
 }
