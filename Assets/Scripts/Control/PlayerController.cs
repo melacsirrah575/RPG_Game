@@ -4,16 +4,24 @@ using UnityEngine;
 
 using RPG.Movement;
 using RPG.Combat;
+using RPG.Core;
 
 //Starting namespace with RPG. in case I bring in anything with the same namespace later on
 namespace RPG.Control
 {
     public class PlayerController : MonoBehaviour
     {
+        Health health;
+        private void Start()
+        {
+            health = GetComponent<Health>();
+        }
 
         private void Update()
         {
-            //Priority level: If I clicked on something I need to attack, then I don't move and vice-versa 
+            //Priority level: Check if alive, the check if I clicked on something I need to attack, then I don't move and vice-versa 
+            if (health.HasDied()) return;
+
             if (InteractWithCombat()) return;
             if (InteractWithMovement()) return;
         }
@@ -27,11 +35,13 @@ namespace RPG.Control
             {
                 CombatTarget target = hit.transform.GetComponent<CombatTarget>();
                 //Continue carrys on to next index in the loop but skips the rest of the body of current index
-                if (!GetComponent<Fighter>().CanAttack(target)) { continue; }
-                //Don't want player to be able to hold down mouse to attack
-                if(Input.GetMouseButtonDown(0))
+                if (target == null) continue;
+
+                if (!GetComponent<Fighter>().CanAttack(target.gameObject)) { continue; }
+
+                if(Input.GetMouseButton(0))
                 {
-                    GetComponent<Fighter>().Attack(target);
+                    GetComponent<Fighter>().Attack(target.gameObject);
                 }
                 //return is happening outside of if statement for future implmentation of Cursor changing
                 return true;

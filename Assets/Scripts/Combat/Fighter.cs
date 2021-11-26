@@ -1,10 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 using RPG.Movement;
 using RPG.Core;
-using System;
 
 namespace RPG.Combat
 {
@@ -54,7 +54,8 @@ namespace RPG.Combat
             {
                 //This will trigger the Hit() event
                 TriggerAttack();
-                timeSinceLastAttack = 0;
+                //Allows player to attack immediately when first reaching enemy
+                timeSinceLastAttack = Mathf.Infinity;
             }
         }
 
@@ -72,7 +73,7 @@ namespace RPG.Combat
         }
 
         //Determines if we can attack the current object in the list of objects hit by Raycast in PlayerController
-        public bool CanAttack(CombatTarget combatTarget)
+        public bool CanAttack(GameObject combatTarget)
         {
             if (combatTarget == null) return false;
 
@@ -81,7 +82,7 @@ namespace RPG.Combat
         }
 
         //Player Controller sets target in Attack and calls function
-        public void Attack(CombatTarget combatTarget)
+        public void Attack(GameObject combatTarget)
         {
             GetComponent<ActionScheduler>().StartAction(this);
             target = combatTarget.GetComponent<Health>();

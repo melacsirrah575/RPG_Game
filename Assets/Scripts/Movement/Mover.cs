@@ -14,15 +14,18 @@ namespace RPG.Movement
     {
         NavMeshAgent navMeshAgent;
         Animator animator;
+        Health health;
 
         void Start()
         {
             navMeshAgent = GetComponent<NavMeshAgent>();
             animator = GetComponent<Animator>();
+            health = GetComponent<Health>();
         }
 
         void Update()
         {
+            navMeshAgent.enabled = !health.HasDied();
             UpdateAnimator();
         }
 
