@@ -13,11 +13,12 @@ namespace RPG.Control
 
         private void Update()
         {
-            InteractWithCombat();
-            InteractWithMovement();
+            //Priority level: If I clicked on something I need to attack, then I don't move and vice-versa 
+            if (InteractWithCombat()) return;
+            if (InteractWithMovement()) return;
         }
 
-        private void InteractWithCombat()
+        private bool InteractWithCombat()
         {
             //Instead of having an 'out' return, RaycastAll returns a list of things hit
             RaycastHit[] hits = Physics.RaycastAll(GetMouseRay());
@@ -32,18 +33,13 @@ namespace RPG.Control
                 {
                     GetComponent<Fighter>().Attack(target);
                 }
+                //return is happening outside of if statement for future implmentation of Cursor changing
+                return true;
             }
+            return false;
         }
 
-        private void InteractWithMovement()
-        {
-            if (Input.GetMouseButton(0))
-            {
-                MoveToCursor();
-            }
-        }
-
-        private void MoveToCursor()
+        private bool InteractWithMovement()
         {
             //Inlined variable
             RaycastHit hit;
@@ -52,8 +48,14 @@ namespace RPG.Control
 
             if (hasHit)
             {
-                GetComponent<Mover>().MoveTo(hit.point);
+                if (Input.GetMouseButton(0))
+                {
+                    GetComponent<Mover>().MoveTo(hit.point);
+                }
+                //return is happening outside of if statement for future implmentation of Cursor changing
+                return true;
             }
+            return false;
         }
 
         private static Ray GetMouseRay()
