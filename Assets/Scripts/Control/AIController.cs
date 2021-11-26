@@ -4,6 +4,7 @@ using UnityEngine;
 
 using RPG.Combat;
 using RPG.Core;
+using RPG.Movement;
 
 namespace RPG.Control
 {
@@ -13,13 +14,19 @@ namespace RPG.Control
 
         Fighter fighter;
         Health health;
+        Mover mover;
         GameObject player;
+
+        Vector3 guardPosition;
 
         private void Start()
         {
             fighter = GetComponent<Fighter>();
             health = GetComponent<Health>();
+            mover = GetComponent<Mover>();
             player = GameObject.FindWithTag("Player");
+            //Sets guard position to initial position
+            guardPosition = transform.position;
         }
 
         private void Update()
@@ -31,7 +38,8 @@ namespace RPG.Control
                 fighter.Attack(player);
             } else
             {
-                fighter.Cancel();
+                //Cancels attack and moves back to guardPosition
+                mover.StartMoveAction(guardPosition);
             }
         }
 
