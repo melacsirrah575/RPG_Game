@@ -4,47 +4,56 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Mover : MonoBehaviour
+using RPG.Core;
+
+//Starting namespace with RPG. in case I bring in anything with the same namespace later on
+namespace RPG.Movement
 {
-    NavMeshAgent navMeshAgent;
-    Animator animator;
-
-    void Awake()
+    //Can only inherit from 1 class, but as many interfaces as you would like
+    public class Mover : MonoBehaviour, IAction
     {
-        navMeshAgent = GetComponent<NavMeshAgent>();
-        animator = GetComponent<Animator>();
-    }
+        NavMeshAgent navMeshAgent;
+        Animator animator;
 
-    void Update()
-    {
-        if (Input.GetMouseButton(0))
+        void Start()
         {
-            MoveToCursor();
+            navMeshAgent = GetComponent<NavMeshAgent>();
+            animator = GetComponent<Animator>();
         }
-        UpdateAnimator();
-    }
 
-    private void MoveToCursor()
-    {
-        //Takes position from where player clicked on MainCamera's near clipping plane and sets as variable
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        //out hit stores Raycast hit position in hit
-        bool hasHit = Physics.Raycast(ray, out hit);
-
-        if(hasHit)
+        void Update()
         {
-            navMeshAgent.destination = hit.point;
+            UpdateAnimator();
         }
-    }
-    private void UpdateAnimator()
-    {
-        //Grabbing global velocity
-        Vector3 velocity = navMeshAgent.velocity;
-        //Converts global to local for animator
-        Vector3 localVelocity = transform.InverseTransformDirection(velocity);
-        float speed = localVelocity.z;
-        animator.SetFloat("forwardSpeed", speed);
-    }
 
+        //Used to create a distiction between an action starting and just calling MoveTo
+        public void StartMoveAction(Vector3 destination)
+        {
+            GetComponent<ActionScheduler>().StartAction(this);
+            MoveTo(destination);
+        }
+
+        public void MoveTo(Vector3 destination)
+        {
+            navMeshAgent.isStopped = false;
+            navMeshAgent.destination = destination;
+        }
+
+        //Used by Fighter to stop player when in range
+        public void Cancel()
+        {
+            navMeshAgent.isStopped = true;
+        }
+
+        private void UpdateAnimator()
+        {
+            //Grabbing global velocity
+            Vector3 velocity = navMeshAgent.velocity;
+            //Converts global to local for animator
+            Vector3 localVelocity = transform.InverseTransformDirection(velocity);
+            float speed = localVelocity.z;
+            animator.SetFloat("forwardSpeed", speed);
+        }
+
+    }
 }
