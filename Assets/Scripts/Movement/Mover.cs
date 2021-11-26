@@ -17,26 +17,14 @@ public class Mover : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButton(0))
-        {
-            MoveToCursor();
-        }
         UpdateAnimator();
     }
 
-    private void MoveToCursor()
+    public void MoveTo(Vector3 destination)
     {
-        //Takes position from where player clicked on MainCamera's near clipping plane and sets as variable
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        //out hit stores Raycast hit position in hit
-        bool hasHit = Physics.Raycast(ray, out hit);
-
-        if(hasHit)
-        {
-            navMeshAgent.destination = hit.point;
-        }
+        navMeshAgent.destination = destination;
     }
+
     private void UpdateAnimator()
     {
         //Grabbing global velocity
