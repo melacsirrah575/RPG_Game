@@ -30,6 +30,7 @@ namespace RPG.Combat
             else
             {
                 mover.Cancel();
+                AttackBehaviour();
             }
         }
 
@@ -38,6 +39,12 @@ namespace RPG.Combat
             return Vector3.Distance(transform.position, target.position) < weaponRange;
         }
 
+        private void AttackBehaviour()
+        {
+            GetComponent<Animator>().SetTrigger("attack");
+        }
+
+        //Player Controller sets target in Attack
         public void Attack(CombatTarget combatTarget)
         {
             GetComponent<ActionScheduler>().StartAction(this);
@@ -47,6 +54,11 @@ namespace RPG.Combat
         public void Cancel()
         {
             target = null;
+        }
+        //Hit is an Animation Event
+        void Hit()
+        {
+
         }
     }
 }
