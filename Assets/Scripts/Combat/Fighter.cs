@@ -72,7 +72,7 @@ namespace RPG.Combat
         }
 
         //Determines if we can attack the current object in the list of objects hit by Raycast in PlayerController
-        public bool CanAttack(CombatTarget combatTarget)
+        public bool CanAttack(GameObject combatTarget)
         {
             if (combatTarget == null) return false;
 
@@ -81,7 +81,7 @@ namespace RPG.Combat
         }
 
         //Player Controller sets target in Attack and calls function
-        public void Attack(CombatTarget combatTarget)
+        public void Attack(GameObject combatTarget)
         {
             GetComponent<ActionScheduler>().StartAction(this);
             target = combatTarget.GetComponent<Health>();

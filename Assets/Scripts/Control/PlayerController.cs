@@ -27,11 +27,14 @@ namespace RPG.Control
             {
                 CombatTarget target = hit.transform.GetComponent<CombatTarget>();
                 //Continue carrys on to next index in the loop but skips the rest of the body of current index
-                if (!GetComponent<Fighter>().CanAttack(target)) { continue; }
+                if (target == null) continue;
+
+                if (!GetComponent<Fighter>().CanAttack(target.gameObject)) { continue; }
+
                 //Don't want player to be able to hold down mouse to attack
                 if(Input.GetMouseButtonDown(0))
                 {
-                    GetComponent<Fighter>().Attack(target);
+                    GetComponent<Fighter>().Attack(target.gameObject);
                 }
                 //return is happening outside of if statement for future implmentation of Cursor changing
                 return true;
