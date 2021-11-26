@@ -39,8 +39,7 @@ namespace RPG.Control
 
                 if (!GetComponent<Fighter>().CanAttack(target.gameObject)) { continue; }
 
-                //Don't want player to be able to hold down mouse to attack
-                if(Input.GetMouseButtonDown(0))
+                if(Input.GetMouseButton(0))
                 {
                     GetComponent<Fighter>().Attack(target.gameObject);
                 }
