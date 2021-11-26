@@ -1,10 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 using RPG.Movement;
 using RPG.Core;
-using System;
 
 namespace RPG.Combat
 {
@@ -54,7 +54,8 @@ namespace RPG.Combat
             {
                 //This will trigger the Hit() event
                 TriggerAttack();
-                timeSinceLastAttack = 0;
+                //Allows player to attack immediately when first reaching enemy
+                timeSinceLastAttack = Mathf.Infinity;
             }
         }
 
