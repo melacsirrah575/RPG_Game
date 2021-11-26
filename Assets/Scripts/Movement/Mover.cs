@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 using RPG.Combat;
+using RPG.Core;
 
 //Starting namespace with RPG. in case I bring in anything with the same namespace later on
 namespace RPG.Movement
@@ -28,6 +29,7 @@ namespace RPG.Movement
         //Used to create a distiction between an action starting and just calling MoveTo
         public void StartMoveAction(Vector3 destination)
         {
+            GetComponent<ActionScheduler>().StartAction(this);
             GetComponent<Fighter>().Cancel();
             MoveTo(destination);
         }
