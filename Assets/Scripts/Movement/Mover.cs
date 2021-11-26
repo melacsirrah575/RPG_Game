@@ -4,35 +4,39 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Mover : MonoBehaviour
+//Starting namespace with RPG. in case I bring in anything with the same namespace later on
+namespace RPG.Movement
 {
-    NavMeshAgent navMeshAgent;
-    Animator animator;
-
-    void Awake()
+    public class Mover : MonoBehaviour
     {
-        navMeshAgent = GetComponent<NavMeshAgent>();
-        animator = GetComponent<Animator>();
-    }
+        NavMeshAgent navMeshAgent;
+        Animator animator;
 
-    void Update()
-    {
-        UpdateAnimator();
-    }
+        void Awake()
+        {
+            navMeshAgent = GetComponent<NavMeshAgent>();
+            animator = GetComponent<Animator>();
+        }
 
-    public void MoveTo(Vector3 destination)
-    {
-        navMeshAgent.destination = destination;
-    }
+        void Update()
+        {
+            UpdateAnimator();
+        }
 
-    private void UpdateAnimator()
-    {
-        //Grabbing global velocity
-        Vector3 velocity = navMeshAgent.velocity;
-        //Converts global to local for animator
-        Vector3 localVelocity = transform.InverseTransformDirection(velocity);
-        float speed = localVelocity.z;
-        animator.SetFloat("forwardSpeed", speed);
-    }
+        public void MoveTo(Vector3 destination)
+        {
+            navMeshAgent.destination = destination;
+        }
 
+        private void UpdateAnimator()
+        {
+            //Grabbing global velocity
+            Vector3 velocity = navMeshAgent.velocity;
+            //Converts global to local for animator
+            Vector3 localVelocity = transform.InverseTransformDirection(velocity);
+            float speed = localVelocity.z;
+            animator.SetFloat("forwardSpeed", speed);
+        }
+
+    }
 }

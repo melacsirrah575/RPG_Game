@@ -2,28 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+using RPG.Movement;
+
+//Starting namespace with RPG. in case I bring in anything with the same namespace later on
+namespace RPG.Control
 {
-
-    private void Update()
+    public class PlayerController : MonoBehaviour
     {
-        if (Input.GetMouseButton(0))
+
+        private void Update()
         {
-            MoveToCursor();
+            if (Input.GetMouseButton(0))
+            {
+                MoveToCursor();
+            }
         }
-    }
 
-    private void MoveToCursor()
-    {
-        //Takes position from where player clicked on MainCamera's near clipping plane and sets as variable
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        //out hit stores Raycast hit position in hit
-        bool hasHit = Physics.Raycast(ray, out hit);
-
-        if (hasHit)
+        private void MoveToCursor()
         {
-            GetComponent<Mover>().MoveTo(hit.point);
+            //Takes position from where player clicked on MainCamera's near clipping plane and sets as variable
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            //out hit stores Raycast hit position in hit
+            bool hasHit = Physics.Raycast(ray, out hit);
+
+            if (hasHit)
+            {
+                GetComponent<Mover>().MoveTo(hit.point);
+            }
         }
     }
 }

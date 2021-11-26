@@ -2,12 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FollowCamera : MonoBehaviour
+//Starting namespace with RPG. in case I bring in anything with the same namespace later on
+namespace RPG.Core
 {
-    [SerializeField] GameObject target;
-
-    void LateUpdate()
+    public class FollowCamera : MonoBehaviour
     {
-        transform.position = target.transform.position;
+        [SerializeField] GameObject target;
+
+        void LateUpdate()
+        {
+            transform.position = target.transform.position;
+        }
     }
+
 }
