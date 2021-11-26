@@ -26,8 +26,8 @@ namespace RPG.Control
             foreach(RaycastHit hit in hits)
             {
                 CombatTarget target = hit.transform.GetComponent<CombatTarget>();
-                //Continue carrys on in the loop but skips the body it was put it
-                if (target == null) continue;
+                //Continue carrys on to next index in the loop but skips the rest of the body of current index
+                if (!GetComponent<Fighter>().CanAttack(target)) { continue; }
                 //Don't want player to be able to hold down mouse to attack
                 if(Input.GetMouseButtonDown(0))
                 {

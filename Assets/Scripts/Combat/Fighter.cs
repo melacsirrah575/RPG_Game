@@ -4,6 +4,7 @@ using UnityEngine;
 
 using RPG.Movement;
 using RPG.Core;
+using System;
 
 namespace RPG.Combat
 {
@@ -30,15 +31,15 @@ namespace RPG.Combat
             if (target == null) return;
             if(target.HasDied()) { return; }
 
-            if (target != null && !GetIsInRange())
-            {
-                mover.MoveTo(target.transform.position);
-            }
-            else
-            {
-                mover.Cancel();
-                AttackBehaviour();
-            }
+                if (target != null && !GetIsInRange())
+                {
+                    mover.MoveTo(target.transform.position);
+                }
+                else
+                {
+                    mover.Cancel();
+                    AttackBehaviour();
+                }
         }
 
         private bool GetIsInRange()
@@ -48,17 +49,35 @@ namespace RPG.Combat
 
         private void AttackBehaviour()
         {
-            if(timeSinceLastAttack > timeBetweenAttacks)
+            transform.LookAt(target.transform);
+            if (timeSinceLastAttack > timeBetweenAttacks)
             {
                 //This will trigger the Hit() event
-                GetComponent<Animator>().SetTrigger("attack");
+                TriggerAttack();
                 timeSinceLastAttack = 0;
             }
         }
+
+        private void TriggerAttack()
+        {
+            GetComponent<Animator>().ResetTrigger("stopAttack");
+            GetComponent<Animator>().SetTrigger("attack");
+        }
+
         //Hit is an Animation Event
         void Hit()
         {
+            if (target == null) return;
             target.TakeDamage(weaponDamage);
+        }
+
+        //Determines if we can attack the current object in the list of objects hit by Raycast in PlayerController
+        public bool CanAttack(CombatTarget combatTarget)
+        {
+            if (combatTarget == null) return false;
+
+            Health targetToTest = combatTarget.GetComponent<Health>();
+            return targetToTest != null && !targetToTest.HasDied();
         }
 
         //Player Controller sets target in Attack and calls function
@@ -70,8 +89,14 @@ namespace RPG.Combat
 
         public void Cancel()
         {
-            GetComponent<Animator>().SetTrigger("stopAttack");
+            StopAttack();
             target = null;
+        }
+
+        private void StopAttack()
+        {
+            GetComponent<Animator>().ResetTrigger("attack");
+            GetComponent<Animator>().SetTrigger("stopAttack");
         }
     }
 }
