@@ -19,7 +19,7 @@ namespace RPG.Combat
             }
         }
 
-        private int GetNextIndex(int i)
+        public int GetNextIndex(int i)
         {
             //Loops back to start if at last index
             if(i +1 == transform.childCount) { return 0; }
@@ -27,7 +27,7 @@ namespace RPG.Combat
             return i + 1;
         }
 
-        private Vector3 GetWaypoint(int i)
+        public Vector3 GetWaypoint(int i)
         {
             return transform.GetChild(i).position;
         }
