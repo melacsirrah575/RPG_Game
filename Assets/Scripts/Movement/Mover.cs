@@ -4,13 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-using RPG.Combat;
 using RPG.Core;
 
 //Starting namespace with RPG. in case I bring in anything with the same namespace later on
 namespace RPG.Movement
 {
-    public class Mover : MonoBehaviour
+    //Can only inherit from 1 class, but as many interfaces as you would like
+    public class Mover : MonoBehaviour, IAction
     {
         NavMeshAgent navMeshAgent;
         Animator animator;
@@ -30,7 +30,6 @@ namespace RPG.Movement
         public void StartMoveAction(Vector3 destination)
         {
             GetComponent<ActionScheduler>().StartAction(this);
-            GetComponent<Fighter>().Cancel();
             MoveTo(destination);
         }
 
@@ -41,7 +40,7 @@ namespace RPG.Movement
         }
 
         //Used by Fighter to stop player when in range
-        public void Stop()
+        public void Cancel()
         {
             navMeshAgent.isStopped = true;
         }
