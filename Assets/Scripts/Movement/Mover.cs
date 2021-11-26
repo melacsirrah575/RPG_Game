@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+using RPG.Combat;
+
 //Starting namespace with RPG. in case I bring in anything with the same namespace later on
 namespace RPG.Movement
 {
@@ -23,12 +25,20 @@ namespace RPG.Movement
             UpdateAnimator();
         }
 
+        //Used to create a distiction between an action starting and just calling MoveTo
+        public void StartMoveAction(Vector3 destination)
+        {
+            GetComponent<Fighter>().Cancel();
+            MoveTo(destination);
+        }
+
         public void MoveTo(Vector3 destination)
         {
             navMeshAgent.isStopped = false;
             navMeshAgent.destination = destination;
         }
 
+        //Used by Fighter to stop player when in range
         public void Stop()
         {
             navMeshAgent.isStopped = true;
