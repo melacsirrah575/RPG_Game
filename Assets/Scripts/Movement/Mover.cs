@@ -12,6 +12,7 @@ namespace RPG.Movement
     //Can only inherit from 1 class, but as many interfaces as you would like
     public class Mover : MonoBehaviour, IAction
     {
+        [SerializeField] float maxSpeed = 6f;
         NavMeshAgent navMeshAgent;
         Animator animator;
         Health health;
@@ -30,15 +31,16 @@ namespace RPG.Movement
         }
 
         //Used to create a distiction between an action starting and just calling MoveTo
-        public void StartMoveAction(Vector3 destination)
+        public void StartMoveAction(Vector3 destination, float speedFraction)
         {
             GetComponent<ActionScheduler>().StartAction(this);
-            MoveTo(destination);
+            MoveTo(destination, speedFraction);
         }
 
-        public void MoveTo(Vector3 destination)
+        public void MoveTo(Vector3 destination, float speedFraction)
         {
             navMeshAgent.isStopped = false;
+            navMeshAgent.speed = maxSpeed * Mathf.Clamp01(speedFraction);
             navMeshAgent.destination = destination;
         }
 
