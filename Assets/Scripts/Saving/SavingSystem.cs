@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -17,9 +18,9 @@ namespace RPG.Saving
             //Adding using prevents possible errors causing file to not close and instead, leak
             using (FileStream stream = File.Open(path, FileMode.Create))
             {
-                 //Example of writing to saveFile using an array of bytes
-                 byte[] bytes = Encoding.UTF8.GetBytes("Testing Save Text");
-                 stream.Write(bytes, 0, bytes.Length);
+                Transform playerTransform = GetPlayerTransform();
+                byte[] buffer = SerializeVector(playerTransform.position);
+                 stream.Write(buffer, 0, buffer.Length);
             }
         }
 
@@ -36,8 +37,35 @@ namespace RPG.Saving
                 //Read returns an int of how many bytes it read
                 stream.Read(buffer, 0, buffer.Length);
                 //Converting bytes in buffer into a string
-               print(Encoding.UTF8.GetString(buffer));
+                Transform playerTransform = GetPlayerTransform();
+                playerTransform.position = DeserializeVector(buffer);
             }
+        }
+
+        Transform GetPlayerTransform()
+        {
+            return GameObject.FindWithTag("Player").transform;
+        }
+
+        byte[] SerializeVector(Vector3 vector)
+        {
+            //3 bytes at a length of 4
+            byte[] vectorBytes = new byte[3 * 4];
+            BitConverter.GetBytes(vector.x).CopyTo(vectorBytes, 0);
+            BitConverter.GetBytes(vector.y).CopyTo(vectorBytes, 4);
+            BitConverter.GetBytes(vector.z).CopyTo(vectorBytes, 8);
+            return vectorBytes;
+        }
+
+        Vector3 DeserializeVector(byte[] buffer)
+        {
+            Vector3 result = new Vector3();
+            //ToSingle is basically the same as ToFloat
+            result.x = BitConverter.ToSingle(buffer, 0);
+            result.y = BitConverter.ToSingle(buffer, 4);
+            result.z = BitConverter.ToSingle(buffer, 8);
+            return result;
+
         }
 
         string GetPathFromSaveFile(string saveFile)
