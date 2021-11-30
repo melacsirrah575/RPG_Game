@@ -5,6 +5,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.AI;
 
+using RPG.Saving;
+
 namespace RPG.SceneManagement
 {
     public class Portal : MonoBehaviour
@@ -39,12 +41,16 @@ namespace RPG.SceneManagement
             }
 
             Fader fader = FindObjectOfType<Fader>();
+            SavingWrapper savingWrapper = FindObjectOfType<SavingWrapper>();
 
             DontDestroyOnLoad(gameObject);
 
             yield return fader.FadeOut(fadeOutTime);
+            savingWrapper.Save();
+
             //Calls Coroutine again once scene has finished loading
             yield return SceneManager.LoadSceneAsync(sceneToLoad);
+            savingWrapper.Load();
 
             Portal otherPortal = GetOtherPortal();
             UpdatePlayer(otherPortal);
@@ -70,9 +76,11 @@ namespace RPG.SceneManagement
         private void UpdatePlayer(Portal otherPortal)
         {
             GameObject player = GameObject.FindWithTag("Player");
+            player.GetComponent<NavMeshAgent>().enabled = false;
             //Using NavMeshAgent to prevent conflict between it and manual placement
             player.GetComponent<NavMeshAgent>().Warp(otherPortal.spawnPoint.position);
             player.transform.rotation = otherPortal.spawnPoint.rotation;
+            player.GetComponent<NavMeshAgent>().enabled = true;
         }
     }
 }

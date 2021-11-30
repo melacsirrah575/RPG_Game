@@ -25,9 +25,7 @@ namespace RPG.Saving
         public void RestoreState(object state)
         {
             SerializableVector3 position = (SerializableVector3)state;
-            GetComponent<NavMeshAgent>().enabled = false;
             transform.position = position.ToVector();
-            GetComponent<NavMeshAgent>().enabled = true;
             GetComponent<ActionScheduler>().CancelCurrentAction();
         }
         //Following code is removed if/when project is packaged
