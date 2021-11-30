@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using UnityEngine;
 
@@ -19,8 +20,10 @@ namespace RPG.Saving
             using (FileStream stream = File.Open(path, FileMode.Create))
             {
                 Transform playerTransform = GetPlayerTransform();
-                byte[] buffer = SerializeVector(playerTransform.position);
-                 stream.Write(buffer, 0, buffer.Length);
+                //Have to create method before able to call methods from it
+                BinaryFormatter formatter = new BinaryFormatter();
+                SerializableVector3 position = new SerializableVector3(playerTransform.position);
+                formatter.Serialize(stream, position);
             }
         }
 
@@ -31,14 +34,11 @@ namespace RPG.Saving
             //FileMode.Open doesn't overwrite any existing file
             using (FileStream stream = File.Open(path, FileMode.Open))
             {
-                //A buffer is a piece of allocated memory that we created for something else to fill in
-                //Typically, buffer array should be a fixed, constant size and it would iterate over file multiple times in chunks.
-                byte[] buffer = new byte[stream.Length];
-                //Read returns an int of how many bytes it read
-                stream.Read(buffer, 0, buffer.Length);
-                //Converting bytes in buffer into a string
+
                 Transform playerTransform = GetPlayerTransform();
-                playerTransform.position = DeserializeVector(buffer);
+                BinaryFormatter formatter = new BinaryFormatter();
+                SerializableVector3 position = (SerializableVector3)formatter.Deserialize(stream);
+                playerTransform.position = position.ToVector();
             }
         }
 
