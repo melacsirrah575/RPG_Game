@@ -13,15 +13,23 @@ namespace RPG.Combat
         [SerializeField] float weaponRange = 2f;
         [SerializeField] float timeBetweenAttacks = 1f;
         [SerializeField] float weaponDamage = 5f;
+        [SerializeField] Transform handTransform = null;
+        [SerializeField] Weapon weapon = null;
+
 
         Health target;
         Mover mover;
 
         float timeSinceLastAttack;
 
-        private void Start()
+        private void Awake()
         {
             mover = GetComponent<Mover>();
+        }
+
+        private void Start()
+        {
+            SpawnWeapon();
         }
 
         private void Update()
@@ -40,6 +48,13 @@ namespace RPG.Combat
                     mover.Cancel();
                     AttackBehaviour();
                 }
+        }
+
+        private void SpawnWeapon()
+        {
+            if(weapon == null) return;
+            Animator animator = GetComponent<Animator>();
+            weapon.Spawn(handTransform, animator);
         }
 
         private bool GetIsInRange()
