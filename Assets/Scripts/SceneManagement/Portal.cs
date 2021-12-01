@@ -54,6 +54,8 @@ namespace RPG.SceneManagement
 
             Portal otherPortal = GetOtherPortal();
             UpdatePlayer(otherPortal);
+            //Saving here to prevent player spawning in portal and teleporting if walked through a portal and didn't manually save before quitting
+            savingWrapper.Save();
 
             yield return new WaitForSeconds(fadeWaitTime);
             yield return fader.FadeIn(fadeInTime);

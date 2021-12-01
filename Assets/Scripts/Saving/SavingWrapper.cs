@@ -6,14 +6,11 @@ namespace RPG.Saving
 {
     public class SavingWrapper : MonoBehaviour
     {
-
-        SavingSystem savingSystem;
         const string defaultSaveFile = "save";
 
-        private void Start()
+        private IEnumerator Start()
         {
-            savingSystem = GetComponent<SavingSystem>();
-            Load();
+            yield return GetComponent<SavingSystem>().LoadLastScene(defaultSaveFile);
         }
 
         private void Update()
@@ -30,12 +27,12 @@ namespace RPG.Saving
 
         public void Save()
         {
-            savingSystem.Save(defaultSaveFile);
+            GetComponent<SavingSystem>().Save(defaultSaveFile);
         }
 
         public void Load()
         {
-            savingSystem.Load(defaultSaveFile);
+            GetComponent<SavingSystem>().Load(defaultSaveFile);
         }
     }
 }
