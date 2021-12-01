@@ -5,12 +5,13 @@ using UnityEngine;
 using UnityEngine.AI;
 
 using RPG.Core;
+using RPG.Saving;
 
 //Starting namespace with RPG. in case I bring in anything with the same namespace later on
 namespace RPG.Movement
 {
     //Can only inherit from 1 class, but as many interfaces as you would like
-    public class Mover : MonoBehaviour, IAction
+    public class Mover : MonoBehaviour, IAction, ISaveable
     {
         [SerializeField] float maxSpeed = 6f;
         NavMeshAgent navMeshAgent;
@@ -60,5 +61,18 @@ namespace RPG.Movement
             animator.SetFloat("forwardSpeed", speed);
         }
 
+        public object CaptureState()
+        {
+            return new SerializableVector3(transform.position);
+        }
+
+        public void RestoreState(object state)
+        {
+            SerializableVector3 position = (SerializableVector3)state;
+            GetComponent<NavMeshAgent>().enabled = false;
+            transform.position = position.ToVector();
+            GetComponent<NavMeshAgent>().enabled = true;
+            GetComponent<ActionScheduler>().CancelCurrentAction();
+        }
     }
 }
