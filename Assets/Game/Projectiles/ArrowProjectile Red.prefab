@@ -205,6 +205,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7f49c6920d49ba468b083941d79f2c0, type: 3}
+--- !u!1 &1567631995612800507 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1659504181823486, guid: c7f49c6920d49ba468b083941d79f2c0, type: 3}
+  m_PrefabInstance: {fileID: 1568587141901672965}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2993101802798341250
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -260,6 +265,10 @@ PrefabInstance:
       propertyPath: hitEffect
       value: 
       objectReference: {fileID: 3598159407657716714, guid: 98c39b11bea39d14384ac742af34d0ba, type: 3}
+    - target: {fileID: 2165589392474115659, guid: a5699b9a5b8c9644e8e654fa6dc8030c, type: 3}
+      propertyPath: destroyOnHit.Array.data[0]
+      value: 
+      objectReference: {fileID: 1567631995612800507}
     - target: {fileID: 6416964202589069338, guid: a5699b9a5b8c9644e8e654fa6dc8030c, type: 3}
       propertyPath: m_Parameters.colorGradient.atime1
       value: 65535
