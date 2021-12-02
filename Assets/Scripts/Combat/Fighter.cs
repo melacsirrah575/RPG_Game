@@ -11,7 +11,8 @@ namespace RPG.Combat
     public class Fighter : MonoBehaviour, IAction
     {
         [SerializeField] float timeBetweenAttacks = 1f;
-        [SerializeField] Transform handTransform = null;
+        [SerializeField] Transform rightHandTransform = null;
+        [SerializeField] Transform leftHandTransform = null;
         [SerializeField] Weapon defaultWeapon = null;
 
 
@@ -53,7 +54,7 @@ namespace RPG.Combat
         {
             currentWeapon = weapon;
             Animator animator = GetComponent<Animator>();
-            weapon.Spawn(handTransform, animator);
+            weapon.Spawn(rightHandTransform, leftHandTransform, animator);
         }
 
         private bool GetIsInRange()
@@ -83,7 +84,19 @@ namespace RPG.Combat
         void Hit()
         {
             if (target == null) return;
-            target.TakeDamage(currentWeapon.WeaponDamage);
+
+            if(currentWeapon.HasProjectile())
+            {
+                currentWeapon.LaunchProjectile(rightHandTransform, leftHandTransform, target);
+            } else
+            {
+                target.TakeDamage(currentWeapon.WeaponDamage);
+            }
+        }
+
+        void Shoot()
+        {
+            Hit();
         }
 
         //Determines if we can attack the current object in the list of objects hit by Raycast in PlayerController
