@@ -5,6 +5,7 @@ using UnityEngine;
 using RPG.Saving;
 using RPG.Core;
 using RPG.Stats;
+using System;
 
 namespace RPG.Attributes
 {
@@ -12,27 +13,35 @@ namespace RPG.Attributes
     {
         [SerializeField] float healthPoints = 100f;
 
+        BaseStats baseStats;
+
         bool hasDied = false;
         public bool HasDied() { return hasDied; }
 
-        private void Start()
+        private void Awake()
         {
-            healthPoints = GetComponent<BaseStats>().GetHealth();
+            baseStats = GetComponent<BaseStats>();
         }
 
-        public void TakeDamage(float damage)
+        private void Start()
+        {
+            healthPoints = baseStats.GetHealth();
+        }
+
+        public void TakeDamage(GameObject instigator, float damage)
         {
             //Taking the higher of the two values
             healthPoints = Mathf.Max(healthPoints - damage, 0);
             if (healthPoints == 0)
             {
                 Die();
+                AwardExperience(instigator);
             }
         }
 
         public float GetPercentage()
         {
-            return 100 * (healthPoints / GetComponent<BaseStats>().GetHealth());
+            return 100 * (healthPoints / baseStats.GetHealth());
         }
 
         private void Die()
@@ -42,6 +51,14 @@ namespace RPG.Attributes
             hasDied = true;
             GetComponent<Animator>().SetTrigger("die");
             GetComponent<ActionScheduler>().CancelCurrentAction();
+        }
+
+        private void AwardExperience(GameObject instigator)
+        {
+            Experience experience = instigator.GetComponent<Experience>();
+            if (experience == null) return;
+
+            experience.GainExperience(baseStats.GetExperienceReward());
         }
 
         public object CaptureState()

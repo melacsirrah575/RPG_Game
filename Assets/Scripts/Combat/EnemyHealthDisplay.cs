@@ -24,6 +24,7 @@ namespace RPG.Combat
             if(fighter.GetTarget() == null)
             {
                 text.text = "N/A";
+                return;
             }
             Health health = fighter.GetTarget();
             //Updates HUD and is formatted to return 0 decimal places
