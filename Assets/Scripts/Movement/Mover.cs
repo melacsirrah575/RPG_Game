@@ -6,6 +6,7 @@ using UnityEngine.AI;
 
 using RPG.Core;
 using RPG.Saving;
+using RPG.Attributes;
 
 //Starting namespace with RPG. in case I bring in anything with the same namespace later on
 namespace RPG.Movement

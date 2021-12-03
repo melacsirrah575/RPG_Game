@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using RPG.Saving;
+using RPG.Core;
+using RPG.Stats;
 
-namespace RPG.Core
+namespace RPG.Attributes
 {
     public class Health : MonoBehaviour, ISaveable
     {
@@ -15,7 +17,7 @@ namespace RPG.Core
 
         private void Start()
         {
-            healthPoints = maxHealth;
+            healthPoints = GetComponent<BaseStats>().GetHealth();
         }
 
         public void TakeDamage(float damage)

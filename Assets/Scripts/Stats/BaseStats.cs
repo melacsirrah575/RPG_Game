@@ -10,14 +10,12 @@ namespace RPG.Stats
         [SerializeField] int startingLevel = 1;
         [SerializeField] int bonusHealthMaxRange = 10;
         [SerializeField] CharacterClass characterClass;
-<<<<<<< Updated upstream
-=======
+
         [SerializeField] Progression progression = null;
 
         public float GetHealth()
         {
             return progression.GetHealth(characterClass, startingLevel);
         }
->>>>>>> Stashed changes
     }
 }

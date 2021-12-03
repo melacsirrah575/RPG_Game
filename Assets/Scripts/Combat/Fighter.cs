@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using RPG.Movement;
+using RPG.Attributes;
 using RPG.Core;
 using RPG.Saving;
 
