@@ -60,6 +60,11 @@ namespace RPG.Combat
             weapon.Spawn(rightHandTransform, leftHandTransform, animator);
         }
 
+        public Health GetTarget()
+        {
+            return target;
+        }
+
         private bool GetIsInRange()
         {
             return Vector3.Distance(transform.position, target.transform.position) < currentWeapon.WeaponRange;

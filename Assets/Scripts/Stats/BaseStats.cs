@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System;
 using UnityEngine;
 
 namespace RPG.Stats
@@ -9,6 +8,16 @@ namespace RPG.Stats
     {
         [Range(1, 99)]
         [SerializeField] int startingLevel = 1;
+        [SerializeField] int bonusHealthMaxRange = 10;
         [SerializeField] CharacterClass characterClass;
+<<<<<<< Updated upstream
+=======
+        [SerializeField] Progression progression = null;
+
+        public float GetHealth()
+        {
+            return progression.GetHealth(characterClass, startingLevel);
+        }
+>>>>>>> Stashed changes
     }
 }

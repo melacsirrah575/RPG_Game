@@ -8,9 +8,8 @@ namespace RPG.Core
 {
     public class Health : MonoBehaviour, ISaveable
     {
-        [SerializeField] float maxHealth = 100f;
+        [SerializeField] float healthPoints = 100f;
 
-        float healthPoints;
         bool hasDied = false;
         public bool HasDied() { return hasDied; }
 
@@ -27,6 +26,11 @@ namespace RPG.Core
             {
                 Die();
             }
+        }
+
+        public float GetPercentage()
+        {
+            return 100 * (healthPoints / GetComponent<BaseStats>().GetHealth());
         }
 
         private void Die()
