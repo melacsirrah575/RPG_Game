@@ -4,7 +4,7 @@ using UnityEngine;
 
 using RPG.Movement;
 using RPG.Combat;
-using RPG.Core;
+using RPG.Attributes;
 
 //Starting namespace with RPG. in case I bring in anything with the same namespace later on
 namespace RPG.Control
