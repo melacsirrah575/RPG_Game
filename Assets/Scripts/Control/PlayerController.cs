@@ -20,7 +20,7 @@ namespace RPG.Control
         private void Update()
         {
             //Priority level: Check if alive, the check if I clicked on something I need to attack, then I don't move and vice-versa 
-            if (health.HasDied()) return;
+            if (health.IsDead()) return;
 
             if (InteractWithCombat()) return;
             if (InteractWithMovement()) return;

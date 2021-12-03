@@ -15,8 +15,8 @@ namespace RPG.Attributes
 
         BaseStats baseStats;
 
-        bool hasDied = false;
-        public bool HasDied() { return hasDied; }
+        bool isDead = false;
+        public bool IsDead() { return isDead; }
 
         private void Awake()
         {
@@ -46,9 +46,9 @@ namespace RPG.Attributes
 
         private void Die()
         {
-            if (hasDied) return;
+            if (isDead) return;
 
-            hasDied = true;
+            isDead = true;
             GetComponent<Animator>().SetTrigger("die");
             GetComponent<ActionScheduler>().CancelCurrentAction();
         }

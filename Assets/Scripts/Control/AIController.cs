@@ -42,7 +42,7 @@ namespace RPG.Control
 
         private void Update()
         {
-            if (health.HasDied()) return;
+            if (health.IsDead()) return;
             //Checks if player is in range and follows/attacks if true
             if (InAttackRangeOfPlayer() && fighter.CanAttack(player))
             {

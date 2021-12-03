@@ -41,7 +41,7 @@ namespace RPG.Combat
             timeSinceLastAttack += Time.deltaTime;
 
             if (target == null) return;
-            if(target.HasDied()) { return; }
+            if(target.IsDead()) return;
 
                 if (target != null && !GetIsInRange())
                 {
@@ -114,7 +114,7 @@ namespace RPG.Combat
             if (combatTarget == null) return false;
 
             Health targetToTest = combatTarget.GetComponent<Health>();
-            return targetToTest != null && !targetToTest.HasDied();
+            return targetToTest != null && !targetToTest.IsDead();
         }
 
         //Player Controller sets target in Attack and calls function

@@ -30,7 +30,7 @@ namespace RPG.Combat
         {
             if (target == null) return;
 
-            if(isHoming && !target.HasDied())
+            if(isHoming && !target.IsDead())
             {
                 transform.LookAt(GetAimLocation());
             }
@@ -58,7 +58,7 @@ namespace RPG.Combat
         private void OnTriggerEnter(Collider other)
         {
             if (other.GetComponent<Health>() != target) return;
-            if (target.HasDied()) return;
+            if (target.IsDead()) return;
 
             target.TakeDamage(instigator , damage);
             speed = 0;
