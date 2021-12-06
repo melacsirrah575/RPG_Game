@@ -79,7 +79,7 @@ namespace RPG.Combat
                 //This will trigger the Hit() event
                 TriggerAttack();
                 //Allows player to attack immediately when first reaching enemy
-                timeSinceLastAttack = Mathf.Infinity;
+                timeSinceLastAttack = 0;
             }
         }
 
