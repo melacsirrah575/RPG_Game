@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -19,6 +20,7 @@ namespace RPG.Saving
                 int buildIndex = (int)state["lastSceneBuildIndex"];
                 if (buildIndex != SceneManager.GetActiveScene().buildIndex)
                 {
+                    //Happens after Awake but before Start
                     yield return SceneManager.LoadSceneAsync(buildIndex);
                 }
             }
@@ -36,6 +38,7 @@ namespace RPG.Saving
             RestoreState(LoadFile(saveFile));
         }
 
+        //[MenuItem("Utils/Delete Current SaveFile")] Needs Static function and currently making function static breaks deleteing save while in-game
         public void Delete(string saveFile)
         {
             File.Delete(GetPathFromSaveFile(saveFile));

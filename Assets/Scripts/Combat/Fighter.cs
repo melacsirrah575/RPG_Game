@@ -26,11 +26,8 @@ namespace RPG.Combat
         private void Awake()
         {
             mover = GetComponent<Mover>();
-        }
 
-        private void Start()
-        {
-            if(currentWeapon == null)
+            if (currentWeapon == null)
             {
                 EquipWeapon(defaultWeapon);
             }

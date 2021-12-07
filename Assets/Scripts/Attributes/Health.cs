@@ -11,6 +11,9 @@ namespace RPG.Attributes
 {
     public class Health : MonoBehaviour, ISaveable
     {
+        [Tooltip("Percent of health player returns to on level up if below")]
+        [SerializeField] float regenerationPercentage = 70f;
+
         float healthPoints = -1f;
 
         BaseStats baseStats;
@@ -25,6 +28,8 @@ namespace RPG.Attributes
 
         private void Start()
         {
+            baseStats.onLevelUp += RegenerateHealth;
+
             if (healthPoints < 0)
             {
                 healthPoints = baseStats.GetStat(Stat.Health);
@@ -62,6 +67,11 @@ namespace RPG.Attributes
             if (experience == null) return;
 
             experience.GainExperience(baseStats.GetStat(Stat.ExperienceReward));
+        }
+        private void RegenerateHealth()
+        {
+            float regenHealthPoints = baseStats.GetStat(Stat.Health) * (regenerationPercentage / 100);
+            healthPoints = Mathf.Max(healthPoints, regenHealthPoints);
         }
 
         public object CaptureState()
