@@ -20,7 +20,7 @@ namespace RPG.Attributes
         private void Update()
         {
             //Updates HUD and is formatted to return 0 decimal places
-            text.text = String.Format("{0:0}%", health.GetPercentage());
+            text.text = String.Format("{0:0}/{1:0}", health.GetHealthPoints(), health.GetMaxHealthPoints());
         }
     }
 }
