@@ -28,12 +28,20 @@ namespace RPG.Attributes
 
         private void Start()
         {
-            baseStats.onLevelUp += RegenerateHealth;
-
             if (healthPoints < 0)
             {
                 healthPoints = baseStats.GetStat(Stat.Health);
             }
+        }
+
+        private void OnEnable()
+        {
+            baseStats.onLevelUp += RegenerateHealth;
+        }
+
+        private void OnDisable()
+        {
+            baseStats.onLevelUp -= RegenerateHealth;
         }
 
         public void TakeDamage(GameObject instigator, float damage)

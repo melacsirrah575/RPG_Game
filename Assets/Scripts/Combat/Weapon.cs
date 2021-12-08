@@ -13,9 +13,12 @@ namespace RPG.Combat
         [SerializeField] GameObject equippedPrefab = null;
         [SerializeField] bool isRightHanded = true;
         [SerializeField] Projectile projectile = null;
+        [SerializeField] float percentageBonus = 0;
         [SerializeField] float weaponDamage = 5f;
-        public float WeaponDamage { get { return weaponDamage; } }
         [SerializeField] float weaponRange = 2f;
+
+        public float GetPercentageBonus() { return percentageBonus; }
+        public float GetDamage() { return weaponDamage; }
         public float WeaponRange { get { return weaponRange; } }
 
         const string weaponName = "Weapon";

@@ -19,7 +19,7 @@ namespace RPG.Movement
         Animator animator;
         Health health;
 
-        void Start()
+        private void Awake()
         {
             navMeshAgent = GetComponent<NavMeshAgent>();
             animator = GetComponent<Animator>();
