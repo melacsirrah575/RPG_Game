@@ -10,6 +10,5 @@ namespace RPG.Stats
         ExperienceReward,
         ExperienceToLevelUp,
         Damage,
-        PercentBonus
     }
 }
