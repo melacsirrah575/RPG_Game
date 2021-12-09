@@ -17,14 +17,6 @@ namespace RPG.Control
 
         Health health;
 
-        enum CursorType
-        {
-            None,
-            Movement,
-            Combat,
-            UI
-        }
-
         [System.Serializable]
         struct CursorMapping
         {
@@ -52,7 +44,7 @@ namespace RPG.Control
                 return;
             }
 
-            if (InteractWithCombat()) return;
+            if (InteractWithComponent()) return;
             if (InteractWithMovement()) return;
 
             SetCursor(CursorType.None);
@@ -63,28 +55,35 @@ namespace RPG.Control
             return EventSystem.current.IsPointerOverGameObject();
         }
 
-        private bool InteractWithCombat()
+        private bool InteractWithComponent()
         {
-            //Instead of having an 'out' return, RaycastAll returns a list of things hit
-            RaycastHit[] hits = Physics.RaycastAll(GetMouseRay());
+            RaycastHit[] hits = RaycastAllSorted();
             //Looping through all objects Raycast hit to look for enemy
-            foreach(RaycastHit hit in hits)
+            foreach (RaycastHit hit in hits)
             {
-                CombatTarget target = hit.transform.GetComponent<CombatTarget>();
-                //Continue carrys on to next index in the loop but skips the rest of the body of current index
-                if (target == null) continue;
-
-                if (!GetComponent<Fighter>().CanAttack(target.gameObject)) { continue; }
-
-                if(Input.GetMouseButton(0))
+                IRaycastable[] raycastables = hit.transform.GetComponents<IRaycastable>();
+                foreach(IRaycastable raycastable in raycastables)
                 {
-                    GetComponent<Fighter>().Attack(target.gameObject);
+                    if (raycastable.HandleRaycast(this))
+                    {
+                        SetCursor(raycastable.GetCursorType());
+                        return true;
+                    }
                 }
-                SetCursor(CursorType.Combat);
-                //return is happening outside of if statement for future implmentation of Cursor changing
-                return true;
             }
             return false;
+        }
+
+        RaycastHit[] RaycastAllSorted()
+        {
+            RaycastHit[] hits = Physics.RaycastAll(GetMouseRay());
+            float[] distances = new float[hits.Length];
+            for (int i = 0; i < hits.Length; i++)
+            {
+                distances[i] = hits[i].distance;
+            }
+            Array.Sort(distances, hits);
+            return hits;
         }
 
         private bool InteractWithMovement()
