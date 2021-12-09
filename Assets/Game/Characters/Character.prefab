@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 7542376548985241128}
   - component: {fileID: 417727514976066019}
   - component: {fileID: 4914850678391773416}
+  - component: {fileID: 2580516752778180952}
   - component: {fileID: 4502240225027160420}
   m_Layer: 0
   m_Name: Character
@@ -160,7 +161,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBetweenAttacks: 1
-  handTransform: {fileID: 0}
+  rightHandTransform: {fileID: 0}
+  leftHandTransform: {fileID: 0}
   defaultWeapon: {fileID: 0}
 --- !u!114 &417727514976066019
 MonoBehaviour:
@@ -174,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0947c12fa02f32b49b0e922593610cff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  healthPoints: 100
 --- !u!114 &4914850678391773416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,6 +190,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uniqueIdentifier: 
+--- !u!114 &2580516752778180952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2383914658388352949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 603476ded6e8ccd4ba913758f8345f9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingLevel: 1
+  bonusHealthMaxRange: 10
+  characterClass: 1
+  progression: {fileID: 11400000, guid: 55f8b3a4eb5787440be7a5bf4e7de713, type: 2}
 --- !u!54 &4502240225027160420
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -26,6 +26,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 621a9e26a31ea854b9a11354d11e2802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7513794773762451886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3108746492147386429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52270ae632d02b4094ef305227177f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  experiencePoints: 0
 --- !u!1001 &734405283785889672
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -85,6 +98,18 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2580516752778180952, guid: d27cc64d47ffb22499b19cd3190846b3, type: 3}
+      propertyPath: characterClass
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2580516752778180952, guid: d27cc64d47ffb22499b19cd3190846b3, type: 3}
+      propertyPath: shouldUseModifiers
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2580516752778180952, guid: d27cc64d47ffb22499b19cd3190846b3, type: 3}
+      propertyPath: levelUpParticleEffect
+      value: 
+      objectReference: {fileID: 7702570987103755874, guid: 252eb1c557203f44eb45a9af77fa1d24, type: 3}
     - target: {fileID: 4914850678391773416, guid: d27cc64d47ffb22499b19cd3190846b3, type: 3}
       propertyPath: uniqueIdentifier
       value: player

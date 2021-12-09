@@ -4,7 +4,7 @@ using UnityEngine;
 
 using RPG.Movement;
 using RPG.Combat;
-using RPG.Core;
+using RPG.Attributes;
 
 //Starting namespace with RPG. in case I bring in anything with the same namespace later on
 namespace RPG.Control
@@ -12,7 +12,7 @@ namespace RPG.Control
     public class PlayerController : MonoBehaviour
     {
         Health health;
-        private void Start()
+        private void Awake()
         {
             health = GetComponent<Health>();
         }
@@ -20,7 +20,7 @@ namespace RPG.Control
         private void Update()
         {
             //Priority level: Check if alive, the check if I clicked on something I need to attack, then I don't move and vice-versa 
-            if (health.HasDied()) return;
+            if (health.IsDead()) return;
 
             if (InteractWithCombat()) return;
             if (InteractWithMovement()) return;

@@ -6,6 +6,7 @@ using UnityEngine.AI;
 
 using RPG.Core;
 using RPG.Saving;
+using RPG.Attributes;
 
 //Starting namespace with RPG. in case I bring in anything with the same namespace later on
 namespace RPG.Movement
@@ -18,7 +19,7 @@ namespace RPG.Movement
         Animator animator;
         Health health;
 
-        void Start()
+        private void Awake()
         {
             navMeshAgent = GetComponent<NavMeshAgent>();
             animator = GetComponent<Animator>();
@@ -27,7 +28,7 @@ namespace RPG.Movement
 
         void Update()
         {
-            navMeshAgent.enabled = !health.HasDied();
+            navMeshAgent.enabled = !health.IsDead();
             UpdateAnimator();
         }
 

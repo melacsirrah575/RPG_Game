@@ -1,7 +1,8 @@
+using System;
 using UnityEngine;
 
-using RPG.Core;
-using System;
+using RPG.Attributes;
+
 
 namespace RPG.Combat
 {
@@ -12,9 +13,12 @@ namespace RPG.Combat
         [SerializeField] GameObject equippedPrefab = null;
         [SerializeField] bool isRightHanded = true;
         [SerializeField] Projectile projectile = null;
+        [SerializeField] float percentageBonus = 0;
         [SerializeField] float weaponDamage = 5f;
-        public float WeaponDamage { get { return weaponDamage; } }
         [SerializeField] float weaponRange = 2f;
+
+        public float GetPercentageBonus() { return percentageBonus; }
+        public float GetDamage() { return weaponDamage; }
         public float WeaponRange { get { return weaponRange; } }
 
         const string weaponName = "Weapon";
@@ -71,10 +75,10 @@ namespace RPG.Combat
             return projectile != null;
         }
 
-        public void LaunchProjectile(Transform rightHand, Transform leftHand, Health target)
+        public void LaunchProjectile(Transform rightHand, Transform leftHand, Health target, GameObject instigator, float calculatedDamage)
         {
             Projectile projectileInstance = Instantiate(projectile, GetTransform(rightHand, leftHand).position, Quaternion.identity);
-            projectileInstance.SetTarget(target, weaponDamage);
+            projectileInstance.SetTarget(target, instigator, calculatedDamage);
         }
     }
 }
