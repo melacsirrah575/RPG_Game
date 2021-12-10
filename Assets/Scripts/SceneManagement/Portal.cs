@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.AI;
 
 using RPG.Saving;
+using RPG.Control;
 
 namespace RPG.SceneManagement
 {
@@ -40,16 +41,22 @@ namespace RPG.SceneManagement
                 yield break;
             }
 
+            DontDestroyOnLoad(gameObject);
+
             Fader fader = FindObjectOfType<Fader>();
             SavingWrapper savingWrapper = FindObjectOfType<SavingWrapper>();
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
 
-            DontDestroyOnLoad(gameObject);
+            player.GetComponent<PlayerController>().enabled = false;
 
             yield return fader.FadeOut(fadeOutTime);
             savingWrapper.Save();
 
             //Calls Coroutine again once scene has finished loading
             yield return SceneManager.LoadSceneAsync(sceneToLoad);
+
+            player.GetComponent<PlayerController>().enabled = false;
+            
             savingWrapper.Load();
 
             Portal otherPortal = GetOtherPortal();
@@ -58,8 +65,9 @@ namespace RPG.SceneManagement
             savingWrapper.Save();
 
             yield return new WaitForSeconds(fadeWaitTime);
-            yield return fader.FadeIn(fadeInTime);
+            fader.FadeIn(fadeInTime);
 
+            player.GetComponent<PlayerController>().enabled = true;
             Destroy(gameObject);
         }
 
