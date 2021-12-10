@@ -15,7 +15,7 @@ namespace RPG.Attributes
     {
         [Tooltip("Percent of health player returns to on level up if below")]
         [SerializeField] float regenerationPercentage = 70f;
-        [SerializeField] UnityEvent takeDamage;
+        [SerializeField] TakeDamageEvent takeDamage;
 
         LazyValue<float> healthPoints;
 
@@ -23,6 +23,13 @@ namespace RPG.Attributes
 
         bool isDead = false;
         public bool IsDead() { return isDead; }
+
+        //Because I have <float> after the Unity event, I need to make a class in order for it to be serializeable
+        [System.Serializable]
+        public class TakeDamageEvent : UnityEvent<float>
+        {
+
+        }
 
         private void Awake()
         {
@@ -63,7 +70,7 @@ namespace RPG.Attributes
                 AwardExperience(instigator);
             } else
             {
-                takeDamage.Invoke();
+                takeDamage.Invoke(damage);
             }
         }
 
