@@ -143,7 +143,7 @@ namespace RPG.Control
             }
 
             //Print statement to help check if maxNavMeshPathLength is an okay size
-            print("NavMeshPath Range = " + total);
+            //print("NavMeshPath Range = " + total);
             return total;
         }
 

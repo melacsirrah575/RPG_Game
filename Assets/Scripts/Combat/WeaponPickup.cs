@@ -9,7 +9,7 @@ namespace RPG.Combat
 {
     public class WeaponPickup : MonoBehaviour, IRaycastable
     {
-        [SerializeField] Weapon weaponType = null;
+        [SerializeField] WeaponConfig weaponType = null;
         [SerializeField] float respawnTime = 5f;
 
 
