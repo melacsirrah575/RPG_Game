@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using GameDevTV.Utils;
 using UnityEngine;
+using System;
+using UnityEngine.Events;
 
 using RPG.Saving;
 using RPG.Core;
 using RPG.Stats;
-using System;
 
 namespace RPG.Attributes
 {
@@ -14,6 +15,7 @@ namespace RPG.Attributes
     {
         [Tooltip("Percent of health player returns to on level up if below")]
         [SerializeField] float regenerationPercentage = 70f;
+        [SerializeField] UnityEvent takeDamage;
 
         LazyValue<float> healthPoints;
 
@@ -54,10 +56,14 @@ namespace RPG.Attributes
             print(gameObject.name + " took damage: " + damage);
             //Taking the higher of the two values
             healthPoints.value = Mathf.Max(healthPoints.value - damage, 0);
+
             if (healthPoints.value == 0)
             {
                 Die();
                 AwardExperience(instigator);
+            } else
+            {
+                takeDamage.Invoke();
             }
         }
 

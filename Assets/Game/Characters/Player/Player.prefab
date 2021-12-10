@@ -42,6 +42,8 @@ MonoBehaviour:
   - type: 4
     texture: {fileID: 2800000, guid: f8c873f1e53e83f4aabf342d6be1dfc3, type: 3}
     hotspot: {x: 0, y: 0}
+  maxNavMeshProjectionDistance: 1
+  maxNavMeshPathLength: 40
 --- !u!114 &7513794773762451886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,6 +64,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 417727514976066019, guid: d27cc64d47ffb22499b19cd3190846b3, type: 3}
+      propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2187312991575751113}
+    - target: {fileID: 417727514976066019, guid: d27cc64d47ffb22499b19cd3190846b3, type: 3}
+      propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Spawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 787535732722162357, guid: d27cc64d47ffb22499b19cd3190846b3, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1968190917929118575, guid: d27cc64d47ffb22499b19cd3190846b3, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -174,6 +188,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1968190917929118575, guid: d27cc64d47ffb22499b19cd3190846b3, type: 3}
   m_PrefabInstance: {fileID: 734405283785889672}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2187312991575751113 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1471485368040844865, guid: d27cc64d47ffb22499b19cd3190846b3, type: 3}
+  m_PrefabInstance: {fileID: 734405283785889672}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d8437e29e1f87845afbd873b68755e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &9139468052487948263
 PrefabInstance:
   m_ObjectHideFlags: 0
