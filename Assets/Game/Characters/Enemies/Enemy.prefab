@@ -151,6 +151,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1968190917929118575, guid: d27cc64d47ffb22499b19cd3190846b3, type: 3}
   m_PrefabInstance: {fileID: 3098233719971969628}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3401119116757492671 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 417727514976066019, guid: d27cc64d47ffb22499b19cd3190846b3, type: 3}
+  m_PrefabInstance: {fileID: 3098233719971969628}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858638211214566889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0947c12fa02f32b49b0e922593610cff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3379391676620689541
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -225,6 +236,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3580159468635181363}
     m_Modifications:
+    - target: {fileID: 1176247433028798942, guid: 828fdd042d8c91346b2e92f4f7a8199b, type: 3}
+      propertyPath: healthComponent
+      value: 
+      objectReference: {fileID: 3401119116757492671}
     - target: {fileID: 1500884029923694589, guid: 828fdd042d8c91346b2e92f4f7a8199b, type: 3}
       propertyPath: m_RootOrder
       value: 2
