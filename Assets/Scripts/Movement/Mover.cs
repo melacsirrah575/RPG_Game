@@ -15,6 +15,8 @@ namespace RPG.Movement
     public class Mover : MonoBehaviour, IAction, ISaveable
     {
         [SerializeField] float maxSpeed = 6f;
+        [SerializeField] float maxNavMeshPathLength = 40f;
+
         NavMeshAgent navMeshAgent;
         Animator animator;
         Health health;
@@ -39,6 +41,19 @@ namespace RPG.Movement
             MoveTo(destination, speedFraction);
         }
 
+        public bool CanMoveTo(Vector3 destination)
+        {
+
+            NavMeshPath path = new NavMeshPath();
+            bool hasPath = NavMesh.CalculatePath(transform.position, destination, NavMesh.AllAreas, path);
+
+            if (!hasPath) return false;
+            if (path.status != NavMeshPathStatus.PathComplete) return false;
+            if (GetPathLength(path) > maxNavMeshPathLength) return false;
+
+            return true;
+        }
+
         public void MoveTo(Vector3 destination, float speedFraction)
         {
             navMeshAgent.isStopped = false;
@@ -50,6 +65,21 @@ namespace RPG.Movement
         public void Cancel()
         {
             navMeshAgent.isStopped = true;
+        }
+
+        private float GetPathLength(NavMeshPath path)
+        {
+            float total = 0;
+
+            if (path.corners.Length < 2) return total;
+            for (int i = 0; i < path.corners.Length - 1; i++)
+            {
+                total += Vector3.Distance(path.corners[i], path.corners[i + 1]);
+            }
+
+            //Print statement to help check if maxNavMeshPathLength is an okay size
+            //print("NavMeshPath Range = " + total);
+            return total;
         }
 
         private void UpdateAnimator()
