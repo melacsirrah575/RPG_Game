@@ -50,7 +50,7 @@ namespace RPG.Combat
             if (target == null) return;
             if (target.IsDead()) return;
 
-            if (target != null && !GetIsInRange())
+            if (target != null && !GetIsInRange(target.transform))
             {
                 mover.MoveTo(target.transform.position, 1f);
             }
@@ -76,11 +76,6 @@ namespace RPG.Combat
         public Health GetTarget()
         {
             return target;
-        }
-
-        private bool GetIsInRange()
-        {
-            return Vector3.Distance(transform.position, target.transform.position) < currentWeaponConfig.WeaponRange;
         }
 
         private void AttackBehaviour()
@@ -126,12 +121,20 @@ namespace RPG.Combat
         {
             Hit();
         }
+        private bool GetIsInRange(Transform targetTransform)
+        {
+            return Vector3.Distance(transform.position, targetTransform.position) < currentWeaponConfig.WeaponRange;
+        }
 
         //Determines if we can attack the current object in the list of objects hit by Raycast in PlayerController
         public bool CanAttack(GameObject combatTarget)
         {
             if (combatTarget == null) return false;
-            if (!mover.CanMoveTo(combatTarget.transform.position)) return false;
+            if (!mover.CanMoveTo(combatTarget.transform.position) &&
+                !GetIsInRange(combatTarget.transform))
+            {
+                return false;
+            }
 
             Health targetToTest = combatTarget.GetComponent<Health>();
             return targetToTest != null && !targetToTest.IsDead();
