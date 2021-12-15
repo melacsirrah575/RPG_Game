@@ -45,9 +45,9 @@ namespace RPG.SceneManagement
 
             Fader fader = FindObjectOfType<Fader>();
             SavingWrapper savingWrapper = FindObjectOfType<SavingWrapper>();
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            PlayerController playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
 
-            player.GetComponent<PlayerController>().enabled = false;
+            playerController.enabled = false;
 
             yield return fader.FadeOut(fadeOutTime);
             savingWrapper.Save();
@@ -55,7 +55,8 @@ namespace RPG.SceneManagement
             //Calls Coroutine again once scene has finished loading
             yield return SceneManager.LoadSceneAsync(sceneToLoad);
 
-            player.GetComponent<PlayerController>().enabled = false;
+            PlayerController newPlayerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+            newPlayerController.enabled = false;
             
             savingWrapper.Load();
 
@@ -67,7 +68,7 @@ namespace RPG.SceneManagement
             yield return new WaitForSeconds(fadeWaitTime);
             fader.FadeIn(fadeInTime);
 
-            player.GetComponent<PlayerController>().enabled = true;
+            newPlayerController.enabled = true;
             Destroy(gameObject);
         }
 
