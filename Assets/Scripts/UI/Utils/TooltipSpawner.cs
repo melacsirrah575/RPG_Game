@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace Inventory.Tooltips
+namespace RPG.Inventory.Tooltips
 {
     //Abstract based class that handles the spawning of a tooltip prefab at the correct position on screen relative to a cursor
     

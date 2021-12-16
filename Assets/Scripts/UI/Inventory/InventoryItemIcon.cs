@@ -3,31 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-//To be put on the icon representing an inventory item
-//Allows the slot to update the icon and number
-[RequireComponent(typeof(Image))]
-public class InventoryItemIcon : MonoBehaviour
+namespace RPG.Inventory.UI
 {
-    public void SetItem(Sprite item)
+    //To be put on the icon representing an inventory item
+    //Allows the slot to update the icon and number
+    [RequireComponent(typeof(Image))]
+    public class InventoryItemIcon : MonoBehaviour
     {
-        var iconImage = GetComponent<Image>();
-        if (item == null)
+        public void SetItem(InventoryItem item)
         {
-            iconImage.enabled = false;
-        } else
-        {
-            iconImage.enabled = true;
-            iconImage.sprite = item;
+            var iconImage = GetComponent<Image>();
+            if (item == null)
+            {
+                iconImage.enabled = false;
+            }
+            else
+            {
+                iconImage.enabled = true;
+                iconImage.sprite = item.GetIcon();
+            }
         }
-    }
-
-    public Sprite GetItem()
-    {
-        var iconImage = GetComponent<Image>();
-        if (!iconImage.enabled)
-        {
-            return null;
-        }
-        return iconImage.sprite;
     }
 }

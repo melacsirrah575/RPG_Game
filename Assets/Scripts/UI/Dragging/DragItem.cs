@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace Inventory.Dragging
+namespace RPG.Inventory.Dragging
 {
     //Allows UI element to be dragged and dropped to and from a container
     //Create a subclass for the type you want to be draggable. Then place on the UI element you wish to make draggable
