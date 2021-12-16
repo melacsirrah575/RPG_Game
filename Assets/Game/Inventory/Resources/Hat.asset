@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Hat
   m_EditorClassIdentifier: 
   itemID: 0fda8807-0135-4a59-a3de-5be5fbe998f4
-  displayName: 
-  description: 
-  icon: {fileID: 0}
+  displayName: Hat
+  description: A Hat
+  icon: {fileID: 21300000, guid: c1b61b3a91732a747a8496fc75a13fe2, type: 3}
   stackable: 0

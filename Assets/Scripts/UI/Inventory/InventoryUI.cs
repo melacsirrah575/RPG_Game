@@ -8,7 +8,7 @@ namespace RPG.Inventory.UI
 {
     public class InventoryUI : MonoBehaviour
     {
-        [SerializeField] InventorySlotUI inventoryItemPrefab = null;
+        [SerializeField] InventorySlotUI InventoryItemPrefab = null;
 
         Inventory playerInventory;
 
@@ -23,6 +23,8 @@ namespace RPG.Inventory.UI
             Redraw();
         }
 
+        // PRIVATE
+
         private void Redraw()
         {
             foreach (Transform child in transform)
@@ -32,7 +34,7 @@ namespace RPG.Inventory.UI
 
             for (int i = 0; i < playerInventory.GetSize(); i++)
             {
-                var itemUI = Instantiate(inventoryItemPrefab, transform);
+                var itemUI = Instantiate(InventoryItemPrefab, transform);
                 itemUI.Setup(playerInventory, i);
             }
         }

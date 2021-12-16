@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dagger
   m_EditorClassIdentifier: 
   itemID: e4c7d71a-fa91-4276-ae1b-4c8e1c8df6cd
-  displayName: 
-  description: 
-  icon: {fileID: 0}
+  displayName: Dagger
+  description: A Dagger
+  icon: {fileID: 21300000, guid: d19901b0ee3c38743a7d383bd484b0b5, type: 3}
   stackable: 0

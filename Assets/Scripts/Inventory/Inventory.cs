@@ -7,7 +7,6 @@ using RPG.Saving;
 
 namespace RPG.Inventory
 {
-    //Should be placed on the Player Gameobject
     public class Inventory : MonoBehaviour, ISaveable
     {
         [Tooltip("Allowed size")]
@@ -15,10 +14,8 @@ namespace RPG.Inventory
 
         InventoryItem[] slots;
 
-        //Broadcasts when items in the slots are added/removed
         public event Action inventoryUpdated;
 
-        //Convience for getting the player's inventory
         public static Inventory GetPlayerInventory()
         {
             var player = GameObject.FindWithTag("Player");
@@ -35,8 +32,6 @@ namespace RPG.Inventory
             return slots.Length;
         }
 
-        //Attempts to add items to the first available slot.
-        //Returns whether or not the item could be added
         public bool AddToFirstEmptySlot(InventoryItem item)
         {
             int i = FindSlot(item);
@@ -53,7 +48,7 @@ namespace RPG.Inventory
             }
             return true;
         }
-        //Checks for instance of the item in the inventory
+
         public bool HasItem(InventoryItem item)
         {
             for (int i = 0; i < slots.Length; i++)
@@ -80,15 +75,11 @@ namespace RPG.Inventory
             }
         }
 
-        //Will add an item to given slot if possible.
-        //If there is already a stack of this type, it will add to existing stack.
-        //Otherwise it will be added to the first empty slot.
-        //Returns true if the item was added anywhere in the inventory
         public bool AddItemToSlot(int slot, InventoryItem item)
         {
             if (slots[slot] != null)
             {
-                return AddToFirstEmptySlot(item);
+                return AddToFirstEmptySlot(item); ;
             }
 
             slots[slot] = item;
@@ -99,6 +90,8 @@ namespace RPG.Inventory
             return true;
         }
 
+        // PRIVATE
+
         private void Awake()
         {
             slots = new InventoryItem[inventorySize];
@@ -106,13 +99,11 @@ namespace RPG.Inventory
             slots[1] = InventoryItem.GetFromID("0aa7c8b8-4796-42aa-89d0-9d100ea67d7b");
         }
 
-        //Finds a slot that can accomodate given item. Returns -1 if no slot is found.
         private int FindSlot(InventoryItem item)
         {
             return FindEmptySlot();
         }
 
-        //Finds Empty Slot. Returns -1 if all are full
         private int FindEmptySlot()
         {
             for (int i = 0; i < slots.Length; i++)
