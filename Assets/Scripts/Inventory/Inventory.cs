@@ -5,14 +5,18 @@ using UnityEngine;
 
 using RPG.Saving;
 
-namespace RPG.Inventory
+namespace RPG.Inventories
 {
     public class Inventory : MonoBehaviour, ISaveable
     {
+        // CONFIG DATA
         [Tooltip("Allowed size")]
         [SerializeField] int inventorySize = 16;
 
+        // STATE
         InventoryItem[] slots;
+
+        // PUBLIC
 
         public event Action inventoryUpdated;
 
@@ -95,8 +99,8 @@ namespace RPG.Inventory
         private void Awake()
         {
             slots = new InventoryItem[inventorySize];
-            slots[0] = InventoryItem.GetFromID("71e73607-4bac-4e42-b7d6-5e6f91e92dc4");
-            slots[1] = InventoryItem.GetFromID("0aa7c8b8-4796-42aa-89d0-9d100ea67d7b");
+            slots[0] = InventoryItem.GetFromID("0fda8807-0135-4a59-a3de-5be5fbe998f4");
+            slots[1] = InventoryItem.GetFromID("e4c7d71a-fa91-4276-ae1b-4c8e1c8df6cd");
         }
 
         private int FindSlot(InventoryItem item)

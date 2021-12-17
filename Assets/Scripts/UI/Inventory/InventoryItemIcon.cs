@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace RPG.Inventory.UI
+using RPG.Inventories;
+
+namespace RPG.UI.Inventories
 {
     //To be put on the icon representing an inventory item
     //Allows the slot to update the icon and number
     [RequireComponent(typeof(Image))]
     public class InventoryItemIcon : MonoBehaviour
     {
+        // PUBLIC
+
         public void SetItem(InventoryItem item)
         {
             var iconImage = GetComponent<Image>();

@@ -3,22 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace RPG.Inventory.Tooltips
+namespace RPG.UI.Tooltips
 {
     //Abstract based class that handles the spawning of a tooltip prefab at the correct position on screen relative to a cursor
-    
+
     public abstract class TooltipSpawner : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
+        // CONFIG DATA
         [Tooltip("The prefab of the tooltip to spawn.")]
         [SerializeField] GameObject tooltipPrefab = null;
 
+        // PRIVATE STATE
         GameObject tooltip = null;
 
-        //Called when it is time to update the infoon the tooltip
+        /// <summary>
+        /// Called when it is time to update the information on the tooltip
+        /// prefab.
+        /// </summary>
+        /// <param name="tooltip">
+        /// The spawned tooltip prefab for updating.
+        /// </param>
         public abstract void UpdateTooltip(GameObject tooltip);
 
-        //Returns true when the tooltip spawner should be allowed to create a tooltip
+        /// <summary>
+        /// Return true when the tooltip spawner should be allowed to create a tooltip.
+        /// </summary>
         public abstract bool CanCreateTooltip();
+
+        // PRIVATE
 
         private void OnDestroy()
         {
@@ -53,7 +65,7 @@ namespace RPG.Inventory.Tooltips
 
         private void PositionTooltip()
         {
-            //Required to ensure corners are updated by positioning elements
+            // Required to ensure corners are updated by positioning elements.
             Canvas.ForceUpdateCanvases();
 
             var tooltipCorners = new Vector3[4];
@@ -76,6 +88,7 @@ namespace RPG.Inventory.Tooltips
             else if (!below && !right) return 1;
             else if (!below && right) return 2;
             else return 3;
+
         }
 
         void IPointerExitHandler.OnPointerExit(PointerEventData eventData)

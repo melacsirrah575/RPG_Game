@@ -1,16 +1,21 @@
-using Inventory.UI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using RPG.Inventories;
 
-namespace RPG.Inventory.UI
+
+namespace RPG.UI.Inventories
 {
     public class InventoryUI : MonoBehaviour
     {
+        // CONFIG DATA
         [SerializeField] InventorySlotUI InventoryItemPrefab = null;
 
+        // CACHE
         Inventory playerInventory;
+
+        // LIFECYCLE METHODS
 
         private void Awake()
         {

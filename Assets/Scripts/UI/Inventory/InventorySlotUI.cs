@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-using RPG.Inventory.Dragging;
+using RPG.UI.Dragging;
+using RPG.Inventories;
 
 
-namespace RPG.Inventory.UI
+namespace RPG.UI.Inventories
 {
     public class InventorySlotUI : MonoBehaviour, IDragContainer<InventoryItem>
     {
         [SerializeField] InventoryItemIcon icon = null;
 
         int index;
-        InventoryItem item;
         Inventory inventory;
 
         // PUBLIC

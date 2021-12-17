@@ -2,23 +2,26 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace RPG.Inventory
+namespace RPG.Inventories
 {
     [CreateAssetMenu(menuName = ("Inventory/Item"))]
     public class InventoryItem : ScriptableObject, ISerializationCallbackReceiver
     {
-        [Tooltip("Auto-generated UUID for saving/loading. Clear this field if you want to generate a new one")]
+        [Tooltip("Auto-generated UUID for saving/loading. Clear this field if you want to generate a new one.")]
         [SerializeField] string itemID = null;
-        [Tooltip("Item name to be displayed in UI")]
+        [Tooltip("Item name to be displayed in UI.")]
         [SerializeField] string displayName = null;
-        [Tooltip("Item description to be displayed in UI")]
+        [Tooltip("Item description to be displayed in UI.")]
         [SerializeField] [TextArea] string description = null;
-        [Tooltip("The UI icon to represent this item in the inventory")]
+        [Tooltip("The UI icon to represent this item in the inventory.")]
         [SerializeField] Sprite icon = null;
-        [Tooltip("If true, multiple items of this type can be stacked in the same inventory slot")]
+        [Tooltip("If true, multiple items of this type can be stacked in the same inventory slot.")]
         [SerializeField] bool stackable = false;
 
+        // STATE
         static Dictionary<string, InventoryItem> itemLookupCache;
+
+        // PUBLIC
 
         public static InventoryItem GetFromID(string itemID)
         {
@@ -30,7 +33,7 @@ namespace RPG.Inventory
                 {
                     if (itemLookupCache.ContainsKey(item.itemID))
                     {
-                        Debug.LogError(string.Format("Looks like there's a duplicate InventorySystem ID for objects: {0} and {1}", itemLookupCache[item.itemID], item));
+                        Debug.LogError(string.Format("Looks like there's a duplicate GameDevTV.UI.InventorySystem ID for objects: {0} and {1}", itemLookupCache[item.itemID], item));
                         continue;
                     }
 
@@ -62,9 +65,16 @@ namespace RPG.Inventory
             return displayName;
         }
 
+        public string GetDescription()
+        {
+            return description;
+        }
+
+        // PRIVATE
+
         void ISerializationCallbackReceiver.OnBeforeSerialize()
         {
-            //Generate and save a new UUID if this is blank
+            // Generate and save a new UUID if this is blank.
             if (string.IsNullOrWhiteSpace(itemID))
             {
                 itemID = System.Guid.NewGuid().ToString();
@@ -73,7 +83,8 @@ namespace RPG.Inventory
 
         void ISerializationCallbackReceiver.OnAfterDeserialize()
         {
-            //Required by ISerializationCallbackReciever but not needed
+            // Require by the ISerializationCallbackReceiver but we don't need
+            // to do anything with it.
         }
     }
 }

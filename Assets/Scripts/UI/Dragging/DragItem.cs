@@ -3,36 +3,37 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace RPG.Inventory.Dragging
+namespace RPG.UI.Dragging
 {
     //Allows UI element to be dragged and dropped to and from a container
     //Create a subclass for the type you want to be draggable. Then place on the UI element you wish to make draggable
     //During dragging, the item is reparented to the parent canvas
     //After the item is dropped it will automatically return to the original UI parent.
     //It is the job of of components implementing 'IDragContainer', 'IDragDestination', and 'IDragSource' to update the interface after drag has occured
-    public class DragItem<T> : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler where T : class 
+    public class DragItem<T> : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+        where T : class
     {
-        //Private State
+        // PRIVATE STATE
         Vector3 startPosition;
         Transform originalParent;
         IDragSource<T> source;
 
-        //Cached References
+        // CACHED REFERENCES
         Canvas parentCanvas;
 
-        //Lifecycle Methods
-        void Awake()
+        // LIFECYCLE METHODS
+        private void Awake()
         {
             parentCanvas = GetComponentInParent<Canvas>();
             source = GetComponentInParent<IDragSource<T>>();
         }
 
-        //Private
+        // PRIVATE
         void IBeginDragHandler.OnBeginDrag(PointerEventData eventData)
         {
             startPosition = transform.position;
             originalParent = transform.parent;
-            //Else won't get drop event
+            // Else won't get the drop event.
             GetComponent<CanvasGroup>().blocksRaycasts = false;
             transform.SetParent(parentCanvas.transform, true);
         }
@@ -48,19 +49,22 @@ namespace RPG.Inventory.Dragging
             GetComponent<CanvasGroup>().blocksRaycasts = true;
             transform.SetParent(originalParent, true);
 
-            IDragDestination<T> containter;
+            IDragDestination<T> container;
             if (!EventSystem.current.IsPointerOverGameObject())
             {
-                containter = parentCanvas.GetComponent<IDragDestination<T>>();
-            } else
+                container = parentCanvas.GetComponent<IDragDestination<T>>();
+            }
+            else
             {
-                containter = GetContainer(eventData);
+                container = GetContainer(eventData);
             }
 
-            if (containter != null)
+            if (container != null)
             {
-                DropItemIntoContainer(containter);
+                DropItemIntoContainer(container);
             }
+
+
         }
 
         private IDragDestination<T> GetContainer(PointerEventData eventData)
@@ -81,7 +85,7 @@ namespace RPG.Inventory.Dragging
             var destinationContainer = destination as IDragContainer<T>;
             var sourceContainer = source as IDragContainer<T>;
 
-            //Swap won't be possible
+            // Swap won't be possible
             if (destinationContainer == null || sourceContainer == null ||
                 destinationContainer.GetItem() == null ||
                 object.ReferenceEquals(destinationContainer.GetItem(), sourceContainer.GetItem()))
@@ -95,7 +99,7 @@ namespace RPG.Inventory.Dragging
 
         private void AttemptSwap(IDragContainer<T> destination, IDragContainer<T> source)
         {
-            //Provisionally remove item from both sides
+            // Provisionally remove item from both sides. 
             var removedSourceNumber = source.GetNumber();
             var removedSourceItem = source.GetItem();
             var removedDestinationNumber = destination.GetNumber();
@@ -107,7 +111,7 @@ namespace RPG.Inventory.Dragging
             var sourceTakeBackNumber = CalculateTakeBack(removedSourceItem, removedSourceNumber, source, destination);
             var destinationTakeBackNumber = CalculateTakeBack(removedDestinationItem, removedDestinationNumber, destination, source);
 
-            //Do take backs (if needed)
+            // Do take backs (if needed)
             if (sourceTakeBackNumber > 0)
             {
                 source.AddItems(removedSourceItem, sourceTakeBackNumber);
@@ -119,7 +123,7 @@ namespace RPG.Inventory.Dragging
                 removedDestinationNumber -= destinationTakeBackNumber;
             }
 
-            //Abort if we can't do a successful swap
+            // Abort if we can't do a successful swap
             if (source.MaxAcceptable(removedDestinationItem) < removedDestinationNumber ||
                 destination.MaxAcceptable(removedSourceItem) < removedSourceNumber)
             {
@@ -128,7 +132,7 @@ namespace RPG.Inventory.Dragging
                 return;
             }
 
-            //Do swaps
+            // Do swaps
             if (removedDestinationNumber > 0)
             {
                 source.AddItems(removedDestinationItem, removedDestinationNumber);
@@ -168,7 +172,7 @@ namespace RPG.Inventory.Dragging
 
                 var sourceTakeBackAcceptable = removeSource.MaxAcceptable(removedItem);
 
-                //Abort and reset
+                // Abort and reset
                 if (sourceTakeBackAcceptable < takeBackNumber)
                 {
                     return 0;
