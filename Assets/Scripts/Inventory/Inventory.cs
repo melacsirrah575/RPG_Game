@@ -104,6 +104,12 @@ namespace RPG.Inventories
                 return AddToFirstEmptySlot(item, number);
             }
 
+            var i = FindStack(item);
+            if (i >= 0)
+            {
+                slot = i;
+            }
+
             slots[slot].item = item;
             slots[slot].number += number;
             if (inventoryUpdated != null)
@@ -122,7 +128,12 @@ namespace RPG.Inventories
 
         private int FindSlot(InventoryItem item)
         {
-            return FindEmptySlot();
+            int i = FindStack(item);
+            if (i < 0)
+            {
+                i = FindEmptySlot();
+            }
+            return i;
         }
 
         private int FindEmptySlot()
@@ -134,6 +145,25 @@ namespace RPG.Inventories
                     return i;
                 }
             }
+            return -1;
+        }
+
+        //Returns -1 if no stack exists or item isn't stackable
+        private int FindStack(InventoryItem item)
+        {
+            if (!item.IsStackable())
+            {
+                return -1;
+            }
+
+            for (int i = 0; i < slots.Length; i++)
+            {
+                if (object.ReferenceEquals(slots[i].item, item))
+                {
+                    return i;
+                }
+            }
+
             return -1;
         }
 
