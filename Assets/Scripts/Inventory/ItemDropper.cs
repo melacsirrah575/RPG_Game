@@ -10,9 +10,9 @@ namespace RPG.Inventories
     {
         private List<Pickup> droppedItems = new List<Pickup>();
 
-        public void DropItem(InventoryItem item)
+        public void DropItem(InventoryItem item, int number)
         {
-            SpawnPickup(item, GetDropLocation());
+            SpawnPickup(item, GetDropLocation(), number);
         }
 
         protected virtual Vector3 GetDropLocation()
@@ -20,9 +20,9 @@ namespace RPG.Inventories
             return transform.position;
         }
 
-        public void SpawnPickup(InventoryItem item, Vector3 spawnLocation)
+        public void SpawnPickup(InventoryItem item, Vector3 spawnLocation, int number)
         {
-            var pickup = item.SpawnPickup(spawnLocation);
+            var pickup = item.SpawnPickup(spawnLocation, number);
             droppedItems.Add(pickup);
         }
 
@@ -41,6 +41,7 @@ namespace RPG.Inventories
             {
                 droppedItemsList[i].itemID = droppedItems[i].GetItem().GetItemID();
                 droppedItemsList[i].position = new SerializableVector3(droppedItems[i].transform.position);
+                //TODO
             }
             return droppedItemsList;
         }
@@ -52,7 +53,8 @@ namespace RPG.Inventories
             {
                 var pickupItem = InventoryItem.GetFromID(item.itemID);
                 Vector3 position = item.position.ToVector();
-                SpawnPickup(pickupItem, position);
+                //TODO
+                SpawnPickup(pickupItem, position, 1);
             }
         }
 

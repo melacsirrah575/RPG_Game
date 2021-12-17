@@ -9,6 +9,8 @@ namespace RPG.Inventories
     public class Pickup : MonoBehaviour
     {
         InventoryItem item;
+        int number;
+
         Inventory inventory;
 
         private void Awake()
@@ -17,9 +19,10 @@ namespace RPG.Inventories
             inventory = player.GetComponent<Inventory>();
         }
 
-        public void Setup(InventoryItem item)
+        public void Setup(InventoryItem item, int number)
         {
             this.item = item;
+            this.number = number;
         }
 
         public InventoryItem GetItem()
@@ -29,7 +32,7 @@ namespace RPG.Inventories
 
         public void PickupItem()
         {
-            bool foundSlot = inventory.AddToFirstEmptySlot(item);
+            bool foundSlot = inventory.AddToFirstEmptySlot(item, number);
             if (foundSlot)
             {
                 Destroy(gameObject);

@@ -14,7 +14,13 @@ namespace RPG.Inventories
         [SerializeField] int inventorySize = 16;
 
         // STATE
-        InventoryItem[] slots;
+        InventorySlot[] slots;
+
+        public struct InventorySlot
+        {
+            public InventoryItem item;
+            public int number;
+        }
 
         // PUBLIC
 
@@ -36,7 +42,7 @@ namespace RPG.Inventories
             return slots.Length;
         }
 
-        public bool AddToFirstEmptySlot(InventoryItem item)
+        public bool AddToFirstEmptySlot(InventoryItem item, int number)
         {
             int i = FindSlot(item);
 
@@ -45,7 +51,8 @@ namespace RPG.Inventories
                 return false;
             }
 
-            slots[i] = item;
+            slots[i].item = item;
+            slots[i].number += number;
             if (inventoryUpdated != null)
             {
                 inventoryUpdated();
@@ -67,26 +74,38 @@ namespace RPG.Inventories
 
         public InventoryItem GetItemInSlot(int slot)
         {
-            return slots[slot];
+            return slots[slot].item;
         }
 
-        public void RemoveFromSlot(int slot)
+        public int GetNumberInSlot(int slot)
         {
-            slots[slot] = null;
+            return slots[slot].number;
+        }
+
+        public void RemoveFromSlot(int slot, int number)
+        {
+            slots[slot].number -= number;
+            if (slots[slot].number <= 0)
+            {
+                slots[slot].number = 0;
+                slots[slot].item = null;
+            }
+
             if (inventoryUpdated != null)
             {
                 inventoryUpdated();
             }
         }
 
-        public bool AddItemToSlot(int slot, InventoryItem item)
+        public bool AddItemToSlot(int slot, InventoryItem item, int number)
         {
-            if (slots[slot] != null)
+            if (slots[slot].item != null)
             {
-                return AddToFirstEmptySlot(item); ;
+                return AddToFirstEmptySlot(item, number);
             }
 
-            slots[slot] = item;
+            slots[slot].item = item;
+            slots[slot].number += number;
             if (inventoryUpdated != null)
             {
                 inventoryUpdated();
@@ -98,7 +117,7 @@ namespace RPG.Inventories
 
         private void Awake()
         {
-            slots = new InventoryItem[inventorySize];
+            slots = new InventorySlot[inventorySize];
         }
 
         private int FindSlot(InventoryItem item)
@@ -110,7 +129,7 @@ namespace RPG.Inventories
         {
             for (int i = 0; i < slots.Length; i++)
             {
-                if (slots[i] == null)
+                if (slots[i].item == null)
                 {
                     return i;
                 }
@@ -123,9 +142,10 @@ namespace RPG.Inventories
             var slotStrings = new string[inventorySize];
             for (int i = 0; i < inventorySize; i++)
             {
-                if (slots[i] != null)
+                if (slots[i].item != null)
                 {
-                    slotStrings[i] = slots[i].GetItemID();
+                    slotStrings[i] = slots[i].item.GetItemID();
+                    //TODO
                 }
             }
             return slotStrings;
@@ -136,7 +156,8 @@ namespace RPG.Inventories
             var slotStrings = (string[])state;
             for (int i = 0; i < inventorySize; i++)
             {
-                slots[i] = InventoryItem.GetFromID(slotStrings[i]);
+                slots[i].item = InventoryItem.GetFromID(slotStrings[i]);
+                //TODO
             }
             if (inventoryUpdated != null)
             {
