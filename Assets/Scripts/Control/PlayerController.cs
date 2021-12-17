@@ -20,6 +20,8 @@ namespace RPG.Control
 
         Health health;
 
+        bool movementStarted = false;
+
         [System.Serializable]
         struct CursorMapping
         {
@@ -35,6 +37,11 @@ namespace RPG.Control
 
         private void Update()
         {
+            if (Input.GetMouseButtonUp(0))
+            {
+                movementStarted = false;
+            }
+
             if (InteractWithUI())
             {
                 SetCursor(CursorType.UI);
@@ -98,7 +105,12 @@ namespace RPG.Control
             {
                 if (!GetComponent<Mover>().CanMoveTo(target)) return false;
 
-                if (Input.GetMouseButton(0))
+                if (Input.GetMouseButtonDown(0))
+                {
+                    movementStarted = true;
+                }
+
+                if (Input.GetMouseButton(0) && movementStarted)
                 {
                     GetComponent<Mover>().StartMoveAction(target, 1f);
                 }
