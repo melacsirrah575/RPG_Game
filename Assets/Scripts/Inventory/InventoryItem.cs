@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -72,12 +73,19 @@ namespace RPG.Inventories
 
         // PRIVATE
 
-        void ISerializationCallbackReceiver.OnBeforeSerialize()
+void ISerializationCallbackReceiver.OnBeforeSerialize()
         {
             // Generate and save a new UUID if this is blank.
             if (string.IsNullOrWhiteSpace(itemID))
             {
-                itemID = System.Guid.NewGuid().ToString();
+                itemID = Guid.NewGuid().ToString();
+            }
+            // Test for multiple objects with the same UUID
+            var items = Resources.LoadAll<InventoryItem>(""). //continues below
+                       Where(p => p.GetItemID() == itemID).ToList();
+            if (items.Count > 1)
+            {
+                itemID = Guid.NewGuid().ToString();
             }
         }
 
