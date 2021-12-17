@@ -16,6 +16,7 @@ namespace RPG.Inventories
         // STATE
         InventorySlot[] slots;
 
+        //Struct used for getting the object
         public struct InventorySlot
         {
             public InventoryItem item;
@@ -167,27 +168,36 @@ namespace RPG.Inventories
             return -1;
         }
 
+        //Struct used for getting the objects ID instead of the object
+        [System.Serializable]
+        private struct InventorySlotRecord
+        {
+            public string itemID;
+            public int number;
+        }
+
         object ISaveable.CaptureState()
         {
-            var slotStrings = new string[inventorySize];
+            var slotRecords = new InventorySlotRecord[inventorySize];
             for (int i = 0; i < inventorySize; i++)
             {
                 if (slots[i].item != null)
                 {
-                    slotStrings[i] = slots[i].item.GetItemID();
-                    //TODO
+                    slotRecords[i].itemID = slots[i].item.GetItemID();
+                    slotRecords[i].number = slots[i].number;
+
                 }
             }
-            return slotStrings;
+            return slotRecords;
         }
 
         void ISaveable.RestoreState(object state)
         {
-            var slotStrings = (string[])state;
+            var slotRecordss = (InventorySlotRecord[])state;
             for (int i = 0; i < inventorySize; i++)
             {
-                slots[i].item = InventoryItem.GetFromID(slotStrings[i]);
-                //TODO
+                slots[i].item = InventoryItem.GetFromID(slotRecordss[i].itemID);
+                slots[i].number = slotRecordss[i].number;
             }
             if (inventoryUpdated != null)
             {
