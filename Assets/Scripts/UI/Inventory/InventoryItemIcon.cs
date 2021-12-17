@@ -17,6 +17,11 @@ namespace RPG.UI.Inventories
         [SerializeField] TextMeshProUGUI itemNumber = null;
         // PUBLIC
 
+        public void SetItem(InventoryItem item)
+        {
+            SetItem(item, 0);
+        }
+
         public void SetItem(InventoryItem item, int number)
         {
             var iconImage = GetComponent<Image>();
