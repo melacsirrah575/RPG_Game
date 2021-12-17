@@ -8,7 +8,7 @@ using RPG.Inventories;
 
 namespace RPG.UI.Inventories
 {
-    public class InventorySlotUI : MonoBehaviour, IDragContainer<InventoryItem>
+    public class InventorySlotUI : MonoBehaviour, IItemHolder, IDragContainer<InventoryItem>
     {
         [SerializeField] InventoryItemIcon icon = null;
 
