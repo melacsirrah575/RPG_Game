@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 using System;
 
 using RPG.Movement;
-using RPG.Combat;
+using RPG.Inventories;
 using RPG.Attributes;
 using UnityEngine.AI;
 
@@ -37,6 +37,7 @@ namespace RPG.Control
 
         private void Update()
         {
+            CheckSpecialAbilityKeys();
             if (Input.GetMouseButtonUp(0))
             {
                 movementStarted = false;
@@ -60,9 +61,43 @@ namespace RPG.Control
             SetCursor(CursorType.None);
         }
 
+        private void CheckSpecialAbilityKeys()
+        {
+            var actionStore = GetComponent<ActionStore>();
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                actionStore.Use(0, gameObject);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                actionStore.Use(1, gameObject);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                actionStore.Use(2, gameObject);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                actionStore.Use(3, gameObject);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha5))
+            {
+                actionStore.Use(4, gameObject);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha6))
+            {
+                actionStore.Use(5, gameObject);
+            }
+        }
+
         private bool InteractWithUI()
         {
-            return EventSystem.current.IsPointerOverGameObject();
+            if (EventSystem.current.IsPointerOverGameObject())
+            {
+                SetCursor(CursorType.UI);
+                return true;
+            }
+            return false;
         }
 
         private bool InteractWithComponent()
