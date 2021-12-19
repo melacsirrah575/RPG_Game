@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bc3b30266c5adb4796e4bbc2cc2d2b0, type: 3}
-  m_Name: Dagger
+  m_Name: Test Dagger
   m_EditorClassIdentifier: 
   itemID: e4c7d71a-fa91-4276-ae1b-4c8e1c8df6cd
   displayName: Dagger

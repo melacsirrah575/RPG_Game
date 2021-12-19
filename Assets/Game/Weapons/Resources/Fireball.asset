@@ -12,10 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23e6d7800420e834fbcfaffa6a5fcb97, type: 3}
   m_Name: Fireball
   m_EditorClassIdentifier: 
+  itemID: c1144f6d-55fe-4a5b-86c8-2cd6dec4f188
+  displayName: Fireball
+  description: A great way to toast your enemies!
+  icon: {fileID: 21300000, guid: a1ec2c0ddc0da634b85f0f465fec2d0d, type: 3}
+  pickup: {fileID: 6070761863678728562, guid: 811b8e3b80e523945ab163cd752b5b81, type: 3}
+  stackable: 0
+  allowedEquipLocation: 5
   animatorOverride: {fileID: 22100000, guid: f8941363b564d7d48bdad49806ba257f, type: 2}
   equippedPrefab: {fileID: 3129063287736110110, guid: cf14f2217811db14abc2d916f4ded211, type: 3}
   isRightHanded: 0
   projectile: {fileID: 6940738060336661415, guid: 6147f2fd406a473489cd2dd1aea761d8, type: 3}
-  percentageBonus: 25
+  percentageBonus: 0
   weaponDamage: 5
-  weaponRange: 18
+  weaponRange: 10

@@ -9,6 +9,7 @@ using RPG.Core;
 using RPG.Saving;
 using RPG.Stats;
 using GameDevTV.Utils;
+using RPG.Inventories;
 
 namespace RPG.Combat
 {
@@ -21,6 +22,7 @@ namespace RPG.Combat
 
         Health target;
         Mover mover;
+        Equipment equipment;
         WeaponConfig currentWeaponConfig;
         LazyValue<Weapon> currentWeapon;
 
@@ -31,6 +33,11 @@ namespace RPG.Combat
             currentWeaponConfig = defaultWeapon;
             currentWeapon = new LazyValue<Weapon>(SetupDefaultWeapon);
             mover = GetComponent<Mover>();
+            equipment = GetComponent<Equipment>();
+            if (equipment) 
+            {
+                equipment.equipmentUpdated += UpdateWeapon;
+            }
         }
 
         private Weapon SetupDefaultWeapon()
@@ -65,6 +72,18 @@ namespace RPG.Combat
         {
             currentWeaponConfig = weapon;
             currentWeapon.value = AttachWeapon(weapon);
+        }
+
+        private void UpdateWeapon()
+        {
+            var weapon = equipment.GetItemInSlot(EquipLocation.Weapon) as WeaponConfig;
+            if (weapon == null)
+            {
+                EquipWeapon(defaultWeapon);
+            } else
+            {
+                EquipWeapon(weapon);
+            }
         }
 
         private Weapon AttachWeapon(WeaponConfig weapon)
