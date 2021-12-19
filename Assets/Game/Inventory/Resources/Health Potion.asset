@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: afc0dc3f-f464-408f-9714-9d845396e43e
   displayName: Health Potion
-  description: 
+  description: Restores a little life
   icon: {fileID: 21300000, guid: aba0f700d91d4fc4fa8c724899ab04ab, type: 3}
-  pickup: {fileID: 0}
-  stackable: 0
-  consumable: 0
+  pickup: {fileID: 9112133121926219460, guid: d6f8c411a49a55346a3f16cb7d0978cb, type: 3}
+  stackable: 1
+  consumable: 1
