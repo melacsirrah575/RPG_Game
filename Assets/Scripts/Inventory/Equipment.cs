@@ -45,6 +45,11 @@ namespace RPG.Inventories
             }
         }
 
+        public IEnumerable<EquipLocation> GetAllPopulatedSlots()
+        {
+            return equippedItems.Keys;
+        }
+
         public object CaptureState()
         {
             var equippedItemsForSerialization = new Dictionary<EquipLocation, string>();

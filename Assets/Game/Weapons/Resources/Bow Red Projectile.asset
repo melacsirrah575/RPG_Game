@@ -25,4 +25,4 @@ MonoBehaviour:
   projectile: {fileID: 4000351159916581577, guid: 89fca91a21173e044a10a234b8f685a1, type: 3}
   percentageBonus: 0
   weaponDamage: 5
-  weaponRange: 15
+  weaponRange: 20
