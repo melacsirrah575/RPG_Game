@@ -444,6 +444,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7059350973284575927, guid: 6e00bf37347e066419cc7edf971de753, type: 3}
+      propertyPath: startingLevel
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7146458198523989082, guid: 6e00bf37347e066419cc7edf971de753, type: 3}
       propertyPath: m_Name
       value: Grunt (2)
@@ -8663,7 +8667,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7765363, y: 1}
+    m_SensorSize: {x: 1.7772397, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -15589,7 +15593,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7765363, y: 1}
+    m_SensorSize: {x: 1.7772397, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -16026,7 +16030,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7765363, y: 1}
+    m_SensorSize: {x: 1.7772397, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -20590,9 +20594,9 @@ Transform:
   - {fileID: 1608094306}
   - {fileID: 1566237148}
   - {fileID: 605033775}
+  - {fileID: 1149584685}
   - {fileID: 436679223}
   - {fileID: 1713282091}
-  - {fileID: 1149584685}
   - {fileID: 1152419248}
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -22580,6 +22584,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3477437022501312731, guid: 9b1617555dddda24c9156402e0f218f8, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3665085615401080761, guid: 9b1617555dddda24c9156402e0f218f8, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -22598,7 +22606,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3729969451700795429, guid: 9b1617555dddda24c9156402e0f218f8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -663.2499
+      value: -663.2498
       objectReference: {fileID: 0}
     - target: {fileID: 4927197592878931673, guid: 9b1617555dddda24c9156402e0f218f8, type: 3}
       propertyPath: m_AnchorMax.y
