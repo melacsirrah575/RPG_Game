@@ -3,23 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+using RPG.Stats;
+
 namespace RPG.Inventories
 {
     public class RandomDropper : ItemDropper
     {
         [Tooltip("How far can the pickups be scattered from the dropper")]
         [SerializeField] float scatterDistance = 1f;
-        [SerializeField] InventoryItem[] dropLibrary;
-        [SerializeField] int numberofDrops = 2;
+        [SerializeField] DropLibrary dropLibrary;
+  
 
         const int ATTEMPTS = 30;
 
         public void RandomDrop()
         {
-            for (int i = 0; i < numberofDrops; i++)
+            var baseStats = GetComponent<BaseStats>();
+            var drops = dropLibrary.GetRandomDrops(baseStats.GetLevel());
+
+            foreach (var drop in drops)
             {
-                var item = dropLibrary[Random.Range(0, dropLibrary.Length)];
-                DropItem(item, 1);
+                DropItem(drop.item, drop.number);
             }
         }
         protected override Vector3 GetDropLocation()
