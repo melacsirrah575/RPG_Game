@@ -12,10 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23e6d7800420e834fbcfaffa6a5fcb97, type: 3}
   m_Name: Sword
   m_EditorClassIdentifier: 
+  itemID: a8be1776-b456-44fb-8925-659371b02a26
+  displayName: Beginner's Sword
+  description: What better way to start a journey than with a pointy, metal stick!
+  icon: {fileID: 21300000, guid: d19901b0ee3c38743a7d383bd484b0b5, type: 3}
+  pickup: {fileID: 6089703644658291042, guid: ae85a685356ed644d80dbb63e2ee1be8, type: 3}
+  stackable: 0
+  allowedEquipLocation: 5
   animatorOverride: {fileID: 22100000, guid: 3344ac2c57d38e44993e99f3151655bd, type: 2}
   equippedPrefab: {fileID: 8177022240131953442, guid: 2a998e997a86a814e85476d866c66e50, type: 3}
   isRightHanded: 1
   projectile: {fileID: 0}
-  percentageBonus: 0
-  weaponDamage: 5
+  percentageBonus: 40
+  weaponDamage: 8
   weaponRange: 2

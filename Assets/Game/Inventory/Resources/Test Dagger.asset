@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bc3b30266c5adb4796e4bbc2cc2d2b0, type: 3}
+  m_Name: Test Dagger
+  m_EditorClassIdentifier: 
+  itemID: e4c7d71a-fa91-4276-ae1b-4c8e1c8df6cd
+  displayName: Dagger
+  description: A Dagger
+  icon: {fileID: 21300000, guid: d19901b0ee3c38743a7d383bd484b0b5, type: 3}
+  pickup: {fileID: 9112133121926219460, guid: d6f8c411a49a55346a3f16cb7d0978cb, type: 3}
+  stackable: 0

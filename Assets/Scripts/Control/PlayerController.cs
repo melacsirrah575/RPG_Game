@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 using System;
 
 using RPG.Movement;
-using RPG.Combat;
+using RPG.Inventories;
 using RPG.Attributes;
 using UnityEngine.AI;
 
@@ -19,6 +19,9 @@ namespace RPG.Control
         [SerializeField] float sphereCastRadius = 1f;
 
         Health health;
+
+        bool movementStarted = false;
+        bool isDraggingUI = false;
 
         [System.Serializable]
         struct CursorMapping
@@ -35,6 +38,12 @@ namespace RPG.Control
 
         private void Update()
         {
+            CheckSpecialAbilityKeys();
+            if (Input.GetMouseButtonUp(0))
+            {
+                movementStarted = false;
+            }
+
             if (InteractWithUI())
             {
                 SetCursor(CursorType.UI);
@@ -53,9 +62,56 @@ namespace RPG.Control
             SetCursor(CursorType.None);
         }
 
+        private void CheckSpecialAbilityKeys()
+        {
+            var actionStore = GetComponent<ActionStore>();
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                actionStore.Use(0, gameObject);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                actionStore.Use(1, gameObject);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                actionStore.Use(2, gameObject);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                actionStore.Use(3, gameObject);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha5))
+            {
+                actionStore.Use(4, gameObject);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha6))
+            {
+                actionStore.Use(5, gameObject);
+            }
+        }
+
         private bool InteractWithUI()
         {
-            return EventSystem.current.IsPointerOverGameObject();
+            if (Input.GetMouseButtonUp(0))
+            {
+                isDraggingUI = false;
+            }
+            if (EventSystem.current.IsPointerOverGameObject())
+            {
+                if (Input.GetMouseButtonDown(0))
+                {
+                    isDraggingUI = true;
+                }
+                SetCursor(CursorType.UI);
+                return true;
+            }
+
+            if (isDraggingUI)
+            {
+                return true;
+            }
+            return false;
         }
 
         private bool InteractWithComponent()
@@ -98,7 +154,12 @@ namespace RPG.Control
             {
                 if (!GetComponent<Mover>().CanMoveTo(target)) return false;
 
-                if (Input.GetMouseButton(0))
+                if (Input.GetMouseButtonDown(0))
+                {
+                    movementStarted = true;
+                }
+
+                if (Input.GetMouseButton(0) && movementStarted)
                 {
                     GetComponent<Mover>().StartMoveAction(target, 1f);
                 }
