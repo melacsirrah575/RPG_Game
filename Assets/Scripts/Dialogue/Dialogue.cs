@@ -22,5 +22,10 @@ namespace RPG.Dialogues
         {
             return nodes;
         }
+
+        public DialogueNode GetRootNode()
+        {
+            return nodes[0];
+        }
     }
 }
