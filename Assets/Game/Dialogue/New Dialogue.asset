@@ -12,4 +12,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 601364ef52c2dea499b1cb2b1d5aeab6, type: 3}
   m_Name: New Dialogue
   m_EditorClassIdentifier: 
-  nodes: []
+  nodes:
+  - uniqueID: A
+    text: Hello!
+    children: []
+    position:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 200
+      height: 200
+  - uniqueID: B
+    text: Hello yourself!
+    children: []
+    position:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+  - uniqueID: 
+    text: 
+    children: []
+    position:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+  - uniqueID: 
+    text: 
+    children: []
+    position:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+  - uniqueID: 
+    text: 
+    children: []
+    position:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
