@@ -36,6 +36,13 @@ namespace RPG.Dialogues
             return currentDialogue.GetPlayerChildren(currentNode);
         }
 
+        public void SelectChoice(DialogueNode chosenNode)
+        {
+            currentNode = chosenNode;
+            isChoosing = false;
+            Next(); //Doing this automatically brings dialogue to next node in sequence instead of showing chosen dialogue first
+        }
+
         public void Next()
         {
             int numPlayerResponses = currentDialogue.GetPlayerChildren(currentNode).Count();
