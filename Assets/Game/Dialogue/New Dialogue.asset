@@ -13,43 +13,4 @@ MonoBehaviour:
   m_Name: New Dialogue
   m_EditorClassIdentifier: 
   nodes:
-  - uniqueID: A
-    text: Hello
-    children:
-    - B
-    - C
-    - be7f4aef-1b20-4fa1-99f6-a47b5bc59316
-    rect:
-      serializedVersion: 2
-      x: 18
-      y: 125
-      width: 200
-      height: 100
-  - uniqueID: B
-    text: Hello yourself!
-    children: []
-    rect:
-      serializedVersion: 2
-      x: 302
-      y: 14
-      width: 200
-      height: 100
-  - uniqueID: C
-    text: Mwah ha ha!
-    children: []
-    rect:
-      serializedVersion: 2
-      x: 332
-      y: 237
-      width: 200
-      height: 100
-  - uniqueID: be7f4aef-1b20-4fa1-99f6-a47b5bc59316
-    text: 
-    children:
-    - d6d06a36-1ddc-41e5-b776-76112261b358
-    rect:
-      serializedVersion: 2
-      x: 338
-      y: 125
-      width: 200
-      height: 100
+  - {fileID: 0}
