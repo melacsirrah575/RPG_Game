@@ -10,6 +10,7 @@ namespace RPG.Dialogues.Editor
     public class DialogueEditor : EditorWindow
     {
         Dialogue selectedDialogue = null;
+        Vector2 scrollPosition;
         [NonSerialized]
         GUIStyle nodeStyle;
         [NonSerialized]
@@ -71,6 +72,11 @@ namespace RPG.Dialogues.Editor
             } else
             {
                 ProcessEvents();
+
+                scrollPosition = EditorGUILayout.BeginScrollView(scrollPosition);
+
+                GUILayoutUtility.GetRect(4000, 4000); //Could make it changeable in the editor but this should be big enough for 99% of all dialogue trees
+
                 foreach (DialogueNode node in selectedDialogue.GetAllNodes())
                 {
                     DrawConnections(node);
@@ -79,6 +85,9 @@ namespace RPG.Dialogues.Editor
                 {
                     DrawNode(node);
                 }
+
+                EditorGUILayout.EndScrollView();
+
                 if (creatingNode != null)
                 {
                     Undo.RecordObject(selectedDialogue, "Added Dialogue Node");
@@ -98,7 +107,7 @@ namespace RPG.Dialogues.Editor
         {
             if (Event.current.type == EventType.MouseDown && draggingNode == null)
             {
-                draggingNode = GetNodeAtPoint(Event.current.mousePosition);
+                draggingNode = GetNodeAtPoint(Event.current.mousePosition + scrollPosition);
                 if (draggingNode != null)
                 {
                     draggingOffset = draggingNode.rect.position - Event.current.mousePosition;
