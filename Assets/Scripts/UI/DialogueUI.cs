@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 using RPG.Dialogues;
 
@@ -11,16 +12,26 @@ namespace RPG.UI.Dialogues
     {
         PlayerConversant playerConversant;
         [SerializeField] TextMeshProUGUI AIText;
+        [SerializeField] Button nextButton;
         void Start()
         {
             playerConversant = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerConversant>();
-            AIText.text = playerConversant.GetText();
+            nextButton.onClick.AddListener(Next);
+
+            UpdateUI();
+        }
+
+        void Next()
+        {
+            playerConversant.Next();
+            UpdateUI();
         }
 
         // Update is called once per frame
-        void Update()
+        void UpdateUI()
         {
-
+            AIText.text = playerConversant.GetText();
+            nextButton.gameObject.SetActive(playerConversant.HasNext());
         }
     }
 }
