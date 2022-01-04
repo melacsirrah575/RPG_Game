@@ -28,6 +28,9 @@ namespace RPG.Dialogues.Editor
         [NonSerialized]
         Vector2 draggingCanvasOffset;
 
+        const float canvasSize = 4000f;
+        const float backgroundSize = 50f;
+
         [MenuItem("Window/Dialogue Editor")]
         public static void ShowEditorWindow()
         {
@@ -79,7 +82,10 @@ namespace RPG.Dialogues.Editor
 
                 scrollPosition = EditorGUILayout.BeginScrollView(scrollPosition);
 
-                GUILayoutUtility.GetRect(4000, 4000); //Could make it changeable in the editor but this should be big enough for 99% of all dialogue trees
+                Rect canvas = GUILayoutUtility.GetRect(canvasSize, canvasSize);
+                Texture2D backgroundTexture = Resources.Load("background") as Texture2D;
+                Rect texCoords = new Rect(0, 0, (canvasSize / backgroundSize), (canvasSize / backgroundSize));
+                GUI.DrawTextureWithTexCoords(canvas, backgroundTexture, texCoords);
 
                 foreach (DialogueNode node in selectedDialogue.GetAllNodes())
                 {
