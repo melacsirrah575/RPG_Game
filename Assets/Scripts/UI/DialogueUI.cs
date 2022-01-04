@@ -19,6 +19,7 @@ namespace RPG.UI.Dialogues
         void Start()
         {
             playerConversant = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerConversant>();
+            playerConversant.onConversationUpdated += UpdateUI;
             nextButton.onClick.AddListener(Next);
 
             UpdateUI();
@@ -27,12 +28,13 @@ namespace RPG.UI.Dialogues
         void Next()
         {
             playerConversant.Next();
-            UpdateUI();
         }
 
         // Update is called once per frame
         void UpdateUI()
         {
+            if (!playerConversant.IsActive()) return;
+
             AIResponse.SetActive(!playerConversant.IsChoosing());
             choiceRoot.gameObject.SetActive(playerConversant.IsChoosing());
             if (playerConversant.IsChoosing())
@@ -63,7 +65,6 @@ namespace RPG.UI.Dialogues
                 {
                     //Function will be called when button is clicked
                     playerConversant.SelectChoice(choice);
-                    UpdateUI();
                 });
 
             }
