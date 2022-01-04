@@ -16,23 +16,21 @@ namespace RPG.UI.Dialogues
         [SerializeField] GameObject AIResponse;
         [SerializeField] Transform choiceRoot;
         [SerializeField] GameObject choicePrefab;
+        [SerializeField] Button quitButton;
         void Start()
         {
             playerConversant = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerConversant>();
             playerConversant.onConversationUpdated += UpdateUI;
-            nextButton.onClick.AddListener(Next);
+            nextButton.onClick.AddListener(() => playerConversant.Next());
+            quitButton.onClick.AddListener(() => playerConversant.Quit());
 
             UpdateUI();
-        }
-
-        void Next()
-        {
-            playerConversant.Next();
         }
 
         // Update is called once per frame
         void UpdateUI()
         {
+            gameObject.SetActive(playerConversant.IsActive());
             if (!playerConversant.IsActive()) return;
 
             AIResponse.SetActive(!playerConversant.IsChoosing());
