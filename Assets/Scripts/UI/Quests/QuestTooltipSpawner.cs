@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace RPG.UI.Tooltips
+using RPG.UI.Tooltips;
+
+namespace RPG.UI.Quests
 {
     public class QuestTooltipSpawner : TooltipSpawner
     {
