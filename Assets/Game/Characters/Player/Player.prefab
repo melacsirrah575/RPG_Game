@@ -38,7 +38,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7d0a41959fe0384d9dd1804c6ded74d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testDialogue: {fileID: 11400000, guid: 81a01159ea938814681ea25287cedf46, type: 2}
+  playerName: Sir Buddington The Third
 --- !u!114 &3757036613643710362
 MonoBehaviour:
   m_ObjectHideFlags: 0
