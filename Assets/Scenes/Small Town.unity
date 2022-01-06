@@ -16911,6 +16911,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbc8e875211ad354c8956fd38e4a3de3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1647216481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1647216464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f010c061d2a0ab140a380bb7645d147e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quest: {fileID: 11400000, guid: 9d93074b735a0f744aaceb8e07d44b29, type: 2}
+  objective: 3
+--- !u!114 &1647216482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1647216464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5502bf1693917204893766e704240ac5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: TestObjective
+  onTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1647216481}
+        m_TargetAssemblyTypeName: RPG.Quests.QuestCompletion, Assembly-CSharp
+        m_MethodName: CompleteObjective
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1653707838
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18541,6 +18583,76 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a346deceb21d0c4781e67a70fbcc1f6, type: 3}
+--- !u!1001 &1816118220
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2021993407}
+    m_Modifications:
+    - target: {fileID: 4919765282361038165, guid: b8aad62b783821341b5372049922f3a8, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4919765282361038165, guid: b8aad62b783821341b5372049922f3a8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 36.03038
+      objectReference: {fileID: 0}
+    - target: {fileID: 4919765282361038165, guid: b8aad62b783821341b5372049922f3a8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.7969475
+      objectReference: {fileID: 0}
+    - target: {fileID: 4919765282361038165, guid: b8aad62b783821341b5372049922f3a8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -33.601704
+      objectReference: {fileID: 0}
+    - target: {fileID: 4919765282361038165, guid: b8aad62b783821341b5372049922f3a8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4919765282361038165, guid: b8aad62b783821341b5372049922f3a8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4919765282361038165, guid: b8aad62b783821341b5372049922f3a8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4919765282361038165, guid: b8aad62b783821341b5372049922f3a8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4919765282361038165, guid: b8aad62b783821341b5372049922f3a8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4919765282361038165, guid: b8aad62b783821341b5372049922f3a8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4919765282361038165, guid: b8aad62b783821341b5372049922f3a8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5332521231403465880, guid: b8aad62b783821341b5372049922f3a8, type: 3}
+      propertyPath: m_Name
+      value: CreamPickupSpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 6266396262452576327, guid: b8aad62b783821341b5372049922f3a8, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 11400000, guid: d94a0a285a776e24580dfa9fa2c0f04d, type: 2}
+    - target: {fileID: 6275081385156542492, guid: b8aad62b783821341b5372049922f3a8, type: 3}
+      propertyPath: uniqueIdentifier
+      value: 109d807a-f60d-4fbf-b7b5-06c4c0dbdde0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b8aad62b783821341b5372049922f3a8, type: 3}
+--- !u!4 &1816118221 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4919765282361038165, guid: b8aad62b783821341b5372049922f3a8, type: 3}
+  m_PrefabInstance: {fileID: 1816118220}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1816507272
 GameObject:
   m_ObjectHideFlags: 0
@@ -19164,7 +19276,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7146458198523989082, guid: 6e00bf37347e066419cc7edf971de753, type: 3}
   m_PrefabInstance: {fileID: 488215304}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1877670403
+--- !u!114 &1877670416
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -19176,9 +19288,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e881eab5b664e8e44b56801ffff39bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: {fileID: 0}
-  conversantName: 
---- !u!114 &1877670404
+  dialogue: {fileID: 11400000, guid: 0078b624511742a438e941217f2ee3a1, type: 2}
+  conversantName: Mother Hubbard's Son
+--- !u!114 &1877670417
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -19194,7 +19306,7 @@ MonoBehaviour:
   onTrigger:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1877670405}
+      - m_Target: {fileID: 1877670418}
         m_TargetAssemblyTypeName: RPG.Quests.QuestGiver, Assembly-CSharp
         m_MethodName: GiveQuest
         m_Mode: 1
@@ -19206,7 +19318,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1877670405
+--- !u!114 &1877670418
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20834,6 +20946,7 @@ Transform:
   - {fileID: 436679223}
   - {fileID: 1713282091}
   - {fileID: 1152419248}
+  - {fileID: 1816118221}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -23693,7 +23806,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3729969451700795429, guid: 9b1617555dddda24c9156402e0f218f8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -663.2498
+      value: -663.2499
       objectReference: {fileID: 0}
     - target: {fileID: 3813710400160506831, guid: 9b1617555dddda24c9156402e0f218f8, type: 3}
       propertyPath: m_AnchorMax.y

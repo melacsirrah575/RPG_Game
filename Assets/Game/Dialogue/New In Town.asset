@@ -24,6 +24,8 @@ MonoBehaviour:
   isPlayerSpeaking: 1
   onEnterAction: 
   onExitAction: 
+  condition:
+    and: []
 --- !u!114 &-7190946105596757205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47,6 +49,8 @@ MonoBehaviour:
   isPlayerSpeaking: 0
   onEnterAction: 
   onExitAction: Attack
+  condition:
+    and: []
 --- !u!114 &-3774694387861839740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,6 +75,8 @@ MonoBehaviour:
   isPlayerSpeaking: 1
   onEnterAction: 
   onExitAction: 
+  condition:
+    and: []
 --- !u!114 &-2300702880082587984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,6 +102,8 @@ MonoBehaviour:
   isPlayerSpeaking: 0
   onEnterAction: 
   onExitAction: 
+  condition:
+    and: []
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,6 +154,8 @@ MonoBehaviour:
   isPlayerSpeaking: 0
   onEnterAction: 
   onExitAction: TestAIExit
+  condition:
+    and: []
 --- !u!114 &2360071464411230801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,6 +180,8 @@ MonoBehaviour:
   isPlayerSpeaking: 1
   onEnterAction: 
   onExitAction: 
+  condition:
+    and: []
 --- !u!114 &3428565669889175530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,7 +204,9 @@ MonoBehaviour:
     height: 100
   isPlayerSpeaking: 0
   onEnterAction: 
-  onExitAction: 
+  onExitAction: TestObjective
+  condition:
+    and: []
 --- !u!114 &5398569649637876772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,6 +231,8 @@ MonoBehaviour:
   isPlayerSpeaking: 1
   onEnterAction: 
   onExitAction: 
+  condition:
+    and: []
 --- !u!114 &5710575044822411777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,6 +257,8 @@ MonoBehaviour:
   isPlayerSpeaking: 1
   onEnterAction: TestEntrySelelction
   onExitAction: 
+  condition:
+    and: []
 --- !u!114 &7955986842637730332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,6 +283,8 @@ MonoBehaviour:
   isPlayerSpeaking: 1
   onEnterAction: 
   onExitAction: 
+  condition:
+    and: []
 --- !u!114 &8506984866274590998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -290,3 +310,5 @@ MonoBehaviour:
   isPlayerSpeaking: 0
   onEnterAction: Test Root Entry
   onExitAction: 
+  condition:
+    and: []
