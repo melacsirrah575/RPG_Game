@@ -454,7 +454,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7146458198523989082, guid: 6e00bf37347e066419cc7edf971de753, type: 3}
       propertyPath: m_Name
-      value: Grunt (2)
+      value: Dialogue Tester
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e00bf37347e066419cc7edf971de753, type: 3}
@@ -6283,7 +6283,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7146458198523989082, guid: 6e00bf37347e066419cc7edf971de753, type: 3}
       propertyPath: m_Name
-      value: Grunt (1)
+      value: Quest Tester
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e00bf37347e066419cc7edf971de753, type: 3}
@@ -17438,7 +17438,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3068054830538206663, guid: 6e00bf37347e066419cc7edf971de753, type: 3}
   m_PrefabInstance: {fileID: 488215304}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1877670402}
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbc8e875211ad354c8956fd38e4a3de3, type: 3}
@@ -19159,6 +19159,66 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4044910024888608, guid: 94f10da449387134eb5a2276906ccdfd, type: 3}
   m_PrefabInstance: {fileID: 250401897}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1877670402 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7146458198523989082, guid: 6e00bf37347e066419cc7edf971de753, type: 3}
+  m_PrefabInstance: {fileID: 488215304}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1877670403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877670402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e881eab5b664e8e44b56801ffff39bfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: {fileID: 0}
+  conversantName: 
+--- !u!114 &1877670404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877670402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5502bf1693917204893766e704240ac5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: GiveQuest
+  onTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1877670405}
+        m_TargetAssemblyTypeName: RPG.Quests.QuestGiver, Assembly-CSharp
+        m_MethodName: GiveQuest
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1877670405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877670402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b1c0b07ef742a342996b7d2f0a988a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quest: {fileID: 11400000, guid: 9d93074b735a0f744aaceb8e07d44b29, type: 2}
 --- !u!1001 &1879130149
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23343,6 +23403,42 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3039842082939951520, guid: 9b1617555dddda24c9156402e0f218f8, type: 3}
+      propertyPath: statuses.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3039842082939951520, guid: 9b1617555dddda24c9156402e0f218f8, type: 3}
+      propertyPath: statuses.Array.data[0].quest
+      value: 
+      objectReference: {fileID: 11400000, guid: c8a50651d2e9c2c4f86026b51306b249, type: 2}
+    - target: {fileID: 3039842082939951520, guid: 9b1617555dddda24c9156402e0f218f8, type: 3}
+      propertyPath: statuses.Array.data[1].quest
+      value: 
+      objectReference: {fileID: 11400000, guid: 9d93074b735a0f744aaceb8e07d44b29, type: 2}
+    - target: {fileID: 3039842082939951520, guid: 9b1617555dddda24c9156402e0f218f8, type: 3}
+      propertyPath: statuses.Array.data[0].completedObjectives.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3039842082939951520, guid: 9b1617555dddda24c9156402e0f218f8, type: 3}
+      propertyPath: statuses.Array.data[1].completedObjectives.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3039842082939951520, guid: 9b1617555dddda24c9156402e0f218f8, type: 3}
+      propertyPath: statuses.Array.data[0].completedObjectives.Array.data[0]
+      value: a
+      objectReference: {fileID: 0}
+    - target: {fileID: 3039842082939951520, guid: 9b1617555dddda24c9156402e0f218f8, type: 3}
+      propertyPath: statuses.Array.data[0].completedObjectives.Array.data[1]
+      value: b
+      objectReference: {fileID: 0}
+    - target: {fileID: 3039842082939951520, guid: 9b1617555dddda24c9156402e0f218f8, type: 3}
+      propertyPath: statuses.Array.data[0].completedObjectives.Array.data[2]
+      value: c
+      objectReference: {fileID: 0}
+    - target: {fileID: 3039842082939951520, guid: 9b1617555dddda24c9156402e0f218f8, type: 3}
+      propertyPath: statuses.Array.data[1].completedObjectives.Array.data[0]
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3100511676815224288, guid: 9b1617555dddda24c9156402e0f218f8, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -23597,7 +23693,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3729969451700795429, guid: 9b1617555dddda24c9156402e0f218f8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -663.2499
+      value: -663.2498
       objectReference: {fileID: 0}
     - target: {fileID: 3813710400160506831, guid: 9b1617555dddda24c9156402e0f218f8, type: 3}
       propertyPath: m_AnchorMax.y

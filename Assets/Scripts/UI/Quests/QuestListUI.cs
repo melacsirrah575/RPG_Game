@@ -10,10 +10,17 @@ namespace RPG.UI.Quests
     public class QuestListUI : MonoBehaviour
     {
         [SerializeField] QuestItemUI questPrefab;
+        QuestList questList;
         void Start()
         {
+            questList = GameObject.FindGameObjectWithTag("Player").GetComponent<QuestList>();
+            questList.onUpdate += Redraw;
+            Redraw();
+        }
+
+        private void Redraw()
+        {
             transform.DetachChildren();
-            QuestList questList = GameObject.FindGameObjectWithTag("Player").GetComponent<QuestList>();
             foreach (QuestStatus status in questList.GetStatuses())
             {
                 QuestItemUI uiInstance = Instantiate<QuestItemUI>(questPrefab, transform);

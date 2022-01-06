@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-1220303346351861734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10629bf3c59b77142ac793dcf04361ff, type: 3}
+  m_Name: 45ab77f8-7daa-41b4-ac64-5b06d0d0f16a
+  m_EditorClassIdentifier: 
+  text: Sure, how?
+  children:
+  - b1561f48-d3bc-4f38-9a49-dd04c9aef4cb
+  rect:
+    serializedVersion: 2
+    x: 352
+    y: 197
+    width: 200
+    height: 100
+  isPlayerSpeaking: 1
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-244219255207618704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10629bf3c59b77142ac793dcf04361ff, type: 3}
+  m_Name: 8d51c833-6a4c-433e-b921-2b0695ac0da1
+  m_EditorClassIdentifier: 
+  text: Do I look like a doctor?
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 352
+    y: 91
+    width: 200
+    height: 100
+  isPlayerSpeaking: 1
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 601364ef52c2dea499b1cb2b1d5aeab6, type: 3}
+  m_Name: Mother Hubbard's Son
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: 8177784124007648862}
+  - {fileID: -244219255207618704}
+  - {fileID: -1220303346351861734}
+  - {fileID: 49412691511574643}
+  newNodeOffset: {x: 250, y: 0}
+--- !u!114 &49412691511574643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10629bf3c59b77142ac793dcf04361ff, type: 3}
+  m_Name: b1561f48-d3bc-4f38-9a49-dd04c9aef4cb
+  m_EditorClassIdentifier: 
+  text: She needs the foot cream from the pharmacy
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 602
+    y: 197
+    width: 200
+    height: 100
+  isPlayerSpeaking: 0
+  onEnterAction: 
+  onExitAction: GiveQuest
+--- !u!114 &8177784124007648862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10629bf3c59b77142ac793dcf04361ff, type: 3}
+  m_Name: 53644faf-538d-4856-a436-4b0b11ff9668
+  m_EditorClassIdentifier: 
+  text: Mom has terrible bunions, can you help?
+  children:
+  - 8d51c833-6a4c-433e-b921-2b0695ac0da1
+  - 45ab77f8-7daa-41b4-ac64-5b06d0d0f16a
+  rect:
+    serializedVersion: 2
+    x: 102
+    y: 91
+    width: 200
+    height: 100
+  isPlayerSpeaking: 0
+  onEnterAction: 
+  onExitAction: 
