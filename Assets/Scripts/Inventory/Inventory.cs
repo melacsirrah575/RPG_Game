@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using RPG.Saving;
+using RPG.Core;
 
 namespace RPG.Inventories
 {
-    public class Inventory : MonoBehaviour, ISaveable
+    public class Inventory : MonoBehaviour, ISaveable, IPredicateEvaluator
     {
         // CONFIG DATA
         [Tooltip("Allowed size")]
@@ -203,6 +204,17 @@ namespace RPG.Inventories
             {
                 inventoryUpdated();
             }
+        }
+
+        public bool? Evaluate(string predicate, string[] parameters)
+        {
+            switch(predicate)
+            {
+                case "HasInvetoryItem":
+                    return HasItem(InventoryItem.GetFromID(parameters[0]));
+            }
+
+            return null;
         }
     }
 }
