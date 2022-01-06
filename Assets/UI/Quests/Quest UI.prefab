@@ -999,9 +999,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f68d6f5760b61c469f31449b0993486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tempQuests:
-  - {fileID: 11400000, guid: c8a50651d2e9c2c4f86026b51306b249, type: 2}
-  - {fileID: 11400000, guid: 9d93074b735a0f744aaceb8e07d44b29, type: 2}
   questPrefab: {fileID: 5817711422852758028, guid: fcc85872e43bcb846a43b685391ce55c, type: 3}
 --- !u!1001 &2139612819525039557
 PrefabInstance:

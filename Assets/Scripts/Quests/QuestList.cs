@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using RPG.Saving;
+using RPG.Inventories;
 
 namespace RPG.Quests
 {
@@ -28,6 +29,10 @@ namespace RPG.Quests
         {
             QuestStatus status = GetQuestStatus(quest);
             status.CompleteObjective(objective);
+            if (status.IsComplete())
+            {
+                GiveReward(quest);
+            }
             if (onUpdate != null)
             {
                 onUpdate();
@@ -55,6 +60,33 @@ namespace RPG.Quests
             }
 
             return null;
+        }
+
+        private void GiveReward(Quest quest)
+        {
+            foreach (var reward in quest.GetRewards())
+            {
+                if (!reward.item.IsStackable() && reward.number > 1)
+                {
+                    for (int i = 0; i < reward.number; i++)
+                    {
+                        ProcessReward(reward.item, 1);
+                    }
+                }
+                else
+                {
+                    ProcessReward(reward.item, reward.number);
+                }
+            }
+        }
+
+        private void ProcessReward(InventoryItem reward, int number)
+        {
+            bool success = GetComponent<Inventory>().AddToFirstEmptySlot(reward, number);
+            if (!success)
+            {
+                GetComponent<ItemDropper>().DropItem(reward, number);
+            }
         }
 
         public object CaptureState()
