@@ -1,3 +1,4 @@
+using RPG.Core;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ namespace RPG.Dialogues
         [SerializeField] bool isPlayerSpeaking = false;
         [SerializeField] string onEnterAction;
         [SerializeField] string onExitAction;
+        [SerializeField] Condition condition;
 
         public Rect GetRect()
         {
@@ -41,6 +43,10 @@ namespace RPG.Dialogues
         public string GetOnExitAction()
         {
             return onExitAction;
+        }
+        public bool CheckCondition(IEnumerable<IPredicateEvaluator> evaluators)
+        {
+            return condition.Check(evaluators);
         }
 
 #if UNITY_EDITOR
