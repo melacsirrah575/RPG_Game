@@ -10,18 +10,28 @@ namespace RPG.Shops
 {
     public class Shop : MonoBehaviour, IRaycastable
     {
-        [SerializeField] string name;
-        public class ShopItem
+        [SerializeField] string shopName;
+        [SerializeField] StockItemConfig[] stockConfig;
+
+        [System.Serializable]
+        class StockItemConfig
         {
-            InventoryItem item;
-            int availability;
-            float price;
-            int quantityInTransaction;
+            public InventoryItem item;
+            public int initialStock;
+            [Range(0, 100)]
+            public float buyingDiscountPercent;
         }
 
         public event Action onChange;
 
-        public IEnumerable<ShopItem> GetFilteredItems() { return null; }
+        public IEnumerable<ShopItem> GetFilteredItems() 
+        {
+            foreach (StockItemConfig config in stockConfig)
+            {
+                float price = config.item.GetPrice() * (1 - config.buyingDiscountPercent / 100);
+                yield return new ShopItem(config.item, config.initialStock, price, 0);
+            }
+        }
         public void SelectFilter(ItemCategory category) { }
         public ItemCategory GetFilter() { return ItemCategory.None; }
         public void SelectMode(bool isBuying) { }
@@ -31,7 +41,7 @@ namespace RPG.Shops
 
         public string GetShopName()
         {
-            return name;
+            return shopName;
         }
 
         public float TransactionTotal() { return 0; }

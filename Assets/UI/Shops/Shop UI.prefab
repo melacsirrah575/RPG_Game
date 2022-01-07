@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shopName: {fileID: 6610732489929888499}
+  listRoot: {fileID: 2866807598780487153}
+  rowPrefab: {fileID: 8960056249796727371, guid: 2cd79be976108fb429e0114f8531f4ca, type: 3}
 --- !u!1 &8034386389501345956
 GameObject:
   m_ObjectHideFlags: 0

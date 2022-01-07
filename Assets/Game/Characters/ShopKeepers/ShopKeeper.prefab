@@ -26,6 +26,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad9be2d4ca9049c4f94ffb0a9f628051, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shopName: 
 --- !u!1001 &4116527626597610805
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -81,7 +82,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShopKeeper
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7542376548985241128, guid: d27cc64d47ffb22499b19cd3190846b3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d27cc64d47ffb22499b19cd3190846b3, type: 3}
 --- !u!1 &1744447562288147072 stripped
 GameObject:
