@@ -15,6 +15,7 @@ MonoBehaviour:
   shopName: {fileID: 6610732489929888499}
   listRoot: {fileID: 2866807598780487153}
   rowPrefab: {fileID: 8960056249796727371, guid: 2cd79be976108fb429e0114f8531f4ca, type: 3}
+  totalField: {fileID: 5514913811342212147}
 --- !u!1 &8034386389501345956
 GameObject:
   m_ObjectHideFlags: 0
@@ -652,6 +653,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 659e3681dfad492459d0afd76d93b36c, type: 3}
+--- !u!114 &5514913811342212147 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6525109484209978753, guid: 659e3681dfad492459d0afd76d93b36c, type: 3}
+  m_PrefabInstance: {fileID: 1586727656167866802}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2504579330741153885
 PrefabInstance:
   m_ObjectHideFlags: 0
