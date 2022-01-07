@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6800bfa38174f24429970ff8df651b74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shopName: {fileID: 6610732489929888499}
 --- !u!1 &8034386389501345956
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,6 +197,34 @@ PrefabInstance:
     - target: {fileID: 864375408931576526, guid: 8010b8feb5f7e1a4b87d94e690ba33af, type: 3}
       propertyPath: m_Name
       value: Quit Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 4022070711209442736, guid: 8010b8feb5f7e1a4b87d94e690ba33af, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4022070711209442736, guid: 8010b8feb5f7e1a4b87d94e690ba33af, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4022070711209442736, guid: 8010b8feb5f7e1a4b87d94e690ba33af, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 859899436981935890}
+    - target: {fileID: 4022070711209442736, guid: 8010b8feb5f7e1a4b87d94e690ba33af, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4022070711209442736, guid: 8010b8feb5f7e1a4b87d94e690ba33af, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Close
+      objectReference: {fileID: 0}
+    - target: {fileID: 4022070711209442736, guid: 8010b8feb5f7e1a4b87d94e690ba33af, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: RPG.UI.Shops.ShopUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4022070711209442736, guid: 8010b8feb5f7e1a4b87d94e690ba33af, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6956047566969648199, guid: 8010b8feb5f7e1a4b87d94e690ba33af, type: 3}
       propertyPath: m_Pivot.x
@@ -606,7 +635,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8753880078141301422, guid: a073f0d98ebda4748b61e75dc86cdee3, type: 3}
       propertyPath: m_text
-      value: Mr. Bongo's Shop
+      value: Mr. Bongo's Emporium
       objectReference: {fileID: 0}
     - target: {fileID: 9075391153244881899, guid: a073f0d98ebda4748b61e75dc86cdee3, type: 3}
       propertyPath: m_Pivot.x
@@ -694,6 +723,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a073f0d98ebda4748b61e75dc86cdee3, type: 3}
+--- !u!114 &6610732489929888499 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8753880078141301422, guid: a073f0d98ebda4748b61e75dc86cdee3, type: 3}
+  m_PrefabInstance: {fileID: 2504579330741153885}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3682286747960070518
 PrefabInstance:
   m_ObjectHideFlags: 0

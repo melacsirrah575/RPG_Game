@@ -6607,6 +6607,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7568619685109591246, guid: 6be01562cea75314e817581ff18eed6f, type: 3}
+      propertyPath: name
+      value: Jimbob's Shop
+      objectReference: {fileID: 0}
     - target: {fileID: 9013346306471472605, guid: 6be01562cea75314e817581ff18eed6f, type: 3}
       propertyPath: uniqueIdentifier
       value: c8d8040a-901e-409b-82b8-a7b7a1d4e08f
@@ -7073,6 +7077,10 @@ PrefabInstance:
     - target: {fileID: 2481680373327470170, guid: 6be01562cea75314e817581ff18eed6f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7568619685109591246, guid: 6be01562cea75314e817581ff18eed6f, type: 3}
+      propertyPath: name
+      value: Mr. Bongo's Emporium
       objectReference: {fileID: 0}
     - target: {fileID: 9013346306471472605, guid: 6be01562cea75314e817581ff18eed6f, type: 3}
       propertyPath: uniqueIdentifier

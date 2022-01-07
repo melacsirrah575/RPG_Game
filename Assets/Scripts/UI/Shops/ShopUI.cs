@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 using RPG.Shops;
 
@@ -8,6 +10,8 @@ namespace RPG.UI.Shops
 {
     public class ShopUI : MonoBehaviour
     {
+        [SerializeField] TextMeshProUGUI shopName;
+
         Shopper shopper = null;
         Shop currentShop = null;
 
@@ -24,6 +28,11 @@ namespace RPG.UI.Shops
         {
             currentShop = shopper.GetActiveShop();
             gameObject.SetActive(currentShop != null);
+        }
+
+        public void Close()
+        {
+            shopper.SetActiveShop(null);
         }
     }
 }
