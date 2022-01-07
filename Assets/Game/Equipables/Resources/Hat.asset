@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 244d57fb-a840-44ef-98e6-00e6ba26a8dc
   displayName: Hat
-  description: Something to wear on your head
+  description: DOES NOTHING. FOR TESTING
   icon: {fileID: 21300000, guid: c1b61b3a91732a747a8496fc75a13fe2, type: 3}
   pickup: {fileID: 9112133121926219460, guid: d6f8c411a49a55346a3f16cb7d0978cb, type: 3}
   stackable: 0
+  price: 0
   allowedEquipLocation: 0
