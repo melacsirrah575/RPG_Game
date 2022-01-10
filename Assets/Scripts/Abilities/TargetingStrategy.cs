@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace RPG.Abilities
+namespace RPG.Abilities.targeting
 {
     public abstract class TargetingStrategy : ScriptableObject
     {
-        public abstract void StartTargeting();
+        public abstract void StartTargeting(GameObject user);
     }
 }

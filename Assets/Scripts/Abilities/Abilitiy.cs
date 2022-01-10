@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using RPG.Inventories;
+using RPG.Abilities.targeting;
 
 namespace RPG.Abilities
 {
@@ -13,7 +14,7 @@ namespace RPG.Abilities
 
         public override void Use(GameObject user)
         {
-            targetingStrategy.StartTargeting();
+            targetingStrategy.StartTargeting(user);
         }
     }
 }
