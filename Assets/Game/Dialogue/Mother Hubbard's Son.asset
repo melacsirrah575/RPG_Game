@@ -84,7 +84,8 @@ MonoBehaviour:
   m_Name: 8d51c833-6a4c-433e-b921-2b0695ac0da1
   m_EditorClassIdentifier: 
   text: Do I look like a doctor?
-  children: []
+  children:
+  - 0a107cc3-8fe7-4589-83dd-d74ae70c739a
   rect:
     serializedVersion: 2
     x: 352
@@ -117,6 +118,7 @@ MonoBehaviour:
   - {fileID: 2560323086281250502}
   - {fileID: -2332761541466271847}
   - {fileID: 7061960878997756018}
+  - {fileID: 7401341628992823081}
   newNodeOffset: {x: 250, y: 0}
 --- !u!114 &49412691511574643
 MonoBehaviour:
@@ -159,7 +161,7 @@ MonoBehaviour:
   children: []
   rect:
     serializedVersion: 2
-    x: 599
+    x: 606
     y: 311
     width: 200
     height: 100
@@ -222,6 +224,31 @@ MonoBehaviour:
     serializedVersion: 2
     x: 595
     y: 418
+    width: 200
+    height: 100
+  isPlayerSpeaking: 0
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &7401341628992823081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10629bf3c59b77142ac793dcf04361ff, type: 3}
+  m_Name: 0a107cc3-8fe7-4589-83dd-d74ae70c739a
+  m_EditorClassIdentifier: 
+  text: Oh.. My bad.
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 602
+    y: 90
     width: 200
     height: 100
   isPlayerSpeaking: 0

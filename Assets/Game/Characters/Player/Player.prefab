@@ -65,10 +65,13 @@ MonoBehaviour:
     texture: {fileID: 2800000, guid: 2e71a8202d3b4a3448ec85ced5a40265, type: 3}
     hotspot: {x: 0, y: 0}
   - type: 4
-    texture: {fileID: 2800000, guid: f8c873f1e53e83f4aabf342d6be1dfc3, type: 3}
+    texture: {fileID: 2800000, guid: cecad95c851b97f40b105b30b0bfede3, type: 3}
     hotspot: {x: 0, y: 0}
   - type: 6
     texture: {fileID: 2800000, guid: 96d4bfdb0d6d8c042bf8fccf6524d239, type: 3}
+    hotspot: {x: 0, y: 0}
+  - type: 7
+    texture: {fileID: 2800000, guid: f8c873f1e53e83f4aabf342d6be1dfc3, type: 3}
     hotspot: {x: 0, y: 0}
   maxNavMeshProjectionDistance: 1
   sphereCastRadius: 1
@@ -85,6 +88,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventorySize: 16
+--- !u!114 &6040620298785649404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3108746492147386429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3caf131d10f2ef4fa646ad6ac351120, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7456492703175762744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,6 +127,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   experiencePoints: 0
+--- !u!114 &8468223416376440512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3108746492147386429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b336a13d5ff9d1459369720a0794c97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8932280372607869851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba9d9664c5224664bb40353b3c6a5101, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6040620298785649404
+--- !u!114 &8661321498355989503
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,17 +160,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3108746492147386429}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3caf131d10f2ef4fa646ad6ac351120, type: 3}
+  m_Script: {fileID: 11500000, guid: 7b900f3b536fd654abc8786b0314ae13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stautses:
-  - quest: {fileID: 11400000, guid: c8a50651d2e9c2c4f86026b51306b249, type: 2}
-    completedObjectives:
-    - a
-    - b
-  - quest: {fileID: 11400000, guid: 9d93074b735a0f744aaceb8e07d44b29, type: 2}
-    completedObjectives:
-    - 2
+  startingBalance: 400
 --- !u!1001 &678570737832864152
 PrefabInstance:
   m_ObjectHideFlags: 0
