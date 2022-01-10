@@ -7083,6 +7083,10 @@ PrefabInstance:
       value: Mr. Bongo's Emporium
       objectReference: {fileID: 0}
     - target: {fileID: 7568619685109591246, guid: 6be01562cea75314e817581ff18eed6f, type: 3}
+      propertyPath: shopName
+      value: Mr Bongo's Emporium
+      objectReference: {fileID: 0}
+    - target: {fileID: 7568619685109591246, guid: 6be01562cea75314e817581ff18eed6f, type: 3}
       propertyPath: stockConfig.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -26354,7 +26358,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8543694043541816045, guid: 9b1617555dddda24c9156402e0f218f8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -636.84625
+      value: -663.25
       objectReference: {fileID: 0}
     - target: {fileID: 8614876951135481201, guid: 9b1617555dddda24c9156402e0f218f8, type: 3}
       propertyPath: m_AnchorMax.y
