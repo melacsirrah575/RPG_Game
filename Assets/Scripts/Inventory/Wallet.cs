@@ -3,9 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using RPG.Saving;
+
 namespace RPG.Inventories
 {
-    public class Wallet : MonoBehaviour
+    public class Wallet : MonoBehaviour, ISaveable
     {
         [SerializeField] float startingBalance = 400f;
 
@@ -30,6 +32,16 @@ namespace RPG.Inventories
             {
                 onChange();
             }
+        }
+
+        public object CaptureState()
+        {
+            return balance;
+        }
+
+        public void RestoreState(object state)
+        {
+            balance = (float)state;
         }
     }
 }
