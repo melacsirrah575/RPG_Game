@@ -28,6 +28,7 @@ namespace RPG.Shops
         Dictionary<InventoryItem, int> transaction = new Dictionary<InventoryItem, int>();
         Dictionary<InventoryItem, int> stock = new Dictionary<InventoryItem, int>();
         Shopper currentShopper = null;
+        ItemCategory filter = ItemCategory.None;
         bool isBuyingMode = true;
 
         public event Action onChange;
@@ -47,7 +48,14 @@ namespace RPG.Shops
 
         public IEnumerable<ShopItem> GetFilteredItems() 
         {
-            return GetAllItems();
+            foreach (ShopItem shopItem in GetAllItems())
+            {
+                InventoryItem item = shopItem.GetInventoryItem();
+                if (filter == ItemCategory.None || item.GetCategory() == filter)
+                {
+                    yield return shopItem;
+                }
+            }
         }
 
         public IEnumerable<ShopItem> GetAllItems()
@@ -62,8 +70,20 @@ namespace RPG.Shops
             }
         }
 
-        public void SelectFilter(ItemCategory category) { }
-        public ItemCategory GetFilter() { return ItemCategory.None; }
+        public void SelectFilter(ItemCategory category) 
+        {
+            filter = category;
+            if (onChange != null)
+            {
+                onChange();
+            }
+        }
+
+        public ItemCategory GetFilter() 
+        {
+            return filter;
+        }
+
         public void SelectMode(bool isBuying) 
         {
             isBuyingMode = isBuying;
