@@ -88,6 +88,8 @@ namespace RPG.Shops
 
         public bool HasSufficientFunds()
         {
+            if (!isBuyingMode) return true;
+
             Wallet wallet = currentShopper.GetComponent<Wallet>();
             if (wallet == null) return false;
 
@@ -101,6 +103,8 @@ namespace RPG.Shops
 
         public bool HasInventorySpace()
         {
+            if (!isBuyingMode) return true;
+
             Inventory shopperInventory = currentShopper.GetComponent<Inventory>();
             if (shopperInventory == null) return false;
 
@@ -132,14 +136,13 @@ namespace RPG.Shops
 
                 for (int i = 0; i < quantity; i++)
                 {
-                    if (shopperWallet.GetBalance() < price) break;
-
-                    bool success = shopperInventory.AddToFirstEmptySlot(item, 1);
-                    if (success)
+                    if (isBuyingMode)
                     {
-                        AddToTransaction(item, -1);
-                        stock[item]--;
-                        shopperWallet.UpdateBalance(-price);
+                        BuyItem(shopperInventory, shopperWallet, item, price);
+                    }
+                    else
+                    {
+                        SellItem(shopperInventory, shopperWallet, item, price);
                     }
                 }
             }
@@ -240,6 +243,42 @@ namespace RPG.Shops
             }
 
             return config.item.GetPrice() * (sellingPercentage / 100);
+        }
+
+        private void SellItem(Inventory shopperInventory, Wallet shopperWallet, InventoryItem item, float price)
+        {
+            int slot = FindFirstItemSlot(shopperInventory, item);
+            if (slot == -1) return;
+
+            AddToTransaction(item, -1);
+            shopperInventory.RemoveFromSlot(slot, 1);
+            stock[item]++;
+            shopperWallet.UpdateBalance(price);
+        }
+
+        private void BuyItem(Inventory shopperInventory, Wallet shopperWallet, InventoryItem item, float price)
+        {
+            if (shopperWallet.GetBalance() < price) return;
+
+            bool success = shopperInventory.AddToFirstEmptySlot(item, 1);
+            if (success)
+            {
+                AddToTransaction(item, -1);
+                stock[item]--;
+                shopperWallet.UpdateBalance(-price);
+            }
+        }
+        private int FindFirstItemSlot(Inventory shopperInventory, InventoryItem item)
+        {
+            for (int i = 0; i < shopperInventory.GetSize(); i++)
+            {
+                if (shopperInventory.GetItemInSlot(i) == item)
+                {
+                    return i;
+                }
+            }
+
+            return -1;
         }
     }
 }
