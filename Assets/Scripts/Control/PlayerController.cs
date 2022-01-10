@@ -219,7 +219,7 @@ namespace RPG.Control
             return cursorMappings[0];
         }
 
-        private static Ray GetMouseRay()
+        public static Ray GetMouseRay()
         {
             //Takes position from where player clicked on MainCamera's near clipping plane and sets as variable
             return Camera.main.ScreenPointToRay(Input.mousePosition);

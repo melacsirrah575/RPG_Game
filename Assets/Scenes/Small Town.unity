@@ -7972,7 +7972,7 @@ GameObject:
   - component: {fileID: 679558197}
   - component: {fileID: 679558199}
   - component: {fileID: 679558198}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Terrain_(-150.0, -10.0, -150.0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17615,7 +17615,7 @@ GameObject:
   - component: {fileID: 1694749196}
   - component: {fileID: 1694749198}
   - component: {fileID: 1694749197}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Terrain_(-150.0, -10.0, -50.0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18014,7 +18014,7 @@ GameObject:
   - component: {fileID: 1739757133}
   - component: {fileID: 1739757132}
   - component: {fileID: 1739757131}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Terrain_(-50.0, -10.0, 50.0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21866,7 +21866,7 @@ GameObject:
   - component: {fileID: 2075325858}
   - component: {fileID: 2075325860}
   - component: {fileID: 2075325859}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Terrain_(-50.0, -10.0, -150.0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22888,6 +22888,10 @@ PrefabInstance:
     - target: {fileID: 5137379404745314116, guid: fc2f195b9371c51478f7db7e42717eca, type: 3}
       propertyPath: m_Name
       value: Terrain
+      objectReference: {fileID: 0}
+    - target: {fileID: 5137379404745314116, guid: fc2f195b9371c51478f7db7e42717eca, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc2f195b9371c51478f7db7e42717eca, type: 3}
