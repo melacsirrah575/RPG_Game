@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace RPG.Abilities.targeting
+namespace RPG.Abilities
 {
     public abstract class TargetingStrategy : ScriptableObject
     {

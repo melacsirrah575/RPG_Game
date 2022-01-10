@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using RPG.Inventories;
-using RPG.Abilities.targeting;
 
 namespace RPG.Abilities
 {
@@ -11,6 +10,7 @@ namespace RPG.Abilities
     public class Abilitiy : ActionItem
     {
         [SerializeField] TargetingStrategy targetingStrategy;
+        [SerializeField] FilterStrategy[] filterStrategies;
 
         public override void Use(GameObject user)
         {
@@ -19,6 +19,11 @@ namespace RPG.Abilities
 
         private void TargetAquired(IEnumerable<GameObject> targets)
         {
+            foreach (var filterStrategy in filterStrategies)
+            {
+                targets = filterStrategy.Filter(targets);
+            }
+
             foreach (var target in targets)
             {
 
