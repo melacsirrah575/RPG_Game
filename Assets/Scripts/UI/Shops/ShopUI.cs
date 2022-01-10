@@ -23,7 +23,8 @@ namespace RPG.UI.Shops
 
         Color originalTotalTextColor;
 
-        private void Start()
+        // Start is called before the first frame update
+        void Start()
         {
             originalTotalTextColor = totalField.color;
 
@@ -72,10 +73,9 @@ namespace RPG.UI.Shops
                 row.Setup(currentShop, item);
             }
 
-            totalField.text = $"Total : ${currentShop.TransactionTotal():N2}";
+            totalField.text = $"Total: ${currentShop.TransactionTotal():N2}";
             totalField.color = currentShop.HasSufficientFunds() ? originalTotalTextColor : Color.red;
             confirmButton.interactable = currentShop.CanTransact();
-
             TextMeshProUGUI switchText = switchButton.GetComponentInChildren<TextMeshProUGUI>();
             TextMeshProUGUI confirmText = confirmButton.GetComponentInChildren<TextMeshProUGUI>();
             if (currentShop.IsBuyingMode())
