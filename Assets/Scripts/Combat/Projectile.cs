@@ -19,6 +19,7 @@ namespace RPG.Combat
         [SerializeField] UnityEvent onHit;
 
         Health target = null;
+        Vector3 targetPoint;
         GameObject instigator = null;
 
         float damage = 0;
@@ -30,9 +31,7 @@ namespace RPG.Combat
 
         void Update()
         {
-            if (target == null) return;
-
-            if(isHoming && !target.IsDead())
+            if(target != null && isHoming && !target.IsDead())
             {
                 transform.LookAt(GetAimLocation());
             }
@@ -41,7 +40,18 @@ namespace RPG.Combat
 
         public void SetTarget(Health target, GameObject instigator, float damage)
         {
+            SetTarget(instigator, damage, target);
+        }
+
+        public void SetTarget(Vector3 targetPoint, GameObject instigator, float damage)
+        {
+            SetTarget(instigator, damage, null, targetPoint);
+        }
+
+        public void SetTarget(GameObject instigator, float damage, Health target = null, Vector3 targetPoint = default)
+        {
             this.target = target;
+            this.targetPoint = targetPoint;
             this.damage = damage;
             this.instigator = instigator;
 
@@ -50,6 +60,8 @@ namespace RPG.Combat
 
         private Vector3 GetAimLocation()
         {
+            if (target == null) return targetPoint;
+
             CapsuleCollider targetCapsule = target.GetComponent<CapsuleCollider>();
 
             if (targetCapsule == null) return target.transform.position;
@@ -59,10 +71,12 @@ namespace RPG.Combat
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.GetComponent<Health>() != target) return;
-            if (target.IsDead()) return;
+            Health health = other.GetComponent<Health>();
+            if (target != null && health != target) return;
+            if (health == null || health.IsDead()) return;
+            if (other.gameObject == instigator) return;
 
-            target.TakeDamage(instigator , damage);
+            health.TakeDamage(instigator , damage);
             speed = 0;
 
             onHit.Invoke();
