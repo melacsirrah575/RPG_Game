@@ -4,6 +4,7 @@ using UnityEngine;
 
 using RPG.Inventories;
 using RPG.Attributes;
+using RPG.Core;
 
 namespace RPG.Abilities
 {
@@ -25,6 +26,10 @@ namespace RPG.Abilities
             if (cooldownStore.GetTimeRemaining(this) > 0) return;
 
             AbilityData data = new AbilityData(user);
+
+            ActionScheduler actionScheduler = user.GetComponent<ActionScheduler>();
+            actionScheduler.StartAction(data);
+
             targetingStrategy.StartTargeting(data,
                 () =>
                 {
@@ -34,6 +39,8 @@ namespace RPG.Abilities
 
         private void TargetAquired(AbilityData data)
         {
+            if (data.IsCancelled()) return;
+
             Mana mana = data.GetUser().GetComponent<Mana>();
             if (!mana.UseMana(manaCost)) return;
 
