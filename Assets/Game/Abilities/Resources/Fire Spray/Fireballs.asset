@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileToSpawn: {fileID: 6940738060336661415, guid: 6147f2fd406a473489cd2dd1aea761d8, type: 3}
   damage: 10
-  isRightHand: 1
+  isRightHand: 0
+  useTargetPoint: 1

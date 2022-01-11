@@ -21,10 +21,12 @@ MonoBehaviour:
   price: 100
   category: 5
   consumable: 0
-  targetingStrategy: {fileID: 11400000, guid: b363af2ca234f174f8fd3607344add54, type: 2}
+  targetingStrategy: {fileID: 11400000, guid: db950864118c15f468f488f089b852ce, type: 2}
   filterStrategies:
   - {fileID: 11400000, guid: 036edc85aecc1cb408566c755ac35d46, type: 2}
   effectStrategies:
-  - {fileID: 11400000, guid: eb1b06b38e496ee40bf7642edb5afde4, type: 2}
-  cooldownTime: 4
-  manaCost: 30
+  - {fileID: 11400000, guid: 263ab34e688e98a44b5a76d6ae1ad41d, type: 2}
+  - {fileID: 11400000, guid: 18cde2e89852eec45bd2b8e13cb454fc, type: 2}
+  - {fileID: 11400000, guid: a3b771966b0cfc447bd9f19e4fe18996, type: 2}
+  cooldownTime: 0.8
+  manaCost: 20
