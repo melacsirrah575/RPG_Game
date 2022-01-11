@@ -17,8 +17,10 @@ namespace RPG.Control
         [SerializeField] CursorMapping[] cursorMappings = null;
         [SerializeField] float maxNavMeshProjectionDistance = 1f;
         [SerializeField] float sphereCastRadius = 1f;
+        [SerializeField] int numberOfAbilities = 6;
 
         Health health;
+        ActionStore actionStore;
 
         bool movementStarted = false;
         bool isDraggingUI = false;
@@ -34,6 +36,7 @@ namespace RPG.Control
         private void Awake()
         {
             health = GetComponent<Health>();
+            actionStore = GetComponent<ActionStore>();
         }
 
         private void Update()
@@ -55,6 +58,8 @@ namespace RPG.Control
                 SetCursor(CursorType.None);
                 return;
             }
+
+            UseAbilities();
 
             if (InteractWithComponent()) return;
             if (InteractWithMovement()) return;
@@ -113,7 +118,16 @@ namespace RPG.Control
             }
             return false;
         }
-
+        private void UseAbilities()
+        {
+            for (int i = 0; i < numberOfAbilities; i++)
+            {
+                if (Input.GetKeyDown(KeyCode.Alpha1 +i))
+                {
+                    actionStore.Use(i, gameObject);
+                }
+            }
+        }
         private bool InteractWithComponent()
         {
             RaycastHit[] hits = RaycastAllSorted();
@@ -205,7 +219,7 @@ namespace RPG.Control
             return cursorMappings[0];
         }
 
-        private static Ray GetMouseRay()
+        public static Ray GetMouseRay()
         {
             //Takes position from where player clicked on MainCamera's near clipping plane and sets as variable
             return Camera.main.ScreenPointToRay(Input.mousePosition);
