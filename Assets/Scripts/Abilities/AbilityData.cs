@@ -31,7 +31,7 @@ namespace RPG.Abilities
             return targetedPoint;
         }
 
-        public void SetTargetedPoint(Vector3 taretedPoint)
+        public void SetTargetedPoint(Vector3 targetedPoint)
         {
             this.targetedPoint = targetedPoint;
         }
