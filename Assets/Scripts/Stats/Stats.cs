@@ -10,5 +10,7 @@ namespace RPG.Stats
         ExperienceReward,
         ExperienceToLevelUp,
         Damage,
+        Mana,
+        ManaRegenRate,
     }
 }
