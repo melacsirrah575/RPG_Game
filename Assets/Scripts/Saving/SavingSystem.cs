@@ -36,7 +36,12 @@ namespace RPG.Saving
             RestoreState(LoadFile(saveFile));
         }
 
-        //[MenuItem("Utils/Delete Current SaveFile")] Needs Static function and currently making function static breaks deleteing save while in-game
+        public bool SaveFileExists(string saveFile)
+        {
+            string path = GetPathFromSaveFile(saveFile);
+            return (!File.Exists(path));
+        }
+
         public void Delete(string saveFile)
         {
             File.Delete(GetPathFromSaveFile(saveFile));
