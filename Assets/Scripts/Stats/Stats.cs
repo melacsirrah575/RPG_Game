@@ -12,5 +12,6 @@ namespace RPG.Stats
         Damage,
         Mana,
         ManaRegenRate,
+        TotalTraitPoint,
     }
 }
