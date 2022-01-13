@@ -1,5 +1,17 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &6517361659737204542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 140347888976413158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edaf7369d5fcef545a04d361c6d51ceb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &456812319780806308
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,6 +355,34 @@ PrefabInstance:
     - target: {fileID: 4435240377168471173, guid: b5c646a3de3529c4798e3e733d42e156, type: 3}
       propertyPath: m_Name
       value: Save
+      objectReference: {fileID: 0}
+    - target: {fileID: 8112409428537342523, guid: b5c646a3de3529c4798e3e733d42e156, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8112409428537342523, guid: b5c646a3de3529c4798e3e733d42e156, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8112409428537342523, guid: b5c646a3de3529c4798e3e733d42e156, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6517361659737204542}
+    - target: {fileID: 8112409428537342523, guid: b5c646a3de3529c4798e3e733d42e156, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8112409428537342523, guid: b5c646a3de3529c4798e3e733d42e156, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Save
+      objectReference: {fileID: 0}
+    - target: {fileID: 8112409428537342523, guid: b5c646a3de3529c4798e3e733d42e156, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: RPG.UI.PauseMenuUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8112409428537342523, guid: b5c646a3de3529c4798e3e733d42e156, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5c646a3de3529c4798e3e733d42e156, type: 3}
@@ -764,6 +804,34 @@ PrefabInstance:
     - target: {fileID: 4435240377168471173, guid: b5c646a3de3529c4798e3e733d42e156, type: 3}
       propertyPath: m_Name
       value: Save and Quit
+      objectReference: {fileID: 0}
+    - target: {fileID: 8112409428537342523, guid: b5c646a3de3529c4798e3e733d42e156, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8112409428537342523, guid: b5c646a3de3529c4798e3e733d42e156, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8112409428537342523, guid: b5c646a3de3529c4798e3e733d42e156, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6517361659737204542}
+    - target: {fileID: 8112409428537342523, guid: b5c646a3de3529c4798e3e733d42e156, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8112409428537342523, guid: b5c646a3de3529c4798e3e733d42e156, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SaveAndQuit
+      objectReference: {fileID: 0}
+    - target: {fileID: 8112409428537342523, guid: b5c646a3de3529c4798e3e733d42e156, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: RPG.UI.PauseMenuUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8112409428537342523, guid: b5c646a3de3529c4798e3e733d42e156, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5c646a3de3529c4798e3e733d42e156, type: 3}

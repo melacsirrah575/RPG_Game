@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using RPG.Control;
+using RPG.SceneManagement;
 
 namespace RPG.UI
 {
@@ -25,6 +26,17 @@ namespace RPG.UI
         {
             Time.timeScale = 1;
             playerController.enabled = true;
+        }
+
+        public void Save()
+        {
+            SavingWrapper savingWrapper = FindObjectOfType<SavingWrapper>();
+            savingWrapper.Save();
+        }
+
+        public void SaveAndQuit()
+        {
+
         }
     }
 }
