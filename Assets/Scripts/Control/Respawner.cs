@@ -53,10 +53,10 @@ namespace RPG.Control
         {
             foreach (AIController enemyControllers in FindObjectsOfType<AIController>())
             {
-                enemyControllers.Reset();
                 Health health = enemyControllers.GetComponent<Health>();
                 if (health && !health.IsDead())
                 {
+                    enemyControllers.Reset();
                     health.Heal(health.GetMaxHealthPoints() * enemyHealthRegenPercentage / 100);
                 }
             }
