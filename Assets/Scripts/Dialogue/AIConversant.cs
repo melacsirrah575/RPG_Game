@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using RPG.Control;
+using RPG.Attributes;
 
 namespace RPG.Dialogues
 {
@@ -22,6 +23,8 @@ namespace RPG.Dialogues
                 Debug.Log("You forgot to assign a dialogue!");
                 return false;
             }
+
+            if (GetComponent<Health>().IsDead()) return false;
 
             if (Input.GetMouseButtonDown(0))
             {

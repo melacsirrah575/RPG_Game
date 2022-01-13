@@ -20,10 +20,10 @@ namespace RPG.Saving
             {
                 buildIndex = (int)state["lastSceneBuildIndex"];
             }
-            //Happens after Awake but before Start
             yield return SceneManager.LoadSceneAsync(buildIndex);
             RestoreState(state);
         }
+
         public void Save(string saveFile)
         {
             Dictionary<string, object> state = LoadFile(saveFile);
@@ -31,25 +31,34 @@ namespace RPG.Saving
             SaveFile(saveFile, state);
         }
 
-        public void Load(string saveFile)
-        {
-            RestoreState(LoadFile(saveFile));
-        }
-
-        //[MenuItem("Utils/Delete Current SaveFile")] Needs Static function and currently making function static breaks deleteing save while in-game
         public void Delete(string saveFile)
         {
             File.Delete(GetPathFromSaveFile(saveFile));
         }
 
+        public void Load(string saveFile)
+        {
+            RestoreState(LoadFile(saveFile));
+        }
+
+        public IEnumerable<string> ListSaves()
+        {
+            foreach (string path in Directory.EnumerateFiles(Application.persistentDataPath))
+            {
+                if (Path.GetExtension(path) == ".sav")
+                {
+                    yield return Path.GetFileNameWithoutExtension(path);
+                }
+            }
+        }
+
         private Dictionary<string, object> LoadFile(string saveFile)
         {
             string path = GetPathFromSaveFile(saveFile);
-            if(!File.Exists(path))
+            if (!File.Exists(path))
             {
                 return new Dictionary<string, object>();
             }
-            //FileMode.Open doesn't overwrite any existing file
             using (FileStream stream = File.Open(path, FileMode.Open))
             {
                 BinaryFormatter formatter = new BinaryFormatter();
@@ -60,12 +69,9 @@ namespace RPG.Saving
         private void SaveFile(string saveFile, object state)
         {
             string path = GetPathFromSaveFile(saveFile);
-            print("Saving to" + path);
-            //Creates new file and overwrites old file if one exists
-            //Adding using prevents possible errors causing file to not close and instead, leak
+            print("Saving to " + path);
             using (FileStream stream = File.Open(path, FileMode.Create))
             {
-                //Have to create method before able to call methods from it
                 BinaryFormatter formatter = new BinaryFormatter();
                 formatter.Serialize(stream, state);
             }
@@ -73,7 +79,7 @@ namespace RPG.Saving
 
         private void CaptureState(Dictionary<string, object> state)
         {
-            foreach(SaveableEntity saveable in FindObjectsOfType<SaveableEntity>())
+            foreach (SaveableEntity saveable in FindObjectsOfType<SaveableEntity>())
             {
                 state[saveable.GetUniqueIdentifier()] = saveable.CaptureState();
             }
@@ -85,16 +91,15 @@ namespace RPG.Saving
         {
             foreach (SaveableEntity saveable in FindObjectsOfType<SaveableEntity>())
             {
-               string id = saveable.GetUniqueIdentifier();
-               if(state.ContainsKey(id))
-               {
+                string id = saveable.GetUniqueIdentifier();
+                if (state.ContainsKey(id))
+                {
                     saveable.RestoreState(state[id]);
-               }
-
+                }
             }
         }
 
-        string GetPathFromSaveFile(string saveFile)
+        private string GetPathFromSaveFile(string saveFile)
         {
             return Path.Combine(Application.persistentDataPath, saveFile + ".sav");
         }
