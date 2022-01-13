@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
+    m_Left: 35
+    m_Right: 35
+    m_Top: 35
+    m_Bottom: 35
   m_ChildAlignment: 0
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
@@ -119,7 +119,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3098650029888540246, guid: b36584b8f952f2645afb85a6c6022957, type: 3}
       propertyPath: m_Name
-      value: Button
+      value: AutoLayout Button
       objectReference: {fileID: 0}
     - target: {fileID: 3284317453281845108, guid: b36584b8f952f2645afb85a6c6022957, type: 3}
       propertyPath: m_AnchorMax.x
