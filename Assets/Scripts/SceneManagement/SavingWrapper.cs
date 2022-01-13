@@ -25,7 +25,7 @@ namespace RPG.SceneManagement
 
         public void NewGame(string saveFile)
         {
-            if (!String.IsNullOrEmpty(saveFile)) return;
+            if (String.IsNullOrEmpty(saveFile)) return;
             SetCurrentSave(saveFile);
             StartCoroutine(LoadFirstScene());
         }

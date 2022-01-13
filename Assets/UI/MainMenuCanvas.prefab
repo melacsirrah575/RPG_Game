@@ -542,8 +542,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 0
-    m_Right: 0
+    m_Left: 30
+    m_Right: 30
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 0
@@ -567,7 +567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75b58d91b4ba7b1458ae2a92ca1c3c9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contentRoot: {fileID: 1728715060945234530}
+  contentRoot: {fileID: 970141154232336451}
   buttonPrefab: {fileID: 4435240377168471173, guid: b5c646a3de3529c4798e3e733d42e156, type: 3}
 --- !u!1 &5314595932896641189
 GameObject:
