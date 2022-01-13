@@ -16,7 +16,7 @@ namespace RPG.Attributes
         [Tooltip("Percent of health player returns to on level up if below")]
         [SerializeField] float regenerationPercentage = 70f;
         [SerializeField] TakeDamageEvent takeDamage;
-        [SerializeField] UnityEvent onDie;
+        public UnityEvent onDie;
 
         LazyValue<float> healthPoints;
 

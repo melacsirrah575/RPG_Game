@@ -36,7 +36,9 @@ namespace RPG.UI
 
         public void SaveAndQuit()
         {
-
+            SavingWrapper savingWrapper = FindObjectOfType<SavingWrapper>();
+            savingWrapper.Save();
+            savingWrapper.LoadMenu();
         }
     }
 }
