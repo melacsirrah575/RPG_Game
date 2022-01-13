@@ -39,9 +39,9 @@ namespace RPG.UI
         {
 #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
-#endif
+#else
             Application.Quit();
-
+#endif
         }
     }
 }

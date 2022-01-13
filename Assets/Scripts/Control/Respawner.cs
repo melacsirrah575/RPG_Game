@@ -12,13 +12,13 @@ namespace RPG.Control
     public class Respawner : MonoBehaviour
     {
         [SerializeField] Transform respawnLocation;
-        [SerializeField] float respawnDelay = 3f;
+        [SerializeField] float respawnDelay = 3;
         [SerializeField] float fadeTime = 0.2f;
-        [SerializeField] int healthRegenPercent = 20;
+        [SerializeField] float healthRegenPercentage = 20;
+
         private void Awake()
         {
             GetComponent<Health>().onDie.AddListener(Respawn);
-            respawnLocation = transform;
         }
 
         private void Respawn()
@@ -33,7 +33,7 @@ namespace RPG.Control
             yield return fader.FadeOut(fadeTime);
             GetComponent<NavMeshAgent>().Warp(respawnLocation.position);
             Health health = GetComponent<Health>();
-            health.Heal(health.GetMaxHealthPoints() * healthRegenPercent / 100);
+            health.Heal(health.GetMaxHealthPoints() * healthRegenPercentage / 100);
             yield return fader.FadeIn(fadeTime);
         }
     }
