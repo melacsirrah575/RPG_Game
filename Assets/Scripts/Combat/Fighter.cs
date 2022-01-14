@@ -19,6 +19,7 @@ namespace RPG.Combat
         [SerializeField] Transform rightHandTransform = null;
         [SerializeField] Transform leftHandTransform = null;
         [SerializeField] WeaponConfig defaultWeapon = null;
+        [SerializeField] float autoAttackRange = 4f;
 
         Health target;
         Mover mover;
@@ -55,7 +56,11 @@ namespace RPG.Combat
             timeSinceLastAttack += Time.deltaTime;
 
             if (target == null) return;
-            if (target.IsDead()) return;
+            if (target.IsDead())
+            {
+                target = FindNewTargetInRange();
+                if (target == null) return;
+            }
 
             if (target != null && !GetIsInRange(target.transform))
             {
@@ -118,6 +123,34 @@ namespace RPG.Combat
                 TriggerAttack();
                 //Allows player to attack immediately when first reaching enemy
                 timeSinceLastAttack = 0;
+            }
+        }
+        private Health FindNewTargetInRange()
+        {
+            Health best = null;
+            float bestDistance = Mathf.Infinity;
+            foreach (var candidate in FindAllTargetsInRange())
+            {
+                float candiateDistance = Vector3.Distance(transform.position, candidate.transform.position);
+                if (candiateDistance < bestDistance)
+                {
+                    best = candidate;
+                    bestDistance = candiateDistance;
+                }
+            }
+            return best;
+        }
+
+        private IEnumerable<Health> FindAllTargetsInRange()
+        {
+            RaycastHit[] raycastHits = Physics.SphereCastAll(transform.position, autoAttackRange, Vector3.up);
+            foreach (var hit in raycastHits)
+            {
+                Health health = hit.transform.GetComponent<Health>();
+                if (health == null) continue;
+                if (health.IsDead()) continue;
+                if (health.gameObject == gameObject) continue;
+                yield return health;
             }
         }
 
