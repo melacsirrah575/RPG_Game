@@ -26,5 +26,5 @@ MonoBehaviour:
   effectStrategies:
   - {fileID: 11400000, guid: 9d58fd5c939c75b4c96aee026044f879, type: 2}
   - {fileID: 11400000, guid: ea58b1946f337464eba5105fd2d79797, type: 2}
-  cooldownTime: 2
+  cooldownTime: 3
   manaCost: 0

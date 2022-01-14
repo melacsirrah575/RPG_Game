@@ -10,9 +10,10 @@ namespace RPG.Inventories
         [Tooltip("Does an instance of this item get consumed every time it's used")]
         [SerializeField] bool consumable = false;
 
-        public virtual void Use(GameObject user)
+        public virtual bool Use(GameObject user)
         {
             Debug.Log("using action: " + this);
+            return false;
         }
 
         public bool isConsumable()
