@@ -20,5 +20,5 @@ MonoBehaviour:
   - item: {fileID: 11400000, guid: 80783ce5c25b9404986d19a8a7235b5a, type: 2}
     relativeChance:
     - 1
-    minNumber: 00000000
-    maxNumber: 
+    minNumber: 1000000013000000
+    maxNumber: 1400000017000000

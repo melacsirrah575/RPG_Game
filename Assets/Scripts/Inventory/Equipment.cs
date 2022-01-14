@@ -26,7 +26,7 @@ namespace RPG.Inventories
         public void AddItem(EquipLocation slot, EquipableItem item)
         {
             //Shouldn't ever really be called but is here for precautionary purposes
-            Debug.Assert(item.GetAllowedEquipLocation() == slot);
+            Debug.Assert(item.CanEquip(slot, this));
 
             equippedItems[slot] = item;
 
