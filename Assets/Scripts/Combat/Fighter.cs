@@ -13,7 +13,7 @@ using RPG.Inventories;
 
 namespace RPG.Combat
 {
-    public class Fighter : MonoBehaviour, IAction, ISaveable
+    public class Fighter : MonoBehaviour, IAction
     {
         [SerializeField] float timeBetweenAttacks = 1f;
         [SerializeField] Transform rightHandTransform = null;
@@ -166,6 +166,13 @@ namespace RPG.Combat
             if (target == null) return;
 
             float damage = GetComponent<BaseStats>().GetStat(Stat.Damage);
+            BaseStats targetBaseStats = target.GetComponent<BaseStats>();
+            if (targetBaseStats != null)
+            {
+                float defense = targetBaseStats.GetStat(Stat.Defense);
+
+                damage /= 1 + defense / damage;
+            }
 
             if (currentWeapon.value != null)
             {
@@ -222,17 +229,6 @@ namespace RPG.Combat
         {
             GetComponent<Animator>().ResetTrigger("attack");
             GetComponent<Animator>().SetTrigger("stopAttack");
-        }
-
-        public object CaptureState()
-        {
-            return currentWeaponConfig.name;
-        }
-
-        public void RestoreState(object state)
-        {
-            WeaponConfig weapon = Resources.Load<WeaponConfig>(state.ToString());
-            EquipWeapon(weapon);
         }
     }
 }

@@ -10,23 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a617b1f88cee1a244829bfd6b3d99a63, type: 3}
-  m_Name: Ability Super Mega Splash
+  m_Name: Fire Spray
   m_EditorClassIdentifier: 
-  itemID: 4f43b96b-7a4c-4012-b164-deeb83fe333d
-  displayName: Super Mega Splash
-  description: 
+  itemID: efb2453c-d62a-4f05-983a-d0570e282bd7
+  displayName: Fire Spray
+  description: Target an area and shoot fireballs at enemies in it!
   icon: {fileID: 21300000, guid: a1ec2c0ddc0da634b85f0f465fec2d0d, type: 3}
   pickup: {fileID: 9112133121926219460, guid: d6f8c411a49a55346a3f16cb7d0978cb, type: 3}
   stackable: 0
-  price: 50
+  price: 100
   category: 5
   consumable: 0
-  targetingStrategy: {fileID: 11400000, guid: b363af2ca234f174f8fd3607344add54, type: 2}
+  targetingStrategy: {fileID: 11400000, guid: db950864118c15f468f488f089b852ce, type: 2}
   filterStrategies:
   - {fileID: 11400000, guid: 036edc85aecc1cb408566c755ac35d46, type: 2}
   effectStrategies:
+  - {fileID: 11400000, guid: 263ab34e688e98a44b5a76d6ae1ad41d, type: 2}
   - {fileID: 11400000, guid: 18cde2e89852eec45bd2b8e13cb454fc, type: 2}
-  - {fileID: 11400000, guid: 37852f2ed64ece3498136729d32fadf7, type: 2}
   - {fileID: 11400000, guid: a3b771966b0cfc447bd9f19e4fe18996, type: 2}
-  cooldownTime: 5
+  cooldownTime: 0.8
   manaCost: 20
