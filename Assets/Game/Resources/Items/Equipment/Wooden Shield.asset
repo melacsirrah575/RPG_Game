@@ -13,13 +13,15 @@ MonoBehaviour:
   m_Name: Wooden Shield
   m_EditorClassIdentifier: 
   itemID: 73953f80-12e4-4f5c-bcb5-1b9c2fe9466c
-  displayName: 
-  description: 
-  icon: {fileID: 0}
-  pickup: {fileID: 0}
+  displayName: Wooden Shield
+  description: Stops some blows
+  icon: {fileID: 21300000, guid: 886ffb608498aa04c9c0913d5ac3c394, type: 3}
+  pickup: {fileID: 9112133121926219460, guid: d6f8c411a49a55346a3f16cb7d0978cb, type: 3}
   stackable: 0
-  price: 0
-  category: 0
-  allowedEquipLocation: 5
-  additiveModifier: []
+  price: 10
+  category: 1
+  allowedEquipLocation: 6
+  additiveModifier:
+  - stat: 8
+    value: 5
   percentageModifier: []
