@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using RPG.Inventories;
+using RPG.Core;
 
 namespace RPG.Quests
 {
@@ -26,6 +27,8 @@ namespace RPG.Quests
         {
             public string reference;
             public string description;
+            public bool usesCondition = false;
+            public Condition completedCondition;
         }
 
         public string GetTitle()

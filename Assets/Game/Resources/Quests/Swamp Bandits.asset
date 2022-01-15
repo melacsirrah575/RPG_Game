@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a75ad2959a7a99a4084506a63fb2ad86, type: 3}
+  m_Name: Swamp Bandits
+  m_EditorClassIdentifier: 
+  objectives:
+  - reference: train
+    description: Battle guards to Level Up your Strength
+    usesCondition: 1
+    completedCondition:
+      and:
+      - or:
+        - predicate: MinimumTrait
+          parameters:
+          - Strength
+          - 4
+          negate: 0
+  - reference: equip
+    description: Equip a better Sword
+    usesCondition: 1
+    completedCondition:
+      and:
+      - or:
+        - predicate: HasItemEquipped
+          parameters:
+          - a8be1776-b456-44fb-8925-659371b02a26
+          negate: 0
+  - reference: kill
+    description: Kill Bandit Leader
+    usesCondition: 0
+    completedCondition:
+      and: []
+  rewards:
+  - number: 1
+    item: {fileID: 11400000, guid: 6824d30ecfc56da40b26ad8b5d66a0ab, type: 2}
+  - number: 1
+    item: {fileID: 11400000, guid: db0e59e4e4c9bc445a17485912019339, type: 2}
+  - number: 1
+    item: {fileID: 11400000, guid: e447b87c852d5434a85083ce0371d501, type: 2}
+  - number: 1
+    item: {fileID: 11400000, guid: d6293c5e3c2b5ac47b737e28e638e1e6, type: 2}
+  - number: 1
+    item: {fileID: 11400000, guid: c1cafd2fe3fce584584577db40904f91, type: 2}
+  - number: 1000
+    item: {fileID: 11400000, guid: 80783ce5c25b9404986d19a8a7235b5a, type: 2}

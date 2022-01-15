@@ -1,0 +1,560 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8871500594029863277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10629bf3c59b77142ac793dcf04361ff, type: 3}
+  m_Name: c2491174-d31f-4140-9a91-fb932006f83e
+  m_EditorClassIdentifier: 
+  text: Yes
+  children:
+  - e1ab1472-cf34-406c-a0d5-e6ce9601e60d
+  rect:
+    serializedVersion: 2
+    x: 1800
+    y: 51
+    width: 200
+    height: 100
+  isPlayerSpeaking: 1
+  onEnterAction: 
+  onExitAction: GiveQuest
+  condition:
+    and: []
+--- !u!114 &-6747871949126132993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10629bf3c59b77142ac793dcf04361ff, type: 3}
+  m_Name: e1ab1472-cf34-406c-a0d5-e6ce9601e60d
+  m_EditorClassIdentifier: 
+  text: Oh Thank You! You are simply the best!
+  children:
+  - 9ee30352-e20a-4911-9db9-17789ae7c5a3
+  rect:
+    serializedVersion: 2
+    x: 2050
+    y: 51
+    width: 200
+    height: 100
+  isPlayerSpeaking: 0
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-6008912694115828494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10629bf3c59b77142ac793dcf04361ff, type: 3}
+  m_Name: 90db788b-d15c-4feb-9615-a0646dbfed4e
+  m_EditorClassIdentifier: 
+  text: What seems to be the problem?
+  children:
+  - 3d5ad17b-8190-4f55-8e7a-341d393759b2
+  rect:
+    serializedVersion: 2
+    x: 614
+    y: 15
+    width: 200
+    height: 100
+  isPlayerSpeaking: 1
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-5440862600029885905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10629bf3c59b77142ac793dcf04361ff, type: 3}
+  m_Name: d22446f5-2cdc-454a-8908-b9d5aec14348
+  m_EditorClassIdentifier: 
+  text: Slay the Swamp Bandits! Before they decide to make their home in town!
+  children:
+  - f248cfae-1e62-4264-9a65-b3ea83af3244
+  rect:
+    serializedVersion: 2
+    x: 279
+    y: 194
+    width: 200
+    height: 100
+  isPlayerSpeaking: 0
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and:
+    - or:
+      - predicate: HasQuest
+        parameters:
+        - Swamp Bandits
+        negate: 0
+    - or:
+      - predicate: CompletedQuest
+        parameters:
+        - Swamp Bandits
+        negate: 1
+--- !u!114 &-4764555053595392765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10629bf3c59b77142ac793dcf04361ff, type: 3}
+  m_Name: 3ca9726a-dd1b-4785-ac07-95d47620117e
+  m_EditorClassIdentifier: 
+  text: Thank you for playtesting this vertical slice.
+  children:
+  - a6745117-3a86-4113-a1fd-438bd75752bf
+  rect:
+    serializedVersion: 2
+    x: 781
+    y: 484
+    width: 200
+    height: 100
+  isPlayerSpeaking: 0
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-4248243517993431798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10629bf3c59b77142ac793dcf04361ff, type: 3}
+  m_Name: 3d5ad17b-8190-4f55-8e7a-341d393759b2
+  m_EditorClassIdentifier: 
+  text: Swamp Bandits have made their home in... Well, the swamp!
+  children:
+  - ca84370e-0419-418a-9f73-fcd2ebbf5fd0
+  rect:
+    serializedVersion: 2
+    x: 1303
+    y: 124
+    width: 200
+    height: 100
+  isPlayerSpeaking: 0
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-3816569850137832426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10629bf3c59b77142ac793dcf04361ff, type: 3}
+  m_Name: b0968c7b-a6b3-46aa-8925-898f0f0f2426
+  m_EditorClassIdentifier: 
+  text: Fine, I guess I'll just start finding a good hiding place.
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 2096
+    y: 231
+    width: 200
+    height: 100
+  isPlayerSpeaking: 0
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-2926488313383939166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10629bf3c59b77142ac793dcf04361ff, type: 3}
+  m_Name: 2a29b6c8-20d8-44a8-bb05-049274a7c3d4
+  m_EditorClassIdentifier: 
+  text: If you're so scared, why don't you just find someplace to hide?
+  children:
+  - b0968c7b-a6b3-46aa-8925-898f0f0f2426
+  rect:
+    serializedVersion: 2
+    x: 608
+    y: 219
+    width: 200
+    height: 100
+  isPlayerSpeaking: 1
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-2030506904620006347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10629bf3c59b77142ac793dcf04361ff, type: 3}
+  m_Name: 6261e79a-6ab5-4858-830f-dc39e3e58978
+  m_EditorClassIdentifier: 
+  text: No
+  children:
+  - b0968c7b-a6b3-46aa-8925-898f0f0f2426
+  rect:
+    serializedVersion: 2
+    x: 1799
+    y: 175
+    width: 200
+    height: 100
+  isPlayerSpeaking: 1
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-1631102929267266727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10629bf3c59b77142ac793dcf04361ff, type: 3}
+  m_Name: 9aa24300-9193-44f1-a3c7-01dc7b7fedce
+  m_EditorClassIdentifier: 
+  text: Hello stranger!
+  children:
+  - 6e1732a8-a976-4b1b-86a2-65f63c4d7d60
+  - d22446f5-2cdc-454a-8908-b9d5aec14348
+  - 9cefaa19-d89d-4abe-a5be-eca93f711727
+  rect:
+    serializedVersion: 2
+    x: 36
+    y: 126
+    width: 200
+    height: 100
+  isPlayerSpeaking: 0
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 601364ef52c2dea499b1cb2b1d5aeab6, type: 3}
+  m_Name: Quest Giver
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: -1631102929267266727}
+  - {fileID: 4931102535233602131}
+  - {fileID: -6008912694115828494}
+  - {fileID: -4248243517993431798}
+  - {fileID: 3214916440875688200}
+  - {fileID: -5440862600029885905}
+  - {fileID: 5133138538578068203}
+  - {fileID: 561043953749642565}
+  - {fileID: 1848280757412381083}
+  - {fileID: -4764555053595392765}
+  - {fileID: 1286773689998786737}
+  - {fileID: 1060346752172377840}
+  - {fileID: -2926488313383939166}
+  - {fileID: 12241350940705461}
+  - {fileID: -8871500594029863277}
+  - {fileID: -2030506904620006347}
+  - {fileID: -3816569850137832426}
+  - {fileID: -6747871949126132993}
+  - {fileID: 6313885087909242259}
+  newNodeOffset: {x: 250, y: 0}
+--- !u!114 &12241350940705461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10629bf3c59b77142ac793dcf04361ff, type: 3}
+  m_Name: ca84370e-0419-418a-9f73-fcd2ebbf5fd0
+  m_EditorClassIdentifier: 
+  text: Could you slay their leader for us? With their leader gone, the rest will
+    surely disperse.
+  children:
+  - c2491174-d31f-4140-9a91-fb932006f83e
+  - 6261e79a-6ab5-4858-830f-dc39e3e58978
+  rect:
+    serializedVersion: 2
+    x: 1553
+    y: 124
+    width: 200
+    height: 100
+  isPlayerSpeaking: 0
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &561043953749642565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10629bf3c59b77142ac793dcf04361ff, type: 3}
+  m_Name: f248cfae-1e62-4264-9a65-b3ea83af3244
+  m_EditorClassIdentifier: 
+  text: What are you waiting for!?
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 626
+    y: 323
+    width: 200
+    height: 100
+  isPlayerSpeaking: 0
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &1060346752172377840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10629bf3c59b77142ac793dcf04361ff, type: 3}
+  m_Name: 3ba3b705-7186-4cee-8f71-91a4ee9d221d
+  m_EditorClassIdentifier: 
+  text: Yes!
+  children:
+  - 3d5ad17b-8190-4f55-8e7a-341d393759b2
+  rect:
+    serializedVersion: 2
+    x: 865
+    y: 125
+    width: 200
+    height: 100
+  isPlayerSpeaking: 0
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &1286773689998786737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10629bf3c59b77142ac793dcf04361ff, type: 3}
+  m_Name: a6745117-3a86-4113-a1fd-438bd75752bf
+  m_EditorClassIdentifier: 
+  text: The items you have been given did not have a place in this little moment
+    but if you want to test them out, head back to the swamp section and enter the
+    testing zone!
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 1039
+    y: 532
+    width: 200
+    height: 100
+  isPlayerSpeaking: 0
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &1848280757412381083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10629bf3c59b77142ac793dcf04361ff, type: 3}
+  m_Name: eb4f4709-c430-4c46-ac71-19bce2a58264
+  m_EditorClassIdentifier: 
+  text: I knew it would absolutely break the game to give you this before but please,
+    take this as a token of my thanks.
+  children:
+  - 3ca9726a-dd1b-4785-ac07-95d47620117e
+  rect:
+    serializedVersion: 2
+    x: 515
+    y: 415
+    width: 200
+    height: 100
+  isPlayerSpeaking: 0
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &3214916440875688200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10629bf3c59b77142ac793dcf04361ff, type: 3}
+  m_Name: 6e1732a8-a976-4b1b-86a2-65f63c4d7d60
+  m_EditorClassIdentifier: 
+  text: Oh what terrible times we live in! Simply aweful!
+  children:
+  - 90db788b-d15c-4feb-9615-a0646dbfed4e
+  - 0f8b3f78-8bd9-4078-9043-8b4de92a8cea
+  - 2a29b6c8-20d8-44a8-bb05-049274a7c3d4
+  rect:
+    serializedVersion: 2
+    x: 267
+    y: 60
+    width: 200
+    height: 100
+  isPlayerSpeaking: 0
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and:
+    - or:
+      - predicate: HasQuest
+        parameters:
+        - Swamp Bandits
+        negate: 1
+--- !u!114 &4931102535233602131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10629bf3c59b77142ac793dcf04361ff, type: 3}
+  m_Name: 0f8b3f78-8bd9-4078-9043-8b4de92a8cea
+  m_EditorClassIdentifier: 
+  text: Am I about to embark on a quest?
+  children:
+  - 3ba3b705-7186-4cee-8f71-91a4ee9d221d
+  rect:
+    serializedVersion: 2
+    x: 615
+    y: 125
+    width: 200
+    height: 100
+  isPlayerSpeaking: 1
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &5133138538578068203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10629bf3c59b77142ac793dcf04361ff, type: 3}
+  m_Name: 9cefaa19-d89d-4abe-a5be-eca93f711727
+  m_EditorClassIdentifier: 
+  text: You did it! You slew the bandit Lord! Oh thank you so much!
+  children:
+  - eb4f4709-c430-4c46-ac71-19bce2a58264
+  rect:
+    serializedVersion: 2
+    x: 274
+    y: 319
+    width: 200
+    height: 100
+  isPlayerSpeaking: 0
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and:
+    - or:
+      - predicate: HasQuest
+        parameters:
+        - Swamp Bandits
+        negate: 0
+    - or:
+      - predicate: CompletedQuest
+        parameters:
+        - Swamp Bandits
+        negate: 0
+--- !u!114 &6313885087909242259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10629bf3c59b77142ac793dcf04361ff, type: 3}
+  m_Name: 9ee30352-e20a-4911-9db9-17789ae7c5a3
+  m_EditorClassIdentifier: 
+  text: If you're ever confused on what to do, just press 'Q' to open your quest
+    list.
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 2300
+    y: 51
+    width: 200
+    height: 100
+  isPlayerSpeaking: 0
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []

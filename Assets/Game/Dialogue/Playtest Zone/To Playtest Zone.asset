@@ -1,0 +1,508 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9149604623220065535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10629bf3c59b77142ac793dcf04361ff, type: 3}
+  m_Name: 00bbf03b-e6a0-4713-82fb-2417280d8352
+  m_EditorClassIdentifier: 
+  text: You exists simply to help our creator get an A on a final project... With
+    that being said
+  children:
+  - 88bad949-4d3b-4bfe-9770-d0ab82318db5
+  rect:
+    serializedVersion: 2
+    x: 1794
+    y: 290
+    width: 200
+    height: 100
+  isPlayerSpeaking: 0
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-8513870691611854019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10629bf3c59b77142ac793dcf04361ff, type: 3}
+  m_Name: b7564650-311e-4bcd-8f83-71f5ef0b38bf
+  m_EditorClassIdentifier: 
+  text: Wonderful! That means I can cut to the chase.
+  children:
+  - 88bad949-4d3b-4bfe-9770-d0ab82318db5
+  rect:
+    serializedVersion: 2
+    x: 550
+    y: 287
+    width: 200
+    height: 100
+  isPlayerSpeaking: 0
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-8489615519903269913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10629bf3c59b77142ac793dcf04361ff, type: 3}
+  m_Name: 3ea631c8-336c-4da9-81c8-f4c06186cb78
+  m_EditorClassIdentifier: 
+  text: I don't want to hurt you!
+  children:
+  - a482ec5d-31cb-4ce4-8a06-ea229761c55d
+  rect:
+    serializedVersion: 2
+    x: 1293
+    y: 185
+    width: 200
+    height: 100
+  isPlayerSpeaking: 1
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-5407345764070526853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10629bf3c59b77142ac793dcf04361ff, type: 3}
+  m_Name: a482ec5d-31cb-4ce4-8a06-ea229761c55d
+  m_EditorClassIdentifier: 
+  text: Suuuuureee... That's what it is.
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 1543
+    y: 185
+    width: 200
+    height: 100
+  isPlayerSpeaking: 0
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-1221928452725823824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10629bf3c59b77142ac793dcf04361ff, type: 3}
+  m_Name: c4a1f086-b1fe-4dee-b411-31429b2e2cb4
+  m_EditorClassIdentifier: 
+  text: The one controlling you of course.
+  children:
+  - 38777abf-cba2-4d10-9ac5-209fc7e3250b
+  rect:
+    serializedVersion: 2
+    x: 550
+    y: 186
+    width: 200
+    height: 100
+  isPlayerSpeaking: 0
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-987760853118303016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10629bf3c59b77142ac793dcf04361ff, type: 3}
+  m_Name: 676c0f39-76be-4435-ae07-3190d3379c6e
+  m_EditorClassIdentifier: 
+  text: Umm.. Hello?
+  children:
+  - b97cf109-b3b5-4e25-b432-c54fd19d32f1
+  rect:
+    serializedVersion: 2
+    x: 299
+    y: 81
+    width: 200
+    height: 100
+  isPlayerSpeaking: 1
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-636836198614913480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10629bf3c59b77142ac793dcf04361ff, type: 3}
+  m_Name: c2697717-5b88-4bbc-9d15-7cdf9aa8167d
+  m_EditorClassIdentifier: 
+  text: Down this small side, you will enter a level that will have oppertunities
+    to test things no available in this demo.
+  children:
+  - 4bef58f2-ac5c-4655-a1c5-07d1d980b333
+  rect:
+    serializedVersion: 2
+    x: 1293
+    y: 509
+    width: 200
+    height: 100
+  isPlayerSpeaking: 0
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-28489474147008268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10629bf3c59b77142ac793dcf04361ff, type: 3}
+  m_Name: 11cc9221-0aa7-4275-b733-237ceb14f919
+  m_EditorClassIdentifier: 
+  text: I recognize and accept this breaking of the 4th wall.
+  children:
+  - b7564650-311e-4bcd-8f83-71f5ef0b38bf
+  rect:
+    serializedVersion: 2
+    x: 300
+    y: 287
+    width: 200
+    height: 100
+  isPlayerSpeaking: 1
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 601364ef52c2dea499b1cb2b1d5aeab6, type: 3}
+  m_Name: To Playtest Zone
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: 8160114085143731297}
+  - {fileID: -987760853118303016}
+  - {fileID: 5862977276061084709}
+  - {fileID: -28489474147008268}
+  - {fileID: -8513870691611854019}
+  - {fileID: -1221928452725823824}
+  - {fileID: 7162671151822872944}
+  - {fileID: 2410168451988321480}
+  - {fileID: -8489615519903269913}
+  - {fileID: 3654318261939778619}
+  - {fileID: -5407345764070526853}
+  - {fileID: 9140300142541163610}
+  - {fileID: -9149604623220065535}
+  - {fileID: 2083072355504857502}
+  - {fileID: 7392437155581122784}
+  - {fileID: 1799412826836562612}
+  - {fileID: -636836198614913480}
+  - {fileID: 115288413548672513}
+  newNodeOffset: {x: 250, y: 0}
+--- !u!114 &115288413548672513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10629bf3c59b77142ac793dcf04361ff, type: 3}
+  m_Name: 4bef58f2-ac5c-4655-a1c5-07d1d980b333
+  m_EditorClassIdentifier: 
+  text: If you haven't yet completed your quest, I would strongly urge you to wait
+    until you reap your rewards before going this way.
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 1542
+    y: 551
+    width: 200
+    height: 100
+  isPlayerSpeaking: 0
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &1799412826836562612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10629bf3c59b77142ac793dcf04361ff, type: 3}
+  m_Name: b5aa6e2d-adea-4b19-9337-1b90b7f59b09
+  m_EditorClassIdentifier: 
+  text: He figured the best way to give players the oppertunity to experience everything
+    he made so far was to throw together a shoddy level with enemies for you to fight.
+  children:
+  - c2697717-5b88-4bbc-9d15-7cdf9aa8167d
+  rect:
+    serializedVersion: 2
+    x: 1039
+    y: 449
+    width: 200
+    height: 100
+  isPlayerSpeaking: 0
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &2083072355504857502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10629bf3c59b77142ac793dcf04361ff, type: 3}
+  m_Name: b97cf109-b3b5-4e25-b432-c54fd19d32f1
+  m_EditorClassIdentifier: 
+  text: I wasn't talking to you. I was talking to the player!
+  children:
+  - 1bba5166-b1a6-4ff7-896b-8675cc0faec6
+  rect:
+    serializedVersion: 2
+    x: 549
+    y: 81
+    width: 200
+    height: 100
+  isPlayerSpeaking: 0
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &2410168451988321480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10629bf3c59b77142ac793dcf04361ff, type: 3}
+  m_Name: ced12785-9b2f-4869-963f-8e2096867230
+  m_EditorClassIdentifier: 
+  text: Well then try to hit me right now..
+  children:
+  - 3ea631c8-336c-4da9-81c8-f4c06186cb78
+  - 136024cf-ea38-4f4b-a2fc-cbe25b090766
+  rect:
+    serializedVersion: 2
+    x: 1050
+    y: 186
+    width: 200
+    height: 100
+  isPlayerSpeaking: 0
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &3654318261939778619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10629bf3c59b77142ac793dcf04361ff, type: 3}
+  m_Name: 136024cf-ea38-4f4b-a2fc-cbe25b090766
+  m_EditorClassIdentifier: 
+  text: I.. I can't.. WHAT THE HECK!?
+  children:
+  - ad2cf36a-6352-4d67-92ec-b52be4b7dcfd
+  rect:
+    serializedVersion: 2
+    x: 1294
+    y: 290
+    width: 200
+    height: 100
+  isPlayerSpeaking: 1
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &5862977276061084709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10629bf3c59b77142ac793dcf04361ff, type: 3}
+  m_Name: 1bba5166-b1a6-4ff7-896b-8675cc0faec6
+  m_EditorClassIdentifier: 
+  text: Who is "Player"?
+  children:
+  - c4a1f086-b1fe-4dee-b411-31429b2e2cb4
+  rect:
+    serializedVersion: 2
+    x: 300
+    y: 186
+    width: 200
+    height: 100
+  isPlayerSpeaking: 1
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &7162671151822872944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10629bf3c59b77142ac793dcf04361ff, type: 3}
+  m_Name: 38777abf-cba2-4d10-9ac5-209fc7e3250b
+  m_EditorClassIdentifier: 
+  text: What do you mean? I control myself?
+  children:
+  - ced12785-9b2f-4869-963f-8e2096867230
+  rect:
+    serializedVersion: 2
+    x: 800
+    y: 186
+    width: 200
+    height: 100
+  isPlayerSpeaking: 1
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &7392437155581122784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10629bf3c59b77142ac793dcf04361ff, type: 3}
+  m_Name: 88bad949-4d3b-4bfe-9770-d0ab82318db5
+  m_EditorClassIdentifier: 
+  text: Our creator ran out of time to playtest a lot of what he added in due to
+    project dates and a snow storm.
+  children:
+  - b5aa6e2d-adea-4b19-9337-1b90b7f59b09
+  rect:
+    serializedVersion: 2
+    x: 800
+    y: 368
+    width: 200
+    height: 100
+  isPlayerSpeaking: 0
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &8160114085143731297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10629bf3c59b77142ac793dcf04361ff, type: 3}
+  m_Name: 0f4578c5-b36d-4e4e-9762-a0e814a66122
+  m_EditorClassIdentifier: 
+  text: Hello Player!
+  children:
+  - 676c0f39-76be-4435-ae07-3190d3379c6e
+  - 1bba5166-b1a6-4ff7-896b-8675cc0faec6
+  - 11cc9221-0aa7-4275-b733-237ceb14f919
+  rect:
+    serializedVersion: 2
+    x: 49
+    y: 81
+    width: 200
+    height: 100
+  isPlayerSpeaking: 0
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &9140300142541163610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10629bf3c59b77142ac793dcf04361ff, type: 3}
+  m_Name: ad2cf36a-6352-4d67-92ec-b52be4b7dcfd
+  m_EditorClassIdentifier: 
+  text: You are merely a pawn created for a class project by a single man.
+  children:
+  - 00bbf03b-e6a0-4713-82fb-2417280d8352
+  rect:
+    serializedVersion: 2
+    x: 1544
+    y: 290
+    width: 200
+    height: 100
+  isPlayerSpeaking: 0
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []

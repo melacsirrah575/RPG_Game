@@ -24,7 +24,8 @@ namespace RPG.Dialogues
                 return false;
             }
 
-            if (GetComponent<Health>().IsDead()) return false;
+            Health health = GetComponent<Health>();
+            if (health && health.IsDead()) return false;
 
             if (Input.GetMouseButtonDown(0))
             {
