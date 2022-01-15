@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Swamp.unity
     guid: be45bb6f6c80b554ea8d40ff543a147e
+  - enabled: 1
+    path: Assets/Scenes/Playtesting.unity
+    guid: 40eca9651c9e8a041b8be5f4104193e7
   m_configObjects: {}
