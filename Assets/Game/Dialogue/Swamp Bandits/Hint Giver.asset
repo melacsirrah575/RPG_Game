@@ -1,5 +1,33 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9113031065762991722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10629bf3c59b77142ac793dcf04361ff, type: 3}
+  m_Name: d46485ab-0e28-4b01-b555-07d8d9004861
+  m_EditorClassIdentifier: 
+  text: Your inventory shows you items you have on your person. Some items can be
+    put in your ability bar (near bottom of screen). By using the corresponding number
+    key (starting at 1), you can use that item.
+  children:
+  - 3facdad0-64c4-4c82-8a0e-9a1f729c820a
+  rect:
+    serializedVersion: 2
+    x: 1206
+    y: 540
+    width: 200
+    height: 100
+  isPlayerSpeaking: 0
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
 --- !u!114 &-8541220447437356644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16,6 +44,7 @@ MonoBehaviour:
   children:
   - b983f8a1-a3f1-43d8-8a41-efeb945e9881
   - 222f096c-6b20-48f2-b6b8-0079f06bdc87
+  - 7dab7767-a31b-4775-a752-0d8a8cecaef4
   rect:
     serializedVersion: 2
     x: 271
@@ -33,6 +62,33 @@ MonoBehaviour:
         - Strength
         - 4
         negate: 1
+--- !u!114 &-7464582019199572140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10629bf3c59b77142ac793dcf04361ff, type: 3}
+  m_Name: 3facdad0-64c4-4c82-8a0e-9a1f729c820a
+  m_EditorClassIdentifier: 
+  text: Other Items (such as equipment) can be equipped by dragging the item to the
+    right slot on the left pannel. Granted you have the stats to use it.
+  children:
+  - 438a1117-e6be-48d8-b1f7-59c8a07c6f8f
+  rect:
+    serializedVersion: 2
+    x: 1471
+    y: 568
+    width: 200
+    height: 100
+  isPlayerSpeaking: 0
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
 --- !u!114 &-6608924653566833117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51,7 +107,7 @@ MonoBehaviour:
   rect:
     serializedVersion: 2
     x: 512
-    y: 306
+    y: 314
     width: 200
     height: 100
   isPlayerSpeaking: 1
@@ -100,8 +156,8 @@ MonoBehaviour:
   children: []
   rect:
     serializedVersion: 2
-    x: 1280
-    y: 205
+    x: 2678
+    y: 286
     width: 200
     height: 100
   isPlayerSpeaking: 0
@@ -121,9 +177,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10629bf3c59b77142ac793dcf04361ff, type: 3}
   m_Name: dcca16a9-cfc3-4f99-9a08-527288e07374
   m_EditorClassIdentifier: 
-  text: What is this, your first RPG?! Go into town and find some work or something
+  text: What is this, your first RPG?! Go explore and find some work or something
     to kill.
-  children: []
+  children:
+  - 045d4c1a-9277-43d4-8946-8c292310ca04
   rect:
     serializedVersion: 2
     x: 771
@@ -147,13 +204,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10629bf3c59b77142ac793dcf04361ff, type: 3}
   m_Name: e7e2b2b7-e5e6-4c86-8878-2bb8e31267a8
   m_EditorClassIdentifier: 
-  text: To access your invetory, you just need to press 'I'
+  text: To access your inventory, you just need to press 'I'
   children:
-  - 438a1117-e6be-48d8-b1f7-59c8a07c6f8f
+  - d46485ab-0e28-4b01-b555-07d8d9004861
   rect:
     serializedVersion: 2
-    x: 767
-    y: 430
+    x: 963
+    y: 440
     width: 200
     height: 100
   isPlayerSpeaking: 0
@@ -178,8 +235,8 @@ MonoBehaviour:
   - 8386c642-0b1f-4e39-be5a-992396e5c05d
   rect:
     serializedVersion: 2
-    x: 1267
-    y: 430
+    x: 1950
+    y: 604
     width: 200
     height: 100
   isPlayerSpeaking: 0
@@ -204,8 +261,8 @@ MonoBehaviour:
   - 244c032b-e44e-47df-b550-95fe6051adad
   rect:
     serializedVersion: 2
-    x: 1017
-    y: 430
+    x: 1713
+    y: 591
     width: 200
     height: 100
   isPlayerSpeaking: 0
@@ -230,7 +287,6 @@ MonoBehaviour:
   - a9b8fbb8-ab66-4818-a387-f39ac9682464
   - 9ea185aa-40af-4048-a1a2-d82efc9d622f
   - 1aeb9f96-21cd-4012-a58a-0839d4a4744e
-  - 7dab7767-a31b-4775-a752-0d8a8cecaef4
   rect:
     serializedVersion: 2
     x: 23
@@ -301,6 +357,8 @@ MonoBehaviour:
   - {fileID: -2130843805431630680}
   - {fileID: -2847928944631834751}
   - {fileID: 964007145454204348}
+  - {fileID: -7464582019199572140}
+  - {fileID: -9113031065762991722}
   newNodeOffset: {x: 250, y: 0}
 --- !u!114 &519356684417984372
 MonoBehaviour:
@@ -319,8 +377,8 @@ MonoBehaviour:
   - e7e2b2b7-e5e6-4c86-8878-2bb8e31267a8
   rect:
     serializedVersion: 2
-    x: 517
-    y: 430
+    x: 748
+    y: 432
     width: 200
     height: 100
   isPlayerSpeaking: 0
@@ -368,11 +426,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: Finally, if you ever need a break or want to save, press 'Escape' to access
     the game menu.
-  children: []
+  children:
+  - 045d4c1a-9277-43d4-8946-8c292310ca04
   rect:
     serializedVersion: 2
-    x: 1517
-    y: 430
+    x: 2134
+    y: 486
     width: 200
     height: 100
   isPlayerSpeaking: 0
@@ -397,8 +456,8 @@ MonoBehaviour:
   - 5e2f808c-22cb-481e-a73f-be14239479ee
   rect:
     serializedVersion: 2
-    x: 1030
-    y: 205
+    x: 2390
+    y: 287
     width: 200
     height: 100
   isPlayerSpeaking: 1
@@ -423,8 +482,8 @@ MonoBehaviour:
   - 09856a67-d52a-4ccd-a141-b0213b2f310b
   rect:
     serializedVersion: 2
-    x: 267
-    y: 430
+    x: 518
+    y: 420
     width: 200
     height: 100
   isPlayerSpeaking: 1
@@ -448,8 +507,8 @@ MonoBehaviour:
   children: []
   rect:
     serializedVersion: 2
-    x: 762
-    y: 306
+    x: 768
+    y: 319
     width: 200
     height: 100
   isPlayerSpeaking: 0
@@ -474,8 +533,8 @@ MonoBehaviour:
   - 045d4c1a-9277-43d4-8946-8c292310ca04
   rect:
     serializedVersion: 2
-    x: 766
-    y: 208
+    x: 775
+    y: 203
     width: 200
     height: 100
   isPlayerSpeaking: 0

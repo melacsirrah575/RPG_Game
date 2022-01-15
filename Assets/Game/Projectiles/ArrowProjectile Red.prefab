@@ -29,7 +29,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4566307332893720226}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!96 &7278639915267606136
 TrailRenderer:
@@ -217,6 +217,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 213338086968883340, guid: a5699b9a5b8c9644e8e654fa6dc8030c, type: 3}
+      propertyPath: audioClips.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1645901184609051168, guid: a5699b9a5b8c9644e8e654fa6dc8030c, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -262,13 +266,45 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2165589392474115659, guid: a5699b9a5b8c9644e8e654fa6dc8030c, type: 3}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2165589392474115659, guid: a5699b9a5b8c9644e8e654fa6dc8030c, type: 3}
       propertyPath: hitEffect
       value: 
       objectReference: {fileID: 3598159407657716714, guid: 98c39b11bea39d14384ac742af34d0ba, type: 3}
     - target: {fileID: 2165589392474115659, guid: a5699b9a5b8c9644e8e654fa6dc8030c, type: 3}
+      propertyPath: lifeAfterImpact
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2165589392474115659, guid: a5699b9a5b8c9644e8e654fa6dc8030c, type: 3}
+      propertyPath: destroyOnHit.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2165589392474115659, guid: a5699b9a5b8c9644e8e654fa6dc8030c, type: 3}
       propertyPath: destroyOnHit.Array.data[0]
       value: 
       objectReference: {fileID: 1567631995612800507}
+    - target: {fileID: 2165589392474115659, guid: a5699b9a5b8c9644e8e654fa6dc8030c, type: 3}
+      propertyPath: onHit.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2165589392474115659, guid: a5699b9a5b8c9644e8e654fa6dc8030c, type: 3}
+      propertyPath: onHit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3133467295888122894}
+    - target: {fileID: 2165589392474115659, guid: a5699b9a5b8c9644e8e654fa6dc8030c, type: 3}
+      propertyPath: onHit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayRandomAudioClip
+      objectReference: {fileID: 0}
+    - target: {fileID: 2165589392474115659, guid: a5699b9a5b8c9644e8e654fa6dc8030c, type: 3}
+      propertyPath: onHit.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: RPG.Core.AudioRandomizer, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2165589392474115659, guid: a5699b9a5b8c9644e8e654fa6dc8030c, type: 3}
+      propertyPath: onHit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6416964202589069338, guid: a5699b9a5b8c9644e8e654fa6dc8030c, type: 3}
       propertyPath: m_Parameters.colorGradient.atime1
       value: 65535
@@ -301,6 +337,10 @@ PrefabInstance:
       propertyPath: m_Parameters.colorGradient.key1.g
       value: 0.80392164
       objectReference: {fileID: 0}
+    - target: {fileID: 6934450772674377340, guid: a5699b9a5b8c9644e8e654fa6dc8030c, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8274687742290471856, guid: a5699b9a5b8c9644e8e654fa6dc8030c, type: 3}
       propertyPath: m_Name
       value: ArrowProjectile Red
@@ -312,3 +352,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1645901184609051168, guid: a5699b9a5b8c9644e8e654fa6dc8030c, type: 3}
   m_PrefabInstance: {fileID: 2993101802798341250}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3133467295888122894 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 213338086968883340, guid: a5699b9a5b8c9644e8e654fa6dc8030c, type: 3}
+  m_PrefabInstance: {fileID: 2993101802798341250}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc310663bca8761459918f6d26aefa2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

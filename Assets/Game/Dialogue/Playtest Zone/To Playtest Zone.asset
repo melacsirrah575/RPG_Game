@@ -332,7 +332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10629bf3c59b77142ac793dcf04361ff, type: 3}
   m_Name: ced12785-9b2f-4869-963f-8e2096867230
   m_EditorClassIdentifier: 
-  text: Well then try to hit.
+  text: Well then try to hit me right now..
   children:
   - 3ea631c8-336c-4da9-81c8-f4c06186cb78
   - 136024cf-ea38-4f4b-a2fc-cbe25b090766
