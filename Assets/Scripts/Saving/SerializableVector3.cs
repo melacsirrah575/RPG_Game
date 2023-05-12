@@ -1,3 +1,6 @@
+
+//Used to create a Vector3 that I can save
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

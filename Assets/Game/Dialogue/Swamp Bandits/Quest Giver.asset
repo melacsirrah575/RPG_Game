@@ -95,7 +95,7 @@ MonoBehaviour:
   - f248cfae-1e62-4264-9a65-b3ea83af3244
   rect:
     serializedVersion: 2
-    x: 279
+    x: 281
     y: 194
     width: 200
     height: 100
@@ -257,12 +257,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: Hello stranger!
   children:
-  - 6e1732a8-a976-4b1b-86a2-65f63c4d7d60
   - d22446f5-2cdc-454a-8908-b9d5aec14348
   - 9cefaa19-d89d-4abe-a5be-eca93f711727
+  - 6e1732a8-a976-4b1b-86a2-65f63c4d7d60
   rect:
     serializedVersion: 2
-    x: 36
+    x: 35
     y: 126
     width: 200
     height: 100
@@ -451,9 +451,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: Oh what terrible times we live in! Simply aweful!
   children:
-  - 90db788b-d15c-4feb-9615-a0646dbfed4e
   - 0f8b3f78-8bd9-4078-9043-8b4de92a8cea
   - 2a29b6c8-20d8-44a8-bb05-049274a7c3d4
+  - 90db788b-d15c-4feb-9615-a0646dbfed4e
   rect:
     serializedVersion: 2
     x: 267
@@ -513,7 +513,7 @@ MonoBehaviour:
   - eb4f4709-c430-4c46-ac71-19bce2a58264
   rect:
     serializedVersion: 2
-    x: 274
+    x: 272
     y: 319
     width: 200
     height: 100

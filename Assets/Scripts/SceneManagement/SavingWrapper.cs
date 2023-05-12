@@ -1,3 +1,7 @@
+
+//This script as well as SavingSystem.cs are to be placed on a persistant SavingSystem GameObject
+//Check out SavingSystem.cs for a better explanation of how these scripts work together
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -47,6 +51,8 @@ namespace RPG.SceneManagement
         {
             return PlayerPrefs.GetString(currentSaveKey);
         }
+
+        //The fader is just a piece of UI that is used to help smoothly transition the loading between scenes/play
 
         private IEnumerator LoadLastScene()
         {

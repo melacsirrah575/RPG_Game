@@ -1,4 +1,10 @@
 using System;
+
+/* This script as well as SavingWrapper.cs are to be placed on a persistant SavingSystem GameObject
+ * This is the core of the system itself whereas SavingWrapper is more game-specific.
+ * For example, saving and loading from file are here, saving and loading from a keybind should happen in SavingWrapper */ 
+
+
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -41,6 +47,7 @@ namespace RPG.Saving
             RestoreState(LoadFile(saveFile));
         }
 
+        //Allows user to view the list of saves on their computer
         public IEnumerable<string> ListSaves()
         {
             foreach (string path in Directory.EnumerateFiles(Application.persistentDataPath))
@@ -52,6 +59,7 @@ namespace RPG.Saving
             }
         }
 
+        //Loads the saved file from its path
         private Dictionary<string, object> LoadFile(string saveFile)
         {
             string path = GetPathFromSaveFile(saveFile);
@@ -66,6 +74,7 @@ namespace RPG.Saving
             }
         }
 
+        //Saves the file to a specific path and prints that path in the Console
         private void SaveFile(string saveFile, object state)
         {
             string path = GetPathFromSaveFile(saveFile);
@@ -77,6 +86,13 @@ namespace RPG.Saving
             }
         }
 
+        //returns the path location of the file
+        private string GetPathFromSaveFile(string saveFile)
+        {
+            return Path.Combine(Application.persistentDataPath, saveFile + ".sav");
+        }
+
+        //CaptureState and RestoreState are the two functions that every saveable entity will need to fill out through the ISaveable interface.
         private void CaptureState(Dictionary<string, object> state)
         {
             foreach (SaveableEntity saveable in FindObjectsOfType<SaveableEntity>())
@@ -97,11 +113,6 @@ namespace RPG.Saving
                     saveable.RestoreState(state[id]);
                 }
             }
-        }
-
-        private string GetPathFromSaveFile(string saveFile)
-        {
-            return Path.Combine(Application.persistentDataPath, saveFile + ".sav");
         }
     }
 }

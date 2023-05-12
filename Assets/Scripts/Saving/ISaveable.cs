@@ -1,3 +1,6 @@
+
+//The Interface that any object wanting to be saved must inherit from
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

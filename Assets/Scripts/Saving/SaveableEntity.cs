@@ -1,3 +1,9 @@
+
+/*This script should be placed on any entity that needs to be saved
+It creates a random UUID upon being attached to an entity.
+If you want that entity to exsist between scenes, you manually override the UUID, or copy the original
+and paste the new UUID to a duplicate object in the new scene */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
